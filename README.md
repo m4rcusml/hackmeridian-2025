@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# Project Name
 
 A platform that merges **philanthropy, DeFi, and liquidity**, transforming support for social projects with the power of the **Stellar blockchain**.
 The platform allows users to support causes without giving up their principal capital, ensuring **full liquidity**, **fair distribution of generated yields** for social impact, and **radical transparency** of all operations.
