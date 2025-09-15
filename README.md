@@ -1,11 +1,11 @@
-# Project Name
+# 🚀 Project Name
 
 A platform that merges **philanthropy, DeFi, and liquidity**, transforming support for social projects with the power of the **Stellar blockchain**.
 The platform allows users to support causes without giving up their principal capital, ensuring **full liquidity**, **fair distribution of generated yields** for social impact, and **radical transparency** of all operations.
 
 ---
 
-## The Problem
+## ⚠️ Problem
 
 Conventional philanthropy is still stuck in models that hinder large contributions and compromise results at scale. The main historical barriers include:
 
@@ -16,7 +16,7 @@ Conventional philanthropy is still stuck in models that hinder large contributio
 
 ---
 
-## The Solution
+## 💡 Solution
 
 The platform converts **traditional donation** into a **programmable, sustainable, and traceable** model, with the following differentials:
 
@@ -30,7 +30,7 @@ The platform converts **traditional donation** into a **programmable, sustainabl
 
 ---
 
-## Technologies Used
+## 📋 Technologies Used
 
 -   **Blockchain:** Stellar Network
 -   **Smart Contracts:** Soroban (Rust)
@@ -39,7 +39,7 @@ The platform converts **traditional donation** into a **programmable, sustainabl
 -   **Database:** MongoDB (off-chain data)
 -   **Infrastructure:** Docker
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 /impact-vault
@@ -51,9 +51,9 @@ The platform converts **traditional donation** into a **programmable, sustainabl
 └── LICENSE             # MIT License
 ```
 
-## Installation and Running
+##  Installation and Running
 
-### Prerequisites
+### 🛠️ Prerequisites
 
 -   Node.js 18+
 -   Rust and Soroban CLI
