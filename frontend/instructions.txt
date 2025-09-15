@@ -1,0 +1,1 @@
+Nesta pasta deve ser colocada toda a parte frontend da aplicação
