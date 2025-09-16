@@ -37,11 +37,26 @@ O projeto surgiu da necessidade de alinhar o potencial da tecnologia blockchain 
 ### 2.1. Proposta de Valor
 Para melhor entender o projeto e a proposta de valor envolvida à aplicação, foi desenvolvido o seguinte canvas proposta de valor:
 
-<p align = "center">Figura 1 - Canvas proposta de valor da 4Bridges.</p>
+<p align = "center">Figura 1 - Rascunhos do protótipo de baixa fidelidade.</p>
 <div align = "center">
-  <img src = "../docs/assets/canvas.png">
+  <img src = "../docs/assets/wire1.jpg" style="transform: rotate(180deg);">
 </div>
-<p align = "center"> Fonte: (Souza, [2025?]).</p>
+<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+
+
+<p align = "center">Figura 2 - Rascunhos do protótipo de baixa fidelidade.</p>
+<div align = "center">
+  <img src = "../docs/assets/wire2.jpg">
+</div>
+
+<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+
+<p align = "center">Figura 3 - Rascunhos do protótipo de baixa fidelidade.</p>
+<div align = "center">
+  <img src = "../docs/assets/wire3.jpg">
+</div>
+
+<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
 
 #### 2.1.1. Produtos & Serviços
 
@@ -65,13 +80,13 @@ Para melhor entender o projeto e a proposta de valor envolvida à aplicação, f
 
 #### 2.1.4. Público alvo
 
-##### Doadores Individuais Modernos (crypto-native e impact-driven): 
+##### 1 - Doadores Individuais Modernos (crypto-native e impact-driven): 
 - Jovens e adultos que já usam cripto, stablecoins ou fintechs.
 - Pessoas interessadas em impacto social, mas que não querem perder liquidez.
 
 - Perfil: investidores de varejo, early adopters de blockchain, comunidade Web3.
 
-##### Filantropos e Investidores de Impacto (High-net-worth individuals e ESG):
+##### 2 - Filantropos e Investidores de Impacto (High-net-worth individuals e ESG):
 
 - Pessoas ou fundos que já apoiam causas sociais, mas que buscam modelos mais transparentes e eficientes.
 
@@ -79,7 +94,7 @@ Para melhor entender o projeto e a proposta de valor envolvida à aplicação, f
 
 - Perfil: family offices, investidores ESG, doadores recorrentes.
 
-##### Organizações Sociais (ONGs, fundações e projetos de impacto):
+##### 2 - Organizações Sociais (ONGs, fundações e projetos de impacto):
 
 - Entidades que enfrentam a imprevisibilidade das doações e precisam de fluxo de caixa mais estável.
 
@@ -119,16 +134,12 @@ Para melhor entender o projeto e a proposta de valor envolvida à aplicação, f
 
 ## 3. Aplicação do projeto
 
-### 3.1. Arquitetura da Aplicação
-
-### 3.2. Protótipo
-
-### 3.2. Fluxo do usuário
+### 3.1. Fluxo do usuário
 
 **Telas Principais e Fluxos**
 
 - **Tela de Boas-Vindas e Conexão de Carteira:** Primeiro ponto de contato, simples e direto.
-    
+   
 - **Dashboard Principal:** Visão geral do capital do usuário, impacto total gerado e lista de projetos apoiados.
     
 - **Página de Exploração de Projetos:** Listagem detalhada das causas disponíveis para apoio.
@@ -142,7 +153,14 @@ Para melhor entender o projeto e a proposta de valor envolvida à aplicação, f
 - **Tela de Histórico de Transações:** Log detalhado de todas as operações, com links para o explorador de blocos da Stellar.
     
 
-_O processo de design incluiu protótipos de baixa fidelidade para validação rápida de fluxos e usabilidade, culminando no protótipo de alta fidelidade que guiou o desenvolvimento._
+&nbsp; &nbsp; &nbsp; &nbsp; O processo de design incluiu protótipos de baixa fidelidade para validação rápida de fluxos e usabilidade, culminando no protótipo de baixa fidelidade que guiou o desenvolvimento. Para melhor visualização do fluxo, pode-se obserar a imagem abaixo referente ao rascunho do protótipo das telas e posterior digitalização em wireframes no figma.
+
+<p align = "center">Figura 4 - Canvas proposta de valor da 4Bridges.</p>
+<div align = "center">
+  <img src = "../docs/assets/canvas.png">
+</div>
+<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+
 
 ---
 
@@ -178,22 +196,27 @@ _O processo de design incluiu protótipos de baixa fidelidade para validação r
 - **React :** Construção do frontend interativo.
 - **TypeScript/JavaScript:** Lógica de negócio e integração com a blockchain no lado do cliente.
 - **Stellar Wallets:** Integração com a carteira Freighter para assinatura de transações.
----
+
+### 4.4. What AI tools and LLMs have you used?
+&nbsp; &nbsp; &nbsp; &nbsp; Para receber insights, levantar questionamentos, melhorar ideias e buscar ajuda com alguns erros, foi usada as seguintes ferramentas tecnologicas:
+- Stella AI;
+- ChatGPT;
+- Gemini PRO;
+- V0;
+- Perplexity;
+- Claude.
 
 ## **5. Estudo de mercado e plano de marketing**
 
 ### 5.1. Resumo Executivo
-
-O Impact Vault se posiciona como uma solução pioneira no setor de "Philanthropy-Fi", oferecendo um modelo de doação de capital protegido que atrai um novo perfil de doadores e garante sustentabilidade para projetos sociais. O foco na plataforma Stellar permite alcance global com custos operacionais mínimos.
+&nbsp; &nbsp; &nbsp; &nbsp; O Impact Vault se posiciona como uma solução pioneira no setor de "Philanthropy-Fi", oferecendo um modelo de doação de capital protegido que atrai um novo perfil de doadores e garante sustentabilidade para projetos sociais. O foco na plataforma Stellar permite alcance global com custos operacionais mínimos.
 
 ### 5.2. Análise de Mercado
+&nbsp; &nbsp; &nbsp; &nbsp; O mercado de doações está em um ponto de inflexão. De um lado, o modelo tradicional (Web2) enfrenta uma crise de confiança devido à falta de transparência e taxas elevadas. Do outro, a filantropia cripto (Web3) ainda busca um modelo sustentável.
 
-O mercado de doações está em um ponto de inflexão. De um lado, o modelo tradicional (Web2) enfrenta uma crise de confiança devido à falta de transparência e taxas elevadas. Do outro, a filantropia cripto (Web3) ainda busca um modelo sustentável.
+&nbsp; &nbsp; &nbsp; &nbsp; Nossa plataforma se posiciona exatamente nesta intersecção, oferecendo um modelo de "Doação de Rendimento" (Lossless Donation), onde o impacto social é gerado de forma contínua sem que o doador perca seu capital. A escolha da rede Stellar nos confere uma vantagem competitiva crucial em velocidade e custo, democratizando o acesso a este novo modelo.
 
-Nossa plataforma se posiciona exatamente nesta intersecção, oferecendo um modelo de "Doação de Rendimento" (Lossless Donation), onde o impacto social é gerado de forma contínua sem que o doador perca seu capital. A escolha da rede Stellar nos confere uma vantagem competitiva crucial em velocidade e custo, democratizando o acesso a este novo modelo.
-
-Para posicionar o (nome do projeto) e forma clara no cenário filantrópico, é essencial analisar as soluções existentes e identificar as lacunas que nosso projeto preenche. O benchmarking a seguir compara nosso modelo inovador com as principais abordagens do mercado, sendo elas: 
-
+&nbsp; &nbsp; &nbsp; &nbsp; Para posicionar o 4Bridge e forma clara no cenário filantrópico, é essencial analisar as soluções existentes e identificar as lacunas que nosso projeto preenche. O benchmarking a seguir compara nosso modelo inovador com as principais abordagens do mercado, sendo elas: 
 
 - The Giving Block: Plataforma líder em doações de criptomoedas para ONGs, com foco em facilidade e integração.
 
@@ -216,29 +239,24 @@ Para posicionar o (nome do projeto) e forma clara no cenário filantrópico, é 
 
 ### 5.3. Plano de Marketing 
 
-A estratégia de marketing do Impact Vault foi cuidadosamente elaborada para amplificar sua visibilidade, engajando diretamente o público-alvo e fortalecendo seu posicionamento no ecossistema de doações digitais e Web3. Com foco em ações digitais, a comunicação utilizará redes sociais, parcerias estratégicas com organizações sociais, instituições públicas e canais especializados, sempre privilegiando uma linguagem clara, acessível e um design visual acolhed
+&nbsp; &nbsp; &nbsp; &nbsp; A estratégia de marketing do Impact Vault foi cuidadosamente elaborada para amplificar sua visibilidade, engajando diretamente o público-alvo e fortalecendo seu posicionamento no ecossistema de doações digitais e Web3. Com foco em ações digitais, a comunicação utilizará redes sociais, parcerias estratégicas com organizações sociais, instituições públicas e canais especializados, sempre privilegiando uma linguagem clara, acessível e um design visual acolhed
 or.
 #### 5.3.1. Product
 
-(nome do projeto) é uma plataforma descentralizada de doações que combina segurança, transparência e flexibilidade, utilizando blockchain Stellar e contratos inteligentes Soroban. Diferencia-se por permitir ao usuário manter liquidez total do capital principal, com rendimento destinado a projetos sociais escolhidos, certificados NFT de impacto, dashboard em tempo real e governança participativa. O produto oferece uma experiência inovadora, escalável e confiável para engajar doadores digitais, organizações sociais e investidores sociais.
+&nbsp; &nbsp; &nbsp; &nbsp; 4Bridge é uma plataforma descentralizada de doações que combina segurança, transparência e flexibilidade, utilizando blockchain Stellar e contratos inteligentes Soroban. Diferencia-se por permitir ao usuário manter liquidez total do capital principal, com rendimento destinado a projetos sociais escolhidos, certificados NFT de impacto, dashboard em tempo real e governança participativa. O produto oferece uma experiência inovadora, escalável e confiável para engajar doadores digitais, organizações sociais e investidores sociais.
 
 ---
 
 #### 5.3.2. Price
-
-O modelo de precificação será baseado em taxas transparentes e competitivas, aplicadas sobre os rendimentos gerados no vault, garantindo sustentabilidade financeira para manutenção e evolução da plataforma. Haverá níveis diferenciados – versões gratuitas com funcionalidades básicas para usuários comuns e planos premium para ONGs e empresas, incluindo recursos extras, dashboards avançados e relatórios detalhados. Política de incentivos e isenções específicas pode ser aplicada para ampliar acessibilidade inicial.
-
----
+&nbsp; &nbsp; &nbsp; &nbsp; O modelo de precificação será baseado em taxas transparentes e competitivas, aplicadas sobre os rendimentos gerados no vault, garantindo sustentabilidade financeira para manutenção e evolução da plataforma. Haverá níveis diferenciados – versões gratuitas com funcionalidades básicas para usuários comuns e planos premium para ONGs e empresas, incluindo recursos extras, dashboards avançados e relatórios detalhados. Política de incentivos e isenções específicas pode ser aplicada para ampliar acessibilidade inicial.
 
 #### 5.3.3. Place
 
-A distribuição e acesso ao (nome do projeto) será digital, com foco inicial em comunidades e projetos sociais conectados à blockchain Stellar, abrangendo Brasil e demais mercados emergentes. A plataforma terá presença online forte, incluindo website institucional, integração com wallets populares, marketplaces Web3 e parcerias estratégicas com instituições filantrópicas, aceleradoras e organizações ESG para ampliação do alcance. O onboarding será facilitado por tutoriais, webinars e networking digital.
-
----
+&nbsp; &nbsp; &nbsp; &nbsp; A distribuição e acesso ao 4Bridge será digital, com foco inicial em comunidades e projetos sociais conectados à blockchain Stellar, abrangendo Brasil e demais mercados emergentes. A plataforma terá presença online forte, incluindo website institucional, integração com wallets populares, marketplaces Web3 e parcerias estratégicas com instituições filantrópicas, aceleradoras e organizações ESG para ampliação do alcance. O onboarding será facilitado por tutoriais, webinars e networking digital.
 
 #### 5.3.4. Promotion
 
-A estratégia promocional contempla:
+&nbsp; &nbsp; &nbsp; &nbsp; A estratégia promocional contempla:
 
 - Campanhas digitais focadas em públicos de impacto social, entusiastas de cripto e investidores institucionais.
     
@@ -261,7 +279,7 @@ A estratégia promocional contempla:
 - O capital principal dos usuários permanece intocado, garantindo impacto social e liquidez total.  
 - Gamificação via **NFTs** para engajamento e reconhecimento do impacto social.
 
-### 6.1 Validação do MVP
+### 6.1. Validação do MVP
 **Objetivo:** Mostrar que o MVP funciona na prática e gera interesse.
 
 | Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
@@ -275,7 +293,7 @@ A estratégia promocional contempla:
 
 ---
 
-### 6.2 Refinamento e Aprimoramento do Produto
+### 6.2. Refinamento e Aprimoramento do Produto
 **Objetivo:** Melhorar UX/UI, performance do MVP e engajamento com gamificação.
 
 | Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
@@ -289,7 +307,7 @@ A estratégia promocional contempla:
 
 ---
 
-### 6.3 Marketing e Monetização via Pool
+### 6.3. Marketing e Monetização via Pool
 **Objetivo:** Atrair usuários, aumentar volume da pool, gerar receita e engajamento.
 
 | Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
@@ -324,30 +342,30 @@ A estratégia promocional contempla:
 
 ## 7. Por que o uso da Blockchain Stellar
 
-A escolha da blockchain Stellar é uma escolha estratégica para o sucesso e diferencial da plataforma.  Stellar oferece uma combinação única de velocidade, segurança, baixo custo e escalabilidade, características essenciais para operacionalizar uma solução descentralizada de doações que visa atender tanto usuários individuais quanto organizações sociais e investidores institucionais em escala global.
+&nbsp; &nbsp; &nbsp; &nbsp;A escolha da blockchain Stellar é uma escolha estratégica para o sucesso e diferencial da plataforma.  Stellar oferece uma combinação única de velocidade, segurança, baixo custo e escalabilidade, características essenciais para operacionalizar uma solução descentralizada de doações que visa atender tanto usuários individuais quanto organizações sociais e investidores institucionais em escala global.
 
 ### 7.1. Velocidade e Custo Reduzido
 - Transações rápidas via Stellar Consensus Protocol (SCP) com taxas mínimas (~0.00001 XLM por transação).<br>
-Transações rápidas e tarifas baixíssimas permitem que mesmo pequenos aportes sejam economicamente viáveis, democratizando o acesso ao sistema e possibilitando micropagamentos frequentes. Isso é crucial para a sustentabilidade do vault e para estimular o engajamento recorrente dos apoiadores.
+&nbsp; &nbsp; &nbsp; &nbsp; Transações rápidas e tarifas baixíssimas permitem que mesmo pequenos aportes sejam economicamente viáveis, democratizando o acesso ao sistema e possibilitando micropagamentos frequentes. Isso é crucial para a sustentabilidade do vault e para estimular o engajamento recorrente dos apoiadores.
 
 ### 7.2. Contratos Inteligentes Soroban
 - Contratos inteligentes em Rust/WASM usando Soroban SDK.<br>
-A robustez e segurança dos contratos inteligentes Soroban permitem a implementação da lógica complexa de liquidez do capital principal, divisão programável dos rendimentos e emissão de certificados NFT - que é uma ideia futura do projeto. Além disso, facilitam a auditabilidade em tempo real das operações, aumentando a transparência e a confiança de todos os stakeholders.
+&nbsp; &nbsp; &nbsp; &nbsp; A robustez e segurança dos contratos inteligentes Soroban permitem a implementação da lógica complexa de liquidez do capital principal, divisão programável dos rendimentos e emissão de certificados NFT - que é uma ideia futura do projeto. Além disso, facilitam a auditabilidade em tempo real das operações, aumentando a transparência e a confiança de todos os stakeholders.
 
 ### 7.3. Escalabilidade e Inclusão Global
 - Infraestrutura distribuída, compatível com múltiplos ativos e moedas via Stellar Assets e Liquidity Pools.<br>
-A infraestrutura de Stellar é desenhada para suportar elevado volume de transações com muita eficiência, o que garante que o Impact Vault possa crescer sem gargalos técnicos. A capacidade de suportar múltiplas moedas permite que a plataforma atenda a um público global diversificado, promovendo inclusão financeira em mercados emergentes e consolidando o impacto social em diferentes regiões.
+&nbsp; &nbsp; &nbsp; &nbsp; A infraestrutura de Stellar é desenhada para suportar elevado volume de transações com muita eficiência, o que garante que o Impact Vault possa crescer sem gargalos técnicos. A capacidade de suportar múltiplas moedas permite que a plataforma atenda a um público global diversificado, promovendo inclusão financeira em mercados emergentes e consolidando o impacto social em diferentes regiões.
 
 ### 7.4. Segurança e Transparência
 - Ledger imutável + Horizon API + indexers (StellarExpert, Dune) para monitoramento on-chain.<br>
-Stellar oferece um ambiente seguro, resiliente e comprovado, onde todas as operações são imutáveis e rastreáveis, reforçando o compromisso do Impact Vault com a transparência radical. Essa característica é vital para combater a desconfiança histórica em doações, assegurando responsabilidade e governança claras.
+&nbsp; &nbsp; &nbsp; &nbsp; Stellar oferece um ambiente seguro, resiliente e comprovado, onde todas as operações são imutáveis e rastreáveis, reforçando o compromisso do Impact Vault com a transparência radical. Essa característica é vital para combater a desconfiança histórica em doações, assegurando responsabilidade e governança claras.
 
 
 ### 7.5. Ecossistema e Parcerias
 - Anchors e SEPs (SEP-10, SEP-24, SEP-12, SEP-31) + integração com wallets (Freighter, Albedo) + oráculos (Band, DIA).<br>
-Por ser uma rede com crescente ecossistema dedicado a soluções sociais e de finanças descentralizadas, Stellar propicia sinergias, integrações e oportunidades de parcerias que aceleram a inovação contínua do projeto, garantindo uma evolução alinhada com as tecnologias e demandas do mercado.
+&nbsp; &nbsp; &nbsp; &nbsp; Por ser uma rede com crescente ecossistema dedicado a soluções sociais e de finanças descentralizadas, Stellar propicia sinergias, integrações e oportunidades de parcerias que aceleram a inovação contínua do projeto, garantindo uma evolução alinhada com as tecnologias e demandas do mercado.
 
-Em resumo, a blockchain Stellar não é apenas uma infraestrutura tecnológica, mas um pilar essencial que sustenta sua proposta de valor, viabilidade e impacto, configurando-se como um diferencial competitivo decisivo no panorama das doações digitais e do financiamento social inovador.
+&nbsp; &nbsp; &nbsp; &nbsp; Em resumo, a blockchain Stellar não é apenas uma infraestrutura tecnológica, mas um pilar essencial que sustenta sua proposta de valor, viabilidade e impacto, configurando-se como um diferencial competitivo decisivo no panorama das doações digitais e do financiamento social inovador.
 
 ## **8. Conclusões**
-O (nome do projeto) é uma plataforma descentralizada baseada na blockchain Stellar que reinventa o modelo tradicional de doações sociais. Permitindo que o usuário mantenha total liquidez sobre o capital aportado, a plataforma direciona apenas os rendimentos gerados aos projetos sociais escolhidos, assegurando um impacto contínuo, seguro e transparente.  Essa solução alia inovação tecnológica e sustentabilidade social, criando um ambiente escalável e confiável que atrai diversos perfis de apoiadores.
+&nbsp; &nbsp; &nbsp; &nbsp; O 4Bridge é uma plataforma descentralizada baseada na blockchain Stellar que reinventa o modelo tradicional de doações sociais. Permitindo que o usuário mantenha total liquidez sobre o capital aportado, a plataforma direciona apenas os rendimentos gerados aos projetos sociais escolhidos, assegurando um impacto contínuo, seguro e transparente.  Essa solução alia inovação tecnológica e sustentabilidade social, criando um ambiente escalável e confiável que atrai diversos perfis de apoiadores.
