@@ -1,19 +1,25 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Progress } from "@/components/ui/progress"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useUser } from "@/contexts/user-context"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useUser } from "@/contexts/user-context";
+import Link from "next/link";
 import {
   Wallet,
   Copy,
@@ -31,18 +37,21 @@ import {
   Shield,
   Clock,
   ArrowUpRight,
-} from "lucide-react"
+} from "lucide-react";
+
+import { isConnected, getAddress, requestAccess } from "@stellar/freighter-api";
 
 export default function CarteiraPage() {
-  const { userType, isLoggedIn } = useUser()
-  const [isConnected, setIsConnected] = useState(false)
-  const [walletAddress, setWalletAddress] = useState("")
-  const [isConnecting, setIsConnecting] = useState(false)
-  const [balance, setBalance] = useState(0)
-  const [availableForWithdraw, setAvailableForWithdraw] = useState(0)
-  const [withdrawAmount, setWithdrawAmount] = useState("")
-  const [isWithdrawing, setIsWithdrawing] = useState(false)
-  const [isRefreshing, setIsRefreshing] = useState(false)
+  const { userType, isLoggedIn } = useUser();
+  const [walletConnected, setWalletConnected] = useState(false);
+  const [walletAddress, setWalletAddress] = useState("");
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
+  const [balance, setBalance] = useState(0);
+  const [availableForWithdraw, setAvailableForWithdraw] = useState(0);
+  const [withdrawAmount, setWithdrawAmount] = useState("");
+  const [isWithdrawing, setIsWithdrawing] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [transactions, setTransactions] = useState([
     {
       id: "1",
@@ -80,61 +89,82 @@ export default function CarteiraPage() {
       hash: "STU901...VWX234",
       project: "Reflorestamento Mata Atlântica",
     },
-  ])
+  ]);
 
   useEffect(() => {
-    if (userType === "organization") {
-      setBalance(12500.75)
-      setAvailableForWithdraw(3200.5)
-    } else {
-      setBalance(2850.25)
-      setAvailableForWithdraw(420.75)
+    async function checkConnection() {
+      try {
+        const connected = await isConnected();
+        if (connected.isConnected) {
+          const { address } = await getAddress();
+          if (address) {
+            setWalletAddress(address);
+            setWalletConnected(true);
+          }
+        }
+      } catch (e) {
+        console.error("Erro ao verificar conexão Freighter:", e);
+      }
     }
-  }, [userType])
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      setIsConnected(true)
-      setWalletAddress("GCKFBEIYTKP74Q7SMPFIIHFGICNPANCH6BNXEV2HQPBR4WGXVQZOF7XZ")
-    }
-  }, [isLoggedIn])
+    checkConnection();
+  }, [isLoggedIn]);
 
   const connectWallet = async () => {
-    setIsConnecting(true)
-    // Simular conexão com carteira Stellar
-    setTimeout(() => {
-      setIsConnected(true)
-      setWalletAddress("GCKFBEIYTKP74Q7SMPFIIHFGICNPANCH6BNXEV2HQPBR4WGXVQZOF7XZ")
-      setIsConnecting(false)
-    }, 2000)
-  }
+    setIsConnecting(true);
+    setConnectionError(false); // Reseta o erro ao tentar conectar
+
+    // Inicia um temporizador de 5 segundos
+    const timer = setTimeout(() => {
+      setIsConnecting(false); // Para o estado de "conectando"
+      setConnectionError(true); // Mostra o alerta de erro
+    }, 5000);
+
+    try {
+      const access = await requestAccess();
+      clearTimeout(timer); // Cancela o temporizador se a conexão for bem-sucedida ou rejeitada
+
+      if (access.address) {
+        setWalletAddress(access.address);
+        setWalletConnected(true);
+      } else if (access.error) {
+        console.error("Erro na requisição de acesso:", access.error);
+        setConnectionError(true); // Mostra o erro se o usuário rejeitar
+      }
+    } catch (error) {
+      console.error("Erro ao conectar a carteira Freighter:", error);
+      clearTimeout(timer); // Garante que o timer seja limpo em caso de erro
+      setConnectionError(true);
+    }
+    setIsConnecting(false); // Garante que o estado de "conectando" termine
+  };
 
   const disconnectWallet = () => {
-    setIsConnected(false)
-    setWalletAddress("")
-  }
+    // A Freighter API não tem desconectar explícito, só limpa estado local
+    setWalletConnected(false);
+    setWalletAddress("");
+  };
 
   const refreshBalance = async () => {
-    setIsRefreshing(true)
+    setIsRefreshing(true);
     setTimeout(() => {
       // Simular pequena variação no saldo
-      const variation = (Math.random() - 0.5) * 50
-      setBalance((prev) => Math.max(0, prev + variation))
-      setIsRefreshing(false)
-    }, 1500)
-  }
+      const variation = (Math.random() - 0.5) * 50;
+      setBalance((prev) => Math.max(0, prev + variation));
+      setIsRefreshing(false);
+    }, 1500);
+  };
 
   const handleWithdraw = async () => {
-    if (!withdrawAmount || Number.parseFloat(withdrawAmount) <= 0) return
+    if (!withdrawAmount || Number.parseFloat(withdrawAmount) <= 0) return;
 
-    setIsWithdrawing(true)
+    setIsWithdrawing(true);
     // Simular transação de resgate
     setTimeout(() => {
-      const amount = Number.parseFloat(withdrawAmount)
-      setAvailableForWithdraw((prev) => prev - amount)
-      setBalance((prev) => prev - amount)
-      setWithdrawAmount("")
-      setIsWithdrawing(false)
+      const amount = Number.parseFloat(withdrawAmount);
+      setAvailableForWithdraw((prev) => prev - amount);
+      setBalance((prev) => prev - amount);
+      setWithdrawAmount("");
+      setIsWithdrawing(false);
 
       // Adicionar nova transação
       const newTransaction = {
@@ -143,71 +173,82 @@ export default function CarteiraPage() {
         amount,
         date: new Date().toISOString().split("T")[0],
         status: "completed",
-        hash: `${Math.random().toString(36).substring(2, 8).toUpperCase()}...${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+        hash: `${Math.random()
+          .toString(36)
+          .substring(2, 8)
+          .toUpperCase()}...${Math.random()
+          .toString(36)
+          .substring(2, 8)
+          .toUpperCase()}`,
         project: null,
-      }
-      setTransactions((prev) => [newTransaction, ...prev])
-    }, 3000)
-  }
+      };
+      setTransactions((prev) => [newTransaction, ...prev]);
+    }, 3000);
+  };
 
   const copyAddress = () => {
-    navigator.clipboard.writeText(walletAddress)
-  }
+    navigator.clipboard.writeText(walletAddress);
+  };
 
   const formatAddress = (address: string) => {
-    return `${address.slice(0, 8)}...${address.slice(-8)}`
-  }
+    return `${address.slice(0, 8)}...${address.slice(-8)}`;
+  };
 
   const getTransactionIcon = (type: string) => {
     switch (type) {
       case "deposit":
-        return <ArrowDownToLine className="h-4 w-4" />
+        return <ArrowDownToLine className="h-4 w-4" />;
       case "withdraw":
-        return <ArrowUpRight className="h-4 w-4" />
+        return <ArrowUpRight className="h-4 w-4" />;
       case "investment":
-        return <TrendingUp className="h-4 w-4" />
+        return <TrendingUp className="h-4 w-4" />;
       case "investment_return":
-        return <DollarSign className="h-4 w-4" />
+        return <DollarSign className="h-4 w-4" />;
       default:
-        return <DollarSign className="h-4 w-4" />
+        return <DollarSign className="h-4 w-4" />;
     }
-  }
+  };
 
   const getTransactionLabel = (type: string) => {
     switch (type) {
       case "deposit":
-        return "Depósito"
+        return "Depósito";
       case "withdraw":
-        return "Resgate"
+        return "Resgate";
       case "investment":
-        return "Investimento"
+        return "Investimento";
       case "investment_return":
-        return "Retorno de Investimento"
+        return "Retorno de Investimento";
       default:
-        return "Transação"
+        return "Transação";
     }
-  }
+  };
 
   const getTransactionColor = (type: string) => {
     switch (type) {
       case "deposit":
-        return "bg-green-100 text-green-600"
+        return "bg-green-100 text-green-600";
       case "withdraw":
-        return "bg-blue-100 text-blue-600"
+        return "bg-blue-100 text-blue-600";
       case "investment":
-        return "bg-purple-100 text-purple-600"
+        return "bg-purple-100 text-purple-600";
       case "investment_return":
-        return "bg-emerald-100 text-emerald-600"
+        return "bg-emerald-100 text-emerald-600";
       default:
-        return "bg-gray-100 text-gray-600"
+        return "bg-gray-100 text-gray-600";
     }
-  }
+  };
 
-  const totalInvested = transactions.filter((t) => t.type === "investment").reduce((sum, t) => sum + t.amount, 0)
+  const totalInvested = transactions
+    .filter((t) => t.type === "investment")
+    .reduce((sum, t) => sum + t.amount, 0);
 
-  const totalReturns = transactions.filter((t) => t.type === "investment_return").reduce((sum, t) => sum + t.amount, 0)
+  const totalReturns = transactions
+    .filter((t) => t.type === "investment_return")
+    .reduce((sum, t) => sum + t.amount, 0);
 
-  const returnPercentage = totalInvested > 0 ? (totalReturns / totalInvested) * 100 : 0
+  const returnPercentage =
+    totalInvested > 0 ? (totalReturns / totalInvested) * 100 : 0;
 
   return (
     <div className="min-h-screen bg-background">
@@ -223,8 +264,12 @@ export default function CarteiraPage() {
                   Voltar ao Início
                 </Link>
               </Button>
-              {isConnected && (
-                <Button variant="outline" onClick={refreshBalance} disabled={isRefreshing}>
+              {walletConnected && (
+                <Button
+                  variant="outline"
+                  onClick={refreshBalance}
+                  disabled={isRefreshing}
+                >
                   {isRefreshing ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
@@ -251,13 +296,32 @@ export default function CarteiraPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              {!isConnected ? (
+              {!walletConnected ? (
                 <div className="text-center py-6">
                   <div className="mb-4">
                     <Wallet className="h-12 w-12 mx-auto text-muted-foreground mb-2" />
-                    <p className="text-muted-foreground">Nenhuma carteira conectada</p>
+                    <p className="text-muted-foreground">
+                      Nenhuma carteira conectada
+                    </p>
                   </div>
-                  <Button onClick={connectWallet} disabled={isConnecting} className="w-full sm:w-auto">
+
+                  {/* Alerta de Erro */}
+                  {connectionError && (
+                    <Alert variant="destructive" className="mb-4 text-left">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertDescription>
+                        A conexão demorou muito para responder. Verifique se a
+                        extensão Freighter está instalada e ativa, e tente
+                        novamente.
+                      </AlertDescription>
+                    </Alert>
+                  )}
+
+                  <Button
+                    onClick={connectWallet}
+                    disabled={isConnecting}
+                    className="w-full sm:w-auto"
+                  >
                     {isConnecting ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -278,7 +342,10 @@ export default function CarteiraPage() {
                       <CheckCircle className="h-5 w-5 text-green-500" />
                       <span className="font-medium">Carteira Conectada</span>
                     </div>
-                    <Badge variant="secondary" className="bg-green-50 text-green-700">
+                    <Badge
+                      variant="secondary"
+                      className="bg-green-50 text-green-700"
+                    >
                       Ativo
                     </Badge>
                   </div>
@@ -286,11 +353,19 @@ export default function CarteiraPage() {
                   <div className="bg-muted rounded-lg p-4 mb-4">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-muted-foreground mb-1">Endereço da Carteira</p>
-                        <p className="font-mono text-sm">{formatAddress(walletAddress)}</p>
+                        <p className="text-sm text-muted-foreground mb-1">
+                          Endereço da Carteira
+                        </p>
+                        <p className="font-mono text-sm">
+                          {formatAddress(walletAddress)}
+                        </p>
                       </div>
                       <div className="flex gap-2">
-                        <Button variant="outline" size="sm" onClick={copyAddress}>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={copyAddress}
+                        >
                           <Copy className="h-4 w-4" />
                         </Button>
                         <Button variant="outline" size="sm" asChild>
@@ -314,7 +389,7 @@ export default function CarteiraPage() {
             </CardContent>
           </Card>
 
-          {isConnected && (
+          {walletConnected && (
             <Tabs defaultValue="overview" className="space-y-6">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="overview">Visão Geral</TabsTrigger>
@@ -334,7 +409,10 @@ export default function CarteiraPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold text-primary">
-                        ${balance.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                        $
+                        {balance.toLocaleString("en-US", {
+                          minimumFractionDigits: 2,
+                        })}
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">
                         {userType === "organization"
@@ -353,7 +431,10 @@ export default function CarteiraPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold text-green-600">
-                        ${availableForWithdraw.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                        $
+                        {availableForWithdraw.toLocaleString("en-US", {
+                          minimumFractionDigits: 2,
+                        })}
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">
                         {userType === "organization"
@@ -372,9 +453,15 @@ export default function CarteiraPage() {
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <div className="text-2xl font-bold text-emerald-600">+{returnPercentage.toFixed(1)}%</div>
+                        <div className="text-2xl font-bold text-emerald-600">
+                          +{returnPercentage.toFixed(1)}%
+                        </div>
                         <p className="text-sm text-muted-foreground mt-1">
-                          ${totalReturns.toLocaleString("en-US", { minimumFractionDigits: 2 })} em retornos
+                          $
+                          {totalReturns.toLocaleString("en-US", {
+                            minimumFractionDigits: 2,
+                          })}{" "}
+                          em retornos
                         </p>
                       </CardContent>
                     </Card>
@@ -389,26 +476,34 @@ export default function CarteiraPage() {
                         <PieChart className="h-5 w-5" />
                         Performance dos Investimentos
                       </CardTitle>
-                      <CardDescription>Evolução do seu portfólio nos últimos 6 meses</CardDescription>
+                      <CardDescription>
+                        Evolução do seu portfólio nos últimos 6 meses
+                      </CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm">Energia Solar Comunitária</span>
+                          <span className="text-sm">
+                            Energia Solar Comunitária
+                          </span>
                           <div className="flex items-center gap-2">
                             <Progress value={75} className="w-20 h-2" />
                             <span className="text-sm font-medium">+12.5%</span>
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm">Reflorestamento Mata Atlântica</span>
+                          <span className="text-sm">
+                            Reflorestamento Mata Atlântica
+                          </span>
                           <div className="flex items-center gap-2">
                             <Progress value={60} className="w-20 h-2" />
                             <span className="text-sm font-medium">+8.3%</span>
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm">Educação Digital Rural</span>
+                          <span className="text-sm">
+                            Educação Digital Rural
+                          </span>
                           <div className="flex items-center gap-2">
                             <Progress value={45} className="w-20 h-2" />
                             <span className="text-sm font-medium">+6.1%</span>
@@ -458,12 +553,16 @@ export default function CarteiraPage() {
                       <ArrowDownToLine className="h-5 w-5" />
                       Resgatar Valores
                     </CardTitle>
-                    <CardDescription>Transfira seus rendimentos para sua carteira Stellar</CardDescription>
+                    <CardDescription>
+                      Transfira seus rendimentos para sua carteira Stellar
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <div>
-                        <Label htmlFor="withdraw-amount">Valor para Resgate (USD)</Label>
+                        <Label htmlFor="withdraw-amount">
+                          Valor para Resgate (USD)
+                        </Label>
                         <Input
                           id="withdraw-amount"
                           type="number"
@@ -475,14 +574,17 @@ export default function CarteiraPage() {
                         />
                         <p className="text-sm text-muted-foreground mt-1">
                           Máximo disponível: $
-                          {availableForWithdraw.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                          {availableForWithdraw.toLocaleString("en-US", {
+                            minimumFractionDigits: 2,
+                          })}
                         </p>
                       </div>
 
                       <Alert>
                         <AlertCircle className="h-4 w-4" />
                         <AlertDescription>
-                          O resgate será processado na rede Stellar. Taxa de transação: ~$0.00001 USD
+                          O resgate será processado na rede Stellar. Taxa de
+                          transação: ~$0.00001 USD
                         </AlertDescription>
                       </Alert>
 
@@ -492,7 +594,8 @@ export default function CarteiraPage() {
                           disabled={
                             !withdrawAmount ||
                             Number.parseFloat(withdrawAmount) <= 0 ||
-                            Number.parseFloat(withdrawAmount) > availableForWithdraw ||
+                            Number.parseFloat(withdrawAmount) >
+                              availableForWithdraw ||
                             isWithdrawing
                           }
                           className="flex-1"
@@ -511,7 +614,9 @@ export default function CarteiraPage() {
                         </Button>
                         <Button
                           variant="outline"
-                          onClick={() => setWithdrawAmount(availableForWithdraw.toString())}
+                          onClick={() =>
+                            setWithdrawAmount(availableForWithdraw.toString())
+                          }
                           disabled={availableForWithdraw <= 0}
                         >
                           Máximo
@@ -522,10 +627,13 @@ export default function CarteiraPage() {
                       <div className="bg-muted rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-2">
                           <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span className="text-sm font-medium">Tempo estimado</span>
+                          <span className="text-sm font-medium">
+                            Tempo estimado
+                          </span>
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          Resgates são processados em 3-5 segundos na rede Stellar
+                          Resgates são processados em 3-5 segundos na rede
+                          Stellar
                         </p>
                       </div>
                     </div>
@@ -538,7 +646,9 @@ export default function CarteiraPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Histórico de Transações</CardTitle>
-                    <CardDescription>Suas últimas movimentações na rede Stellar</CardDescription>
+                    <CardDescription>
+                      Suas últimas movimentações na rede Stellar
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
@@ -546,37 +656,60 @@ export default function CarteiraPage() {
                         <div key={transaction.id}>
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <div className={`p-2 rounded-full ${getTransactionColor(transaction.type)}`}>
+                              <div
+                                className={`p-2 rounded-full ${getTransactionColor(
+                                  transaction.type
+                                )}`}
+                              >
                                 {getTransactionIcon(transaction.type)}
                               </div>
                               <div>
-                                <p className="font-medium">{getTransactionLabel(transaction.type)}</p>
+                                <p className="font-medium">
+                                  {getTransactionLabel(transaction.type)}
+                                </p>
                                 {transaction.project && (
-                                  <p className="text-sm text-muted-foreground">{transaction.project}</p>
+                                  <p className="text-sm text-muted-foreground">
+                                    {transaction.project}
+                                  </p>
                                 )}
                                 <p className="text-sm text-muted-foreground">
-                                  {new Date(transaction.date).toLocaleDateString("pt-BR")}
+                                  {new Date(
+                                    transaction.date
+                                  ).toLocaleDateString("pt-BR")}
                                 </p>
                               </div>
                             </div>
                             <div className="text-right">
                               <p
                                 className={`font-medium ${
-                                  transaction.type === "withdraw" || transaction.type === "investment"
+                                  transaction.type === "withdraw" ||
+                                  transaction.type === "investment"
                                     ? "text-red-600"
                                     : "text-green-600"
                                 }`}
                               >
-                                {transaction.type === "withdraw" || transaction.type === "investment" ? "-" : "+"}$
-                                {transaction.amount.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                                {transaction.type === "withdraw" ||
+                                transaction.type === "investment"
+                                  ? "-"
+                                  : "+"}
+                                $
+                                {transaction.amount.toLocaleString("en-US", {
+                                  minimumFractionDigits: 2,
+                                })}
                               </p>
-                              <p className="text-sm text-muted-foreground font-mono">{transaction.hash}</p>
+                              <p className="text-sm text-muted-foreground font-mono">
+                                {transaction.hash}
+                              </p>
                               <Badge variant="secondary" className="text-xs">
-                                {transaction.status === "completed" ? "Concluído" : "Pendente"}
+                                {transaction.status === "completed"
+                                  ? "Concluído"
+                                  : "Pendente"}
                               </Badge>
                             </div>
                           </div>
-                          {index < transactions.length - 1 && <Separator className="mt-4" />}
+                          {index < transactions.length - 1 && (
+                            <Separator className="mt-4" />
+                          )}
                         </div>
                       ))}
                     </div>
@@ -589,5 +722,5 @@ export default function CarteiraPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

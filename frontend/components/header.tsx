@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import WalletConnectButton from "./ui/wallet"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -69,12 +70,7 @@ export function Header() {
               </>
             ) : (
               <>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/carteira">
-                    <Wallet className="h-4 w-4 mr-2" />
-                    Carteira
-                  </Link>
-                </Button>
+                <WalletConnectButton />
                 {userType === "organization" && (
                   <Button variant="outline" size="sm" asChild>
                     <Link href="/novo-projeto">
@@ -83,31 +79,16 @@ export function Header() {
                     </Link>
                   </Button>
                 )}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                      {userType === "organization" ? (
-                        <Building2 className="h-4 w-4 mr-2" />
-                      ) : (
-                        <User className="h-4 w-4 mr-2" />
-                      )}
-                      {userType === "organization" ? organizationData?.name : investorData?.name}
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem asChild>
-                      <Link href="/perfil">
-                        <User className="h-4 w-4 mr-2" />
-                        Perfil
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
-                      <LogOut className="h-4 w-4 mr-2" />
-                      Sair
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <Button variant="ghost" size="sm" asChild>
+                  <Link href="/perfil">
+                    {userType === "organization" ? (
+                      <Building2 className="h-4 w-4 mr-2" />
+                    ) : (
+                      <User className="h-4 w-4 mr-2" />
+                    )}
+                    {userType === "organization" ? organizationData?.name : investorData?.name}
+                  </Link>
+                </Button>
               </>
             )}
           </div>
