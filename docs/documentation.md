@@ -245,8 +245,75 @@ A estratégia promocional contempla:
     
 - Relações públicas focadas na mídia especializada em filantropia e tecnologia.
 
+---
+## **6. Plano de execução**
+
+### Roadmap Financeiro Pós-MVP
+
+- Modelo de receita: cobrança de **x% sobre os rendimentos da pool**.  
+- O capital principal dos usuários permanece intocado, garantindo impacto social e liquidez total.  
+- Gamificação via **NFTs** para engajamento e reconhecimento do impacto social.
+
+### 1. Validação do MVP
+**Objetivo:** Mostrar que o MVP funciona na prática e gera interesse.
+
+| Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
+|------|-----------|--------------------|------------------------|---------------------|
+| Teste com usuários reais | Incentivos para projetos sociais e doadores | 1.000 – 2.000 | - | - |
+| Coleta de métricas de uso | Ferramentas de análise e monitoramento | 500 – 1.000 | - | - |
+| Feedback qualitativo | Entrevistas e suporte inicial | 500 – 1.000 | - | - |
+| **Subtotal Fase 1** | - | **2.000 – 4.000** | - | - |
+
+**Entregáveis:** Relatório de validação + métricas iniciais de impacto.
 
 ---
 
-## **6. Conclusões**
+### 2. Refinamento e Aprimoramento do Produto
+**Objetivo:** Melhorar UX/UI, performance do MVP e engajamento com gamificação.
+
+| Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
+|------|-----------|--------------------|------------------------|---------------------|
+| Aprimoramento UX/UI | Ajustes de design, dashboards e painéis | 1.500 – 3.000 | - | - |
+| Otimização smart contracts e backend | Garantir segurança, eficiência e escalabilidade | 2.000 – 4.000 | - | - |
+| Gamificação via NFTs | Criar NFTs de impacto que simbolizam contribuições, reforçando engajamento | 1.000 – 2.000 | Pode gerar receita via minting ou marketplace | Variável |
+| **Subtotal Fase 2** | - | **4.500 – 9.000** | - | - |
+
+**Entregáveis:** MVP aprimorado, pronto para mais usuários e engajamento com gamificação.
+
+---
+
+### 3. Marketing e Monetização via Pool
+**Objetivo:** Atrair usuários, aumentar volume da pool, gerar receita e engajamento.
+
+| Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
+|------|-----------|--------------------|------------------------|---------------------|
+| Campanhas direcionadas | Marketing digital e publicidade | 2.000 – 4.000 | 3% – 5% dos rendimentos da pool | Depende do volume da pool |
+| Parcerias estratégicas | ONGs, fundações e comunidades DeFi | 500 – 1.500 | Aumenta volume de usuários e rendimentos | Depende do volume da pool |
+| Conteúdo educativo | Vídeos, guias e materiais online | 500 – 1.000 | Incentiva engajamento e novos aportes | Depende do volume da pool |
+| Incentivos via NFTs | Promoções e recompensas digitais que incentivam aportes recorrentes | 500 – 1.000 | Receita adicional via minting ou marketplace | Variável |
+| **Subtotal Fase 3** | - | **3.500 – 7.500** | 5.000 – 25.000 (ano 1) | 5.000 – 25.000 |
+
+**Entregáveis:** Crescimento de usuários, volume da pool, receita gerada e engajamento via NFTs.
+
+---
+
+## Resumo Financeiro Total
+
+| Tipo de Custo | Valor Estimado (USD) |
+|---------------|--------------------|
+| Fase 1 – Validação | 2.000 – 4.000 |
+| Fase 2 – Refinamento + NFTs | 4.500 – 9.000 |
+| Fase 3 – Marketing e Monetização | 3.500 – 7.500 |
+| **Total Estimado** | **10.000 – 20.500** |
+
+| Receita Potencial (x% sobre rendimentos da pool) | Lucro Estimado |
+|--------------------------------------------------------|----------------|
+| 5.000 – 25.000 (ano 1) | 5.000 – 25.000 |
+
+**Pontos principais:**  
+ - Receita depende do volume de rendimentos da pool e adoção das NFTs.  
+- Lucro líquido é próximo à receita, considerando custos operacionais já cobertos nas fases anteriores.  
+ - Gamificação via NFTs aumenta engajamento, fidelização e potencial de receita extra.
+
+## **7. Conclusões**
 O (nome do projeto) é uma plataforma descentralizada baseada na blockchain Stellar que reinventa o modelo tradicional de doações sociais. Permitindo que o usuário mantenha total liquidez sobre o capital aportado, a plataforma direciona apenas os rendimentos gerados aos projetos sociais escolhidos, assegurando um impacto contínuo, seguro e transparente.  Essa solução alia inovação tecnológica e sustentabilidade social, criando um ambiente escalável e confiável que atrai diversos perfis de apoiadores.
