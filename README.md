@@ -44,9 +44,9 @@ The platform converts **traditional donation** into a **programmable, sustainabl
 ```text
 /impact-vault
 ├── contracts/          # Soroban Smart Contracts for the fee vault
+         └───src/       # Contratos em rust
 ├── backend/            # REST API, local database
 ├── frontend/           # Web app for user interface
-├── src
 ├── docs/               # General documentation, roadmap, API docs, and pitch
 └── README.md           # Main guide and quick instructions
 ```
