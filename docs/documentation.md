@@ -360,3 +360,10 @@ In summary, the **Stellar blockchain** is not just a technological infrastructur
 # 8. Conclusions
 
 **4Bridge** is a decentralized platform based on the **Stellar blockchain** that reinvents the traditional social donation model. By allowing users to maintain full liquidity over their contributed capital, the platform directs only the generated yields to chosen social projects, ensuring a continuous, secure, and transparent impact. This solution combines technological innovation and social sustainability, creating a scalable and reliable environment that attracts diverse profiles of supporters.
+
+# 9. Referências
+
+**KAHNEMAN**, Daniel. Rápido e devagar: duas formas de pensar. Tradução de Cássio de Arantes Leite. Rio de Janeiro: Objetiva, 2012.
+ 
+**SARGEANT**, Adrian. Marketing Management for Nonprofit Organizations. Oxford University Press, 2009.
+
