@@ -139,7 +139,7 @@ _O processo de design incluiu protótipos de baixa fidelidade para validação r
 
 ---
 
-## **4. Versão final da aplicação **
+## 4. Versão final da aplicação 
 
 ### 4.1. Funcionalidades Implementadas
 
