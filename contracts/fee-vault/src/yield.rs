@@ -1,7 +1,7 @@
 use soroban_sdk::{Address, Env, Symbol, Vec, String, IntoVal};
 
 // O ID da pool da Blend permanece como uma constante do módulo.
-pub const POOL_CONTRACT_ID: &str = "CDV32UPZ3QXCBMFUYTOBND2QN4I65Y3XFO4SRECKS4LUH6GUF2NEFU3U";
+pub const POOL_CONTRACT_ID: &str = "CCCGACYPS2EYJIRMGPLPAAK2F5WH7H2HK3C7VHLTRTPHZVNOWCRKPO6P";
 
 // Removemos `#[contract]` e `#[contractimpl]`.
 // Esta é agora uma função pública simples, não um contrato.
