@@ -1,26 +1,58 @@
-use soroban_sdk::{Env, Symbol, Address, Vec};
-use crate::storage;
+use soroban_sdk::{Address, Env, Symbol, Vec, String, IntoVal};
 
-// users: lista de todos usuários atuais da pool, projects: lista de todos projetos atuais
-pub fn simulate_yield(env: Env, total_yield: i128, all_projects: Vec<Symbol>, all_users: Vec<Address>) {
-    // Distribui proporcionalmente entre os projetos
-    let vault_total = storage::get_total_vault(env.clone());
-    assert!(vault_total > 0, "Vault vazio"); // Evita divisão por zero!
+// O ID da pool da Blend permanece como uma constante do módulo.
+pub const POOL_CONTRACT_ID: &str = "CDV32UPZ3QXCBMFUYTOBND2QN4I65Y3XFO4SRECKS4LUH6GUF2NEFU3U";
+
+// Removemos `#[contract]` e `#[contractimpl]`.
+// Esta é agora uma função pública simples, não um contrato.
+// O nome foi ajustado para refletir a ação para um único usuário.
+pub fn distribute_yield_for_user(
+    env: &Env,
+    total_yield: i128,
+    all_projects: &Vec<Symbol>,
+    user: &Address,
+) {
+    // A validação de `require_auth` deve ser feita na função principal do contrato.
+
+    let pool_address = Address::from_string(&String::from_str(env, POOL_CONTRACT_ID));
+    let vault_total = crate::storage::get_total_vault(env);
+    
+    if vault_total == 0 {
+        return;
+    }
+
     for project in all_projects.iter() {
-        let project_total = storage::get_project_total(env.clone(), project.clone());
-        if project_total > 0 {
-            // Quanto de yield vai para esse projeto
-            let proj_yield = total_yield * project_total / vault_total;
-            // Agora, distribua o yield aos usuários do projeto
-            for user in all_users.iter() {
-                if let Some(info) = storage::get_user_deposit(env.clone(), user.clone(), project.clone()) {
-                    if info.amount > 0 {
-                        let user_yield = proj_yield * info.amount / project_total;
-                        // Doa split% ao projeto (disponibilize como quiser, ex: project_rendimentos[project] etc)
-                        // O restante é reservado ao user
-                        let reserved_part = user_yield * (100 - info.split) / 100;
-                        crate::storage::add_reserved_yield(env.clone(), user.clone(), project.clone(), reserved_part);
-                        // O split (doado) você pode somar em uma variável para relatórios, mas para MVP basta separar
+        if let Some(info) = crate::storage::get_user_deposit(env, user, &project) {
+            if info.amount > 0 {
+                let project_total = crate::storage::get_project_total(env, &project);
+
+                if project_total > 0 {
+                    let proj_yield = total_yield * project_total / vault_total;
+                    let user_yield = proj_yield * info.amount / project_total;
+                    let user_blend_amount = user_yield * (100 - info.split) / 100;
+
+                    // A parte do rendimento que NÃO vai para a Blend (a taxa do projeto)
+                    let fee_amount = user_yield - user_blend_amount;
+
+                    // CORREÇÃO: Salva a "taxa" como rendimento reservado do usuário.
+                    if fee_amount > 0 {
+                        crate::storage::add_reserved_yield(env, user, &project, fee_amount);
+                    }
+
+
+                    if user_blend_amount > 0 {
+                        // `user` e `project` precisam ser clonados para a chamada,
+                        // pois a conversão para `Val` consome o valor.
+                        env.invoke_contract::<()>(
+                            &pool_address,
+                            &Symbol::new(env, "deposit_yield"),
+                            soroban_sdk::vec![
+                                env,
+                                user.clone().into_val(env),
+                                project.clone().into_val(env),
+                                user_blend_amount.into_val(env)
+                            ],
+                        );
                     }
                 }
             }
