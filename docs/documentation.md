@@ -1,393 +1,362 @@
-# 4Bridges
+# 1. Introduction
 
-## **1. Introdução**
+## 1.1. Project Context
 
-### 1.1. Contexto do Projeto
+**4Bridge** is a decentralized social donation platform that aims to revolutionize the digital philanthropy ecosystem through the **Stellar** blockchain. The project addresses the growing demand for donation mechanisms that are transparent, sustainable, and that mitigate financial risk for supporters.
 
-O 4Bridge é uma plataforma descentralizada de doação social, que visa revolucionar o ecossistema de filantropia digital por meio da blockchain Stellar. O projeto aborda a crescente demanda por mecanismos de doação que sejam transparentes, sustentáveis e que mitiguem o risco financeiro para os apoiadores.
+## 1.2. Problem
 
-### 1.2. Problema
+The global philanthropic model is facing a systemic crisis of trust, marked by a lack of transparency in resource management. International research shows that trust is the most determining factor in the decision to donate, but it's also the biggest barrier: a study by the **Charities Aid Foundation (2023)** indicates that over **50% of non-donors** cite doubts about how resources are used as a reason for hesitation. Similarly, research from the **BBB Wise Giving Alliance (2025)** reveals that almost **70% of potential donors** express concern about the misuse of their data and donations when supporting unknown institutions.
 
-O modelo filantrópico global atravessa uma crise de confiança sistêmica, marcada pela falta de transparência na gestão de recursos. Pesquisas internacionais mostram que a confiança é o fator mais determinante na decisão de doar, mas também a maior barreira: um estudo da Charities Aid Foundation (2023) aponta que mais de 50% dos não doadores citam dúvidas sobre a aplicação dos recursos como motivo de hesitação. De forma semelhante, pesquisas da BBB Wise Giving Alliance (2025) revelam que quase 70% dos potenciais doadores expressam preocupação com o uso indevido de seus dados e doações quando apoiam instituições desconhecidas.
+This distrust amplifies the model's biggest obstacle: **the loss of capital**. Traditional donation is a one-way, irreversible transaction—a financial sacrifice that triggers the cognitive bias of loss aversion (**KAHNEMAN, 2012**). For the donor, this creates a dilemma between financial security and social impact, which limits both the volume and frequency of contributions.
 
-Essa desconfiança amplifica o maior obstáculo do modelo: a perda de capital. A doação tradicional é uma transação de via única e irreversível, um sacrifício financeiro que ativa o viés cognitivo da aversão à perda (KAHNEMAN, 2012). Para o doador, isso significa um dilema entre segurança patrimonial e impacto social, o que limita tanto o volume quanto a frequência das contribuições.
+The result is an unsustainable model, often described as a “leaky bucket” (**SARGEANT, 2009**), where fundraising doesn't keep pace with donor attrition. Data from the **Fundraising Effectiveness Project (2023)** indicate that global new donor retention rates rarely exceed **25%** per year, confirming the sporadic and unpredictable nature of donations. This spiral of distrust, financial sacrifice, and low retention undermines the strategic planning of organizations and leaves an enormous potential of philanthropic capital untapped.
 
-O resultado é um modelo insustentável, frequentemente descrito como um “balde furado” (SARGEANT, 2009), no qual a captação não acompanha a evasão. Dados do Fundraising Effectiveness Project (2023) indicam que as taxas globais de retenção de novos doadores raramente ultrapassam 25% ao ano, confirmando o caráter esporádico e pouco previsível das doações. Essa espiral de desconfiança, sacrifício financeiro e baixa retenção mina o planejamento estratégico das organizações e mantém um enorme potencial de capital filantrópico inexplorado.
+## 1.3. Objectives
 
+- Provide an intuitive platform where users can support social causes without giving up their principal capital.
+- Ensure the automated and auditable distribution of generated yields to projects, based on programmable rules.
+- Offer social projects an innovative channel for fundraising, with a more predictable cash flow and strengthened trust with their supporters.
+- Validate the technical and product viability of the **"yield donation"** model within the **Stellar/Soroban** ecosystem.
 
-### 1.3. Objetivos
+## 1.4. Justification
 
-- Proporcionar uma plataforma intuitiva onde usuários possam apoiar causas sociais sem abrir mão do seu capital principal.
-    
-- Garantir a distribuição automatizada e auditável dos rendimentos gerados para os projetos, conforme regras programáveis.
-    
-- Oferecer aos projetos sociais um canal inovador para captação de recursos, com fluxo de caixa mais previsível e fortalecimento da confiança com seus apoiadores.
-    
-- Validar a viabilidade técnica e de produto do modelo "yield donation" no ecossistema Stellar/Soroban.    
-    
-
-### 1.4. Justificativa
-
-O projeto surgiu da necessidade de alinhar o potencial da tecnologia blockchain com o impacto social, eliminando o risco da perda de capital e viabilizando a filantropia, permitindo que mais pessoas contribuam com projetos de impacto social. Além disso, o uso da tecnologia Stellar garante a rastreabilidade dos rendimento doados, reconstruindo a confiança e criando um ecossistema de apoio mais forte e engajado.
+The project emerged from the need to align the potential of blockchain technology with social impact, eliminating the risk of capital loss and making philanthropy viable, which allows more people to contribute to social impact projects. Furthermore, the use of **Stellar** technology guarantees the traceability of donated yields, rebuilding trust and creating a stronger, more engaged support ecosystem.
 
 ---
 
-## **2. Visão geral da aplicação**
+# 2. Application Overview
 
-### 2.1. Proposta de Valor
-Para melhor entender o projeto e a proposta de valor envolvida à aplicação, foi desenvolvido o seguinte canvas proposta de valor:
+## 2.1. Value Proposition
 
-<p align = "center">Figura 1 - Rascunhos do protótipo de baixa fidelidade.</p>
-<div align = "center">
-  <img src = "../docs/assets/wire1.jpg" style="transform: rotate(180deg);">
+To better understand the project and its value proposition, the following value proposition canvas was developed:
+
+<p align="center">Figure 1 - Low-fidelity prototype sketches.</p>
+<div align="center">
+  <img src="../docs/assets/wire1.jpg" style="transform: rotate(180deg);">
 </div>
-<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+<p align="center">Source: (Material produced by the authors, 2025).</p>
 
-
-<p align = "center">Figura 2 - Rascunhos do protótipo de baixa fidelidade.</p>
-<div align = "center">
-  <img src = "../docs/assets/wire2.jpg">
+<p align="center">Figure 2 - Low-fidelity prototype sketches.</p>
+<div align="center">
+  <img src="../docs/assets/wire2.jpg">
 </div>
+<p align="center">Source: (Material produced by the authors, 2025).</p>
 
-<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
-
-<p align = "center">Figura 3 - Rascunhos do protótipo de baixa fidelidade.</p>
-<div align = "center">
-  <img src = "../docs/assets/wire3.jpg">
+<p align="center">Figure 3 - Low-fidelity prototype sketches.</p>
+<div align="center">
+  <img src="../docs/assets/wire3.jpg">
 </div>
+<p align="center">Source: (Material produced by the authors, 2025).</p>
 
-<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+For the digitalization of the screens in Figma, the following wireframes were created:
 
-Já para o a digitalização das telas no figma foram feitas os seguintes wireframes no figma: 
- <p align = "center">Figura 4 - Wireframe da aplicação.</p>
-<div align = "center">
-  <img src = "../docs/assets/LandingPage.png">
+<p align="center">Figure 4 - Application wireframe.</p>
+<div align="center">
+  <img src="../docs/assets/LandingPage.png">
 </div>
+<p align="center">Source: (Material produced by the authors, 2025).</p>
 
-<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
-
- <p align = "center">Figura 5 - Wireframe da aplicação.</p>
-<div align = "center">
-  <img src = "../docs/assets/Projects.png">
+<p align="center">Figure 5 - Application wireframe.</p>
+<div align="center">
+  <img src="../docs/assets/Projects.png">
 </div>
+<p align="center">Source: (Material produced by the authors, 2025).</p>
 
-<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
-
- <p align = "center">Figura 6 - Wireframe da aplicação.</p>
-<div align = "center">
-  <img src = "../docs/assets/profile.png">
+<p align="center">Figure 6 - Application wireframe.</p>
+<div align="center">
+  <img src="../docs/assets/profile.png">
 </div>
-<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
-Para ver melhor cada wireframe acesse o link do figma: https://www.figma.com/design/61pQLLpxmorW98mTKshkIJ/hackMeridian?node-id=0-1&t=AM1NvXknhQ0CXrG8-1.
+<p align="center">Source: (Material produced by the authors, 2025).</p>
 
-#### 2.1.1. Produtos & Serviços
+To better view each wireframe, please access the Figma link: [https://www.figma.com/design/61pQLLpxmorW98mTKshkIJ/hackMeridian?node-id=0-1&t=AM1NvXknhQ0CXrG8-1](https://www.figma.com/design/61pQLLpxmorW98mTKshkIJ/hackMeridian?node-id=0-1&t=AM1NvXknhQ0CXrG8-1).
 
-- Plataforma web integrada a um smart contract para depósitos de capital com liquidez total; 
-- Painel de visualização do perfil com os rendimentos gerados e os projetos financiados; 
-- Mecanismo de split de rendimento que permite que o usuário configure o percentual dos juros a ser doado versus o retido para si;
-- Emissão de NFTs simbólicos como certificados digitais de impacto, gamificando a experiência de doação.
+### 2.1.1. Products & Services
 
-#### 2.1.2. Gain Creators
+- A web platform integrated with a **smart contract** for capital deposits with total liquidity.
+- A profile dashboard to visualize generated yields and funded projects.
+- A yield split mechanism that allows the user to configure the percentage of interest to be donated versus the portion they retain.
+- Issuance of symbolic **NFTs** as digital impact certificates, gamifying the donation experience.
 
-- **Segurança Psicológica e Financeira:** Apoiadores contribuem sem medo de perder seu patrimônio principal.
-- **Transparência:** Auditabilidade imediata de transações dentro da blockchain Stellar.
-- **Engajamento Contínuo:** O modelo gera um fluxo de doações recorrente e contínuo para os projetos.
-- **Flexibilidade e Controle:** O usuário define o nível de apoio através da configuração do split.
+### 2.1.2. Gain Creators
 
-#### 2.1.3. Pain Relievers
+- **Psychological and Financial Security:** Supporters contribute without fear of losing their principal assets.
+- **Transparency:** Immediate auditability of transactions within the **Stellar** blockchain.
+- **Continuous Engagement:** The model generates a recurring and continuous flow of donations for projects.
+- **Flexibility and Control:** The user defines their level of support by configuring the split.
 
-- Eliminação do risco de má gestão ou desvio de fundos através do uso da tecnologia on-chain;
-- Redução drástica da burocracia e dos custos operacionais de intermediários tradicionais;
-- Minimização da desconfiança ao fornecer um registro público e imutável de todo o fluxo financeiro.
+### 2.1.3. Pain Relievers
 
-#### 2.1.4. Público alvo
+- Elimination of the risk of mismanagement or diversion of funds through the use of **on-chain** technology.
+- Drastic reduction of bureaucracy and the operational costs of traditional intermediaries.
+- Minimization of distrust by providing a public and immutable record of the entire financial flow.
 
-##### 1 - Doadores Individuais Modernos (crypto-native e impact-driven): 
-- Jovens e adultos que já usam cripto, stablecoins ou fintechs.
-- Pessoas interessadas em impacto social, mas que não querem perder liquidez.
+### 2.1.4. Target Audience
 
-- Perfil: investidores de varejo, early adopters de blockchain, comunidade Web3.
+1. **Modern Individual Donors (crypto-native and impact-driven):**
+    - Young adults who already use crypto, stablecoins, or fintechs.
+    - People interested in social impact who don't want to lose liquidity.
+    - **Profile:** Retail investors, blockchain early adopters, **Web3** community.
 
-##### 2 - Filantropos e Investidores de Impacto (High-net-worth individuals e ESG):
+2. **Philanthropists and Impact Investors (High-net-worth individuals and ESG):**
+    - Individuals or funds that already support social causes but are looking for more transparent and efficient models.
+    - They may see this platform as a way to “maximize impact without compromising assets.”
+    - **Profile:** Family offices, **ESG** investors, recurring donors.
 
-- Pessoas ou fundos que já apoiam causas sociais, mas que buscam modelos mais transparentes e eficientes.
+3. **Social Organizations (NGOs, foundations, and impact projects):**
+    - Entities that face the unpredictability of donations and need a more stable cash flow.
+    - They benefit directly from the sustainable **yield** model and transparency via blockchain.
+    - **Profile:** Small and medium-sized **NGOs**, educational, environmental, or health foundations.
 
-- Podem enxergar sua plataforma como uma forma de “maximizar impacto sem comprometer patrimônio”.
+## 2.2. Solution Details
 
-- Perfil: family offices, investidores ESG, doadores recorrentes.
+### 2.2.1. Key Features
 
-##### 2 - Organizações Sociais (ONGs, fundações e projetos de impacto):
+- Secure connection to the platform via a **Freighter** wallet.
+- Deposit capital into the donation **vault** with yield split configuration.
+- View deposited capital, accumulated yields, and total amount donated.
+- Automated distribution of yields to social projects via **smart contract**.
+- Withdraw principal capital at any time, with no fees or penalties.
+- View the impact certificate (**NFT**) received for each donation cycle.
+- A complete and auditable history of all transactions on the blockchain.
 
-- Entidades que enfrentam a imprevisibilidade das doações e precisam de fluxo de caixa mais estável.
+### 2.2.2. Competitive Differentiators
 
-- Se beneficiam diretamente do modelo de yield sustentável e da transparência via blockchain.
-
-- Perfil: ONGs pequenas e médias, fundações educacionais, ambientais ou de saúde.
-
-### 2.2. Detalhamento da Solução
-
-#### 2.2.1. Funcionalidades Principais
-
-- Conexão segura com a plataforma via carteira Freighter.
-
-- Depósito de capital no vault de doação com configuração do split de rendimento.
-
-- Visualização do capital depositado, rendimentos acumulados e total doado.
-    
-- Distribuição automatizada dos rendimentos para os projetos sociais via smart contract.
-    
-- Resgate do capital principal a qualquer momento, sem taxas ou penalidades.
-    
-- Visualização do certificado de impacto (NFT) recebido por cada ciclo de doação.
-    
-- Histórico completo e auditável de todas as transações na blockchain.
-
-#### 2.2.2. Diferenciais Competitivos
-
-- **Liquidez Total:** O único modelo de doação que permite ao apoiador reter 100% de seu capital.
-    
-- **Transparência Garantida:** Todas as operações são públicas e imutáveis na Stellar.
-    
-- **Sustentabilidade:** Gera um fluxo contínuo de recursos para as causas, em vez de doações pontuais.
-    
-- **Governança Comunitária:** Roadmap futuro prevê que os próprios apoiadores decidam quais projetos serão listados.
+- **Total Liquidity:** The only donation model that allows supporters to retain **100%** of their capital.
+- **Guaranteed Transparency:** All operations are public and immutable on **Stellar**.
+- **Sustentability:** Generates a continuous flow of resources for causes, rather than one-time donations.
+- **Community Governance:** The future roadmap includes a plan for supporters themselves to decide which projects will be listed.
 
 ---
 
-## 3. Aplicação do projeto
+# 3. Project Application
 
-### 3.1. Fluxo do usuário
+## 3.1. User Flow
 
-**Telas Principais e Fluxos**
+### Main Screens and Flows
 
-- **Tela de Boas-Vindas e Conexão de Carteira:** Primeiro ponto de contato, simples e direto.
-   
-- **Dashboard Principal:** Visão geral do capital do usuário, impacto total gerado e lista de projetos apoiados.
-    
-- **Página de Exploração de Projetos:** Listagem detalhada das causas disponíveis para apoio.
-    
-- **Modal de Depósito:** Fluxo intuitivo para definir o valor e o split de rendimento.
-    
-- **Tela de Resgate (Withdraw):** Interface para solicitar o resgate do capital principal.
-    
-- **Galeria de Certificados (NFTs):** Área para visualizar os NFTs recebidos como prova de impacto.
-    
-- **Tela de Histórico de Transações:** Log detalhado de todas as operações, com links para o explorador de blocos da Stellar.
-    
+- Welcome and Wallet Connection Screen: The first point of contact, simple and direct.
+- Main Dashboard: An overview of the user’s capital, total impact generated, and a list of supported projects.
+- Project Exploration Page: A detailed listing of available causes to support.
+- Deposit Modal: An intuitive flow for defining the amount and yield split.
+- Withdrawal Screen: An interface to request the withdrawal of principal capital.
+- Certificate Gallery (**NFTs**): An area to view **NFTs** received as proof of impact.
+- Transaction History Screen: A detailed log of all operations, with links to the Stellar block explorer.
 
-&nbsp; &nbsp; &nbsp; &nbsp; O processo de design incluiu protótipos de baixa fidelidade para validação rápida de fluxos e usabilidade, culminando no protótipo de baixa fidelidade que guiou o desenvolvimento. Para melhor visualização do fluxo, pode-se obserar a imagem abaixo referente ao rascunho do protótipo das telas e posterior digitalização em wireframes no figma.
+The design process included low-fidelity prototypes for quick validation of flows and usability, culminating in the low-fidelity prototype that guided development. For a better view of the flow, you can observe the image below, which refers to the prototype sketch of the screens and their subsequent digitalization into wireframes in Figma.
 
-<p align = "center">Figura 7 - Canvas proposta de valor da 4Bridges.</p>
-<div align = "center">
-  <img src = "../docs/assets/canvas.png">
+<p align="center">Figure 7 - 4Bridges Value Proposition Canvas.</p>
+<div align="center">
+  <img src="../docs/assets/canvas.png">
 </div>
-<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
-
-
----
-
-## 4. Versão final da aplicação 
-
-### 4.1. Funcionalidades Implementadas
-
-- Conexão com carteira da rede Stellar (Freighter).
-    
-- Depósito de capital no smart contract Soroban via interface web.
-    
-- Resgate (withdraw) do capital principal depositado.
-    
-- Lógica on-chain para o registro de depósitos e saques.
-    
-- Visualização do saldo depositado pelo usuário.
-
-### 4.2. Telas e Fluxos Principais Desenvolvidos
-
-- **Conexão de Carteira:** Fluxo funcional de autenticação na plataforma.
-    
-- **Página de Projetos (Mock):** Interface para visualização de um projeto de exemplo.
-    
-- **Depósito:** Modal e lógica para interagir com a função `deposit` do contrato.
-    
-- **Resgate:** Botão e lógica para interagir com a função `withdraw` do contrato.
-    
-- **Dashboard Simples:** Exibição do saldo atual do usuário no vault.    
-
-### 4.3. Tecnologias Utilizadas
-
-- **Soroban SDK:** Desenvolvimento e deploy do smart contract na Testnet.
-- **React :** Construção do frontend interativo.
-- **TypeScript/JavaScript:** Lógica de negócio e integração com a blockchain no lado do cliente.
-- **Stellar Wallets:** Integração com a carteira Freighter para assinatura de transações.
-
-### 4.4. What AI tools and LLMs have you used?
-&nbsp; &nbsp; &nbsp; &nbsp; Para receber insights, levantar questionamentos, melhorar ideias e buscar ajuda com alguns erros, foi usada as seguintes ferramentas tecnologicas:
-- Stella AI;
-- ChatGPT;
-- Gemini PRO;
-- V0;
-- Perplexity;
-- Claude.
-
-## **5. Estudo de mercado e plano de marketing**
-
-### 5.1. Resumo Executivo
-&nbsp; &nbsp; &nbsp; &nbsp; O Impact Vault se posiciona como uma solução pioneira no setor de "Philanthropy-Fi", oferecendo um modelo de doação de capital protegido que atrai um novo perfil de doadores e garante sustentabilidade para projetos sociais. O foco na plataforma Stellar permite alcance global com custos operacionais mínimos.
-
-### 5.2. Análise de Mercado
-&nbsp; &nbsp; &nbsp; &nbsp; O mercado de doações está em um ponto de inflexão. De um lado, o modelo tradicional (Web2) enfrenta uma crise de confiança devido à falta de transparência e taxas elevadas. Do outro, a filantropia cripto (Web3) ainda busca um modelo sustentável.
-
-&nbsp; &nbsp; &nbsp; &nbsp; Nossa plataforma se posiciona exatamente nesta intersecção, oferecendo um modelo de "Doação de Rendimento" (Lossless Donation), onde o impacto social é gerado de forma contínua sem que o doador perca seu capital. A escolha da rede Stellar nos confere uma vantagem competitiva crucial em velocidade e custo, democratizando o acesso a este novo modelo.
-
-&nbsp; &nbsp; &nbsp; &nbsp; Para posicionar o 4Bridge e forma clara no cenário filantrópico, é essencial analisar as soluções existentes e identificar as lacunas que nosso projeto preenche. O benchmarking a seguir compara nosso modelo inovador com as principais abordagens do mercado, sendo elas: 
-
-- The Giving Block: Plataforma líder em doações de criptomoedas para ONGs, com foco em facilidade e integração.
-
-- Giveth: Plataforma Web3 de doações com governança e recompensas via token.
-
-- Engiven: Solução focada em doações em cripto e ações combinadas para organizações religiosas e ONGs.
-
-- Coinbase Commerce: Infraestrutura robusta para aceitar criptomoedas em sites, com grande user base.
-
-
-| Funcionalidade / Benefício          | Impact Vault | The Giving Block | Giveth | Engiven | Coinbase Commerce |
-| ----------------------------------- | ------------ | ---------------- | ------ | ------- | ----------------- |
-| Liquidez total do capital principal | ✅            | ❌                | ❌      | ❌       | ❌                 |
-| Impacto via rendimento              | ✅            | ❌                | ✅      | ❌       | ❌                 |
-| Transparência on-chain              | ✅            | ✅                | ✅      | ❌       | ❌                 |
-| Split programável de rendimentos    | ✅            | ❌                | ❌      | ❌       | ❌                 |
-| Suporte multi-moeda                 | ✅            | ✅                | ✅      | ✅       | ✅                 |
-| Integração com DeFi real            | ✅            | ❌                | ✅      | ❌       | ❌                 |
-
-
-### 5.3. Plano de Marketing 
-
-&nbsp; &nbsp; &nbsp; &nbsp; A estratégia de marketing do Impact Vault foi cuidadosamente elaborada para amplificar sua visibilidade, engajando diretamente o público-alvo e fortalecendo seu posicionamento no ecossistema de doações digitais e Web3. Com foco em ações digitais, a comunicação utilizará redes sociais, parcerias estratégicas com organizações sociais, instituições públicas e canais especializados, sempre privilegiando uma linguagem clara, acessível e um design visual acolhed
-or.
-#### 5.3.1. Product
-
-&nbsp; &nbsp; &nbsp; &nbsp; 4Bridge é uma plataforma descentralizada de doações que combina segurança, transparência e flexibilidade, utilizando blockchain Stellar e contratos inteligentes Soroban. Diferencia-se por permitir ao usuário manter liquidez total do capital principal, com rendimento destinado a projetos sociais escolhidos, certificados NFT de impacto, dashboard em tempo real e governança participativa. O produto oferece uma experiência inovadora, escalável e confiável para engajar doadores digitais, organizações sociais e investidores sociais.
+<p align="center">Source: (Material produced by the authors, 2025).</p>
 
 ---
 
-#### 5.3.2. Price
-&nbsp; &nbsp; &nbsp; &nbsp; O modelo de precificação será baseado em taxas transparentes e competitivas, aplicadas sobre os rendimentos gerados no vault, garantindo sustentabilidade financeira para manutenção e evolução da plataforma. Haverá níveis diferenciados – versões gratuitas com funcionalidades básicas para usuários comuns e planos premium para ONGs e empresas, incluindo recursos extras, dashboards avançados e relatórios detalhados. Política de incentivos e isenções específicas pode ser aplicada para ampliar acessibilidade inicial.
+# 4. Final Application Version
 
-#### 5.3.3. Place
+## 4.1. Implemented Features
 
-&nbsp; &nbsp; &nbsp; &nbsp; A distribuição e acesso ao 4Bridge será digital, com foco inicial em comunidades e projetos sociais conectados à blockchain Stellar, abrangendo Brasil e demais mercados emergentes. A plataforma terá presença online forte, incluindo website institucional, integração com wallets populares, marketplaces Web3 e parcerias estratégicas com instituições filantrópicas, aceleradoras e organizações ESG para ampliação do alcance. O onboarding será facilitado por tutoriais, webinars e networking digital.
+- Connection to a **Stellar** network wallet (**Freighter**).
+- Deposit of capital into the **Soroban smart contract** via a web interface.
+- **Withdrawal** of deposited principal capital.
+- **On-chain** logic for recording deposits and withdrawals.
+- Visualization of the user's deposited balance.
 
-#### 5.3.4. Promotion
+## 4.2. Main Screens and Flows Developed
 
-&nbsp; &nbsp; &nbsp; &nbsp; A estratégia promocional contempla:
+- **Wallet Connection:** A functional authentication flow for the platform.
+- **Projects Page (Mock):** An interface for viewing an example project.
+- **Deposit:** A modal and logic for interacting with the contract's `deposit` function.
+- **Withdrawal:** A button and logic for interacting with the contract's `withdraw` function.
+- **Simple Dashboard:** Displays the user's current balance in the vault.
 
-- Campanhas digitais focadas em públicos de impacto social, entusiastas de cripto e investidores institucionais.
-    
-- Conteúdo educativo sobre doações programáveis e benefícios do modelo de liquidez, via blogs, podcasts e lives.
-    
-- Participação em eventos blockchain e hackathons para visibilidade técnica e network.
-    
-- Parcerias com ONGs e influenciadores sociais para demonstração e validação.
-    
-- Programas de referral e gamificação para recompensar indicações e engajamento contínuo.
-    
-- Relações públicas focadas na mídia especializada em filantropia e tecnologia.
+## 4.3. Technologies Used
 
----
-## **6. Plano de execução**
+- **Soroban SDK:** For the development and **deployment** of the smart contract on the **Testnet**.
+- **React:** For building the interactive **frontend**.
+- **TypeScript/JavaScript:** For business logic and client-side integration with the blockchain.
+- **Stellar Wallets:** For integration with the **Freighter** wallet to sign transactions.
 
-### Roadmap Financeiro Pós-MVP
+## 4.4. What AI tools and LLMs used
 
-- Modelo de receita: cobrança de **x% sobre os rendimentos da pool**.  
-- O capital principal dos usuários permanece intocado, garantindo impacto social e liquidez total.  
-- Gamificação via **NFTs** para engajamento e reconhecimento do impacto social.
 
-### 6.1. Validação do MVP
-**Objetivo:** Mostrar que o MVP funciona na prática e gera interesse.
+To gain **insights**, raise questions, improve ideas, and get help with some errors, the following technological tools were used:
 
-| Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
-|------|-----------|--------------------|------------------------|---------------------|
-| Teste com usuários reais | Incentivos para projetos sociais e doadores | 1.000 – 2.000 | - | - |
-| Coleta de métricas de uso | Ferramentas de análise e monitoramento | 500 – 1.000 | - | - |
-| Feedback qualitativo | Entrevistas e suporte inicial | 500 – 1.000 | - | - |
-| **Subtotal Fase 1** | - | **2.000 – 4.000** | - | - |
-
-**Entregáveis:** Relatório de validação + métricas iniciais de impacto.
-
+- **Stella AI**
+- **ChatGPT**
+- **Gemini PRO**
+- **V0**
+- **Perplexity**
+- **Claude**
 ---
 
-### 6.2. Refinamento e Aprimoramento do Produto
-**Objetivo:** Melhorar UX/UI, performance do MVP e engajamento com gamificação.
+# 5. Market Study and Marketing Plan
 
-| Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
-|------|-----------|--------------------|------------------------|---------------------|
-| Aprimoramento UX/UI | Ajustes de design, dashboards e painéis | 1.500 – 3.000 | - | - |
-| Otimização smart contracts e backend | Garantir segurança, eficiência e escalabilidade | 2.000 – 4.000 | - | - |
-| Gamificação via NFTs | Criar NFTs de impacto que simbolizam contribuições, reforçando engajamento | 1.000 – 2.000 | Pode gerar receita via minting ou marketplace | Variável |
-| **Subtotal Fase 2** | - | **4.500 – 9.000** | - | - |
+## 5.1. Executive Summary
 
-**Entregáveis:** MVP aprimorado, pronto para mais usuários e engajamento com gamificação.
+**Impact Vault** is positioned as a pioneering solution in the **"Philanthropy-Fi"** sector, offering a protected capital donation model that attracts a new profile of donors and ensures sustainability for social projects. The focus on the **Stellar** platform allows for a global reach with minimal operational costs.
+
+## 5.2. Market Analysis
+
+The donation market is at a tipping point. On one hand, the traditional (**Web2**) model faces a crisis of trust due to a lack of transparency and high fees. On the other, crypto philanthropy (**Web3**) is still looking for a sustainable model.
+
+Our platform is positioned precisely at this intersection, offering a **"Yield Donation" (Lossless Donation)** model, where social impact is generated continuously without the donor losing their capital. The choice of the **Stellar** network gives us a crucial competitive advantage in speed and cost, democratizing access to this new model.
+
+To position **4Bridge** clearly in the philanthropic landscape, it is essential to analyze existing solutions and identify the gaps our project fills. The following **benchmarking** compares our innovative model with the main market approaches, which are:
+
+- **The Giving Block:** A leading platform for cryptocurrency donations to **NGOs**, with a focus on ease and integration.
+- **Giveth:** A **Web3** donation platform with governance and rewards via **token**.
+- **Engiven:** A solution focused on crypto and combined stock donations for religious organizations and **NGOs**.
+- **Coinbase Commerce:** A robust infrastructure for accepting cryptocurrencies on websites, with a large user base.
+
+| Feature / Benefit | Impact Vault | The Giving Block | Giveth | Engiven | Coinbase Commerce |
+| --- | --- | --- | --- | --- | --- |
+| Total liquidity of principal capital | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Impact via yield | ✅ | ❌ | ✅ | ❌ | ❌ |
+| **On-chain** transparency | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Programmable yield split | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Multi-currency support | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Real **DeFi** integration | ✅ | ❌ | ✅ | ❌ | ❌ |
+
+## 5.3. Marketing Plan
+
+The marketing strategy for **Impact Vault** was carefully crafted to amplify its visibility, directly engaging the target audience and strengthening its position in the digital donation and **Web3** ecosystem. With a focus on digital actions, communication will use social media, strategic partnerships with social organizations, public institutions, and specialized channels, always prioritizing clear, accessible language and a welcoming visual design.
+
+### 5.3.1. Product
+
+**4Bridge** is a decentralized donation platform that combines security, transparency, and flexibility, using the **Stellar** blockchain and **Soroban smart contracts**. It stands out by allowing the user to maintain full liquidity of the principal capital, with yields directed to chosen social projects, **NFT** impact certificates, a real-time **dashboard**, and participatory governance. The product offers an innovative, scalable, and reliable experience to engage digital donors, social organizations, and social investors.
+
+### 5.3.2. Price
+
+The pricing model will be based on transparent and competitive fees, applied to the yields generated in the **vault**, ensuring financial sustainability for platform maintenance and evolution. There will be differentiated levels—free versions with basic functionalities for common users and **premium** plans for **NGOs** and companies, including extra features, advanced dashboards, and detailed reports. Specific incentive and exemption policies may be applied to increase initial accessibility.
+
+### 5.3.3. Place
+
+The distribution and access to **4Bridge** will be digital, with an initial focus on communities and social projects connected to the **Stellar** blockchain, covering Brazil and other emerging markets. The platform will have a strong online presence, including an institutional **website**, integration with popular **wallets**, **Web3 marketplaces**, and strategic partnerships with philanthropic institutions, accelerators, and **ESG** organizations to expand its reach. The **onboarding** process will be facilitated by tutorials, **webinars**, and digital **networking**.
+
+### 5.3.4. Promotion
+
+The promotional strategy includes:
+
+- Digital campaigns focused on social impact audiences, crypto enthusiasts, and institutional investors.
+- Educational content about programmable donations and the benefits of the liquidity model, via blogs, **podcasts**, and **live streams**.
+- Participation in **blockchain** events and **hackathons** for technical visibility and **networking**.
+- Partnerships with **NGOs** and social influencers for demonstrations and validation.
+- **Referral** and **gamification** programs to reward referrals and continuous engagement.
+- Public relations focused on media specializing in philanthropy and technology.
 
 ---
 
-### 6.3. Marketing e Monetização via Pool
-**Objetivo:** Atrair usuários, aumentar volume da pool, gerar receita e engajamento.
+# 6. Execution Plan
 
-| Item | Descrição | Custo Estimado (USD) | Receita Potencial (USD) | Lucro Estimado (USD) |
-|------|-----------|--------------------|------------------------|---------------------|
-| Campanhas direcionadas | Marketing digital e publicidade | 2.000 – 4.000 | 3% – 5% dos rendimentos da pool | Depende do volume da pool |
-| Parcerias estratégicas | ONGs, fundações e comunidades DeFi | 500 – 1.500 | Aumenta volume de usuários e rendimentos | Depende do volume da pool |
-| Conteúdo educativo | Vídeos, guias e materiais online | 500 – 1.000 | Incentiva engajamento e novos aportes | Depende do volume da pool |
-| Incentivos via NFTs | Promoções e recompensas digitais que incentivam aportes recorrentes | 500 – 1.000 | Receita adicional via minting ou marketplace | Variável |
-| **Subtotal Fase 3** | - | **3.500 – 7.500** | 5.000 – 25.000 (ano 1) | 5.000 – 25.000 |
+## Post-MVP Financial Roadmap
 
-**Entregáveis:** Crescimento de usuários, volume da pool, receita gerada e engajamento via NFTs.
+- **Revenue model:** Charging **x%** on the **pool's** yields.
+- The users' principal capital remains untouched, ensuring social impact and total liquidity.
+- **Gamification** via **NFTs** for engagement and recognition of social impact.
+
+## 6.1. MVP Validation
+
+**Objective:** To show that the **MVP** works in practice and generates interest.
+
+| Item | Description | Estimated Cost (USD) | Potential Revenue (USD) | Estimated Profit (USD) |
+| --- | --- | --- | --- | --- |
+| Test with real users | Incentives for social projects and donors | 1,000 – 2,000 | - | - |
+| Collection of usage metrics | Analysis and monitoring tools | 500 – 1,000 | - | - |
+| Qualitative feedback | Interviews and initial support | 500 – 1,000 | - | - |
+| **Subtotal Phase 1** | - | **2,000 – 4,000** | - | - |
+
+**Deliverables:** Validation report + initial impact metrics.
+
+## 6.2. Product Refinement and Improvement
+
+**Objective:** To improve **UX/UI**, **MVP** performance, and engagement through **gamification**.
+
+| Item | Description | Estimated Cost (USD) | Potential Revenue (USD) | Estimated Profit (USD) |
+| --- | --- | --- | --- | --- |
+| **UX/UI** improvement | **Design** adjustments, **dashboards**, and panels | 1,500 – 3,000 | - | - |
+| **Smart contract** and **backend** optimization | Ensuring security, efficiency, and scalability | 2,000 – 4,000 | - | - |
+| **Gamification** via **NFTs** | Creating impact **NFTs** that symbolize contributions, reinforcing engagement | 1,000 – 2,000 | May generate revenue via **minting** or **marketplace** | Variable |
+| **Subtotal Phase 2** | - | **4,500 – 9,000** | - | - |
+
+**Deliverables:** An improved **MVP**, ready for more users and engagement through **gamification**.
+
+## 6.3. Marketing and Monetization via Pool
+
+**Objective:** To attract users, increase the **pool** volume, and generate revenue and engagement.
+
+| Item | Description | Estimated Cost (USD) | Potential Revenue (USD) | Estimated Profit (USD) |
+| --- | --- | --- | --- | --- |
+| Targeted campaigns | Digital **marketing** and advertising | 2,000 – 4,000 | 3% – 5% of the **pool's** yields | Depends on the **pool's** volume |
+| Strategic partnerships | **NGOs**, foundations, and **DeFi** communities | 500 – 1,500 | Increases user volume and yields | Depends on the **pool's** volume |
+| Educational content | Videos, guides, and online materials | 500 – 1,000 | Encourages engagement and new contributions | Depends on the **pool's** volume |
+| Incentives via **NFTs** | Digital promotions and rewards that encourage recurring contributions | 500 – 1,000 | Additional revenue via **minting** or **marketplace** | Variable |
+| **Subtotal Phase 3** | - | **3,500 – 7,500** | 5,000 – 25,000 (year 1) | 5,000 – 25,000 |
+
+**Deliverables:** User growth, **pool** volume, generated revenue, and engagement via **NFTs**.
 
 ---
 
-## Resumo Financeiro Total
+# Total Financial Summary
 
-| Tipo de Custo | Valor Estimado (USD) |
-|---------------|--------------------|
-| Fase 1 – Validação | 2.000 – 4.000 |
-| Fase 2 – Refinamento + NFTs | 4.500 – 9.000 |
-| Fase 3 – Marketing e Monetização | 3.500 – 7.500 |
-| **Total Estimado** | **10.000 – 20.500** |
+| Cost Type | Estimated Value (USD) |
+| --- | --- |
+| Phase 1 – Validation | 2,000 – 4,000 |
+| Phase 2 – Refinement + **NFTs** | 4,500 – 9,000 |
+| Phase 3 – **Marketing** and Monetization | 3,500 – 7,500 |
+| **Total Estimated** | **10,000 – 20,500** |
 
-| Receita Potencial (x% sobre rendimentos da pool) | Lucro Estimado |
-|--------------------------------------------------------|----------------|
-| 5.000 – 25.000 (ano 1) | 5.000 – 25.000 |
+| Potential Revenue (x% on pool yields) | Estimated Profit |
+| --- | --- |
+| 5,000 – 25,000 (year 1) | 5,000 – 25,000 |
 
-**Pontos principais:**  
- - Receita depende do volume de rendimentos da pool e adoção das NFTs.  
-- Lucro líquido é próximo à receita, considerando custos operacionais já cobertos nas fases anteriores.  
- - Gamificação via NFTs aumenta engajamento, fidelização e potencial de receita extra.
+**Key points:**
 
-## 7. Por que o uso da Blockchain Stellar
+- Revenue depends on the volume of **pool** yields and the adoption of **NFTs**.
+- Net profit is close to revenue, considering operational costs are already covered in the previous phases.
+- **Gamification** via **NFTs** increases engagement, loyalty, and the potential for extra revenue.
 
-&nbsp; &nbsp; &nbsp; &nbsp;A escolha da blockchain Stellar é uma escolha estratégica para o sucesso e diferencial da plataforma.  Stellar oferece uma combinação única de velocidade, segurança, baixo custo e escalabilidade, características essenciais para operacionalizar uma solução descentralizada de doações que visa atender tanto usuários individuais quanto organizações sociais e investidores institucionais em escala global.
+---
 
-### 7.1. Velocidade e Custo Reduzido
-- Transações rápidas via Stellar Consensus Protocol (SCP) com taxas mínimas (~0.00001 XLM por transação).<br>
-&nbsp; &nbsp; &nbsp; &nbsp; Transações rápidas e tarifas baixíssimas permitem que mesmo pequenos aportes sejam economicamente viáveis, democratizando o acesso ao sistema e possibilitando micropagamentos frequentes. Isso é crucial para a sustentabilidade do vault e para estimular o engajamento recorrente dos apoiadores.
+# 7. Why Use the Stellar Blockchain
 
-### 7.2. Contratos Inteligentes Soroban
-- Contratos inteligentes em Rust/WASM usando Soroban SDK.<br>
-&nbsp; &nbsp; &nbsp; &nbsp; A robustez e segurança dos contratos inteligentes Soroban permitem a implementação da lógica complexa de liquidez do capital principal, divisão programável dos rendimentos e emissão de certificados NFT - que é uma ideia futura do projeto. Além disso, facilitam a auditabilidade em tempo real das operações, aumentando a transparência e a confiança de todos os stakeholders.
+The choice of the **Stellar blockchain** is strategic for the platform's success and differentiation. **Stellar** offers a unique combination of speed, security, low cost, and scalability—essential characteristics for operating a decentralized donation solution that aims to serve individual users as well as social organizations and institutional investors on a global scale.
 
-### 7.3. Escalabilidade e Inclusão Global
-- Infraestrutura distribuída, compatível com múltiplos ativos e moedas via Stellar Assets e Liquidity Pools.<br>
-&nbsp; &nbsp; &nbsp; &nbsp; A infraestrutura de Stellar é desenhada para suportar elevado volume de transações com muita eficiência, o que garante que o Impact Vault possa crescer sem gargalos técnicos. A capacidade de suportar múltiplas moedas permite que a plataforma atenda a um público global diversificado, promovendo inclusão financeira em mercados emergentes e consolidando o impacto social em diferentes regiões.
+## 7.1. Speed and Reduced Cost
 
-### 7.4. Segurança e Transparência
-- Ledger imutável + Horizon API + indexers (StellarExpert, Dune) para monitoramento on-chain.<br>
-&nbsp; &nbsp; &nbsp; &nbsp; Stellar oferece um ambiente seguro, resiliente e comprovado, onde todas as operações são imutáveis e rastreáveis, reforçando o compromisso do Impact Vault com a transparência radical. Essa característica é vital para combater a desconfiança histórica em doações, assegurando responsabilidade e governança claras.
+- Fast transactions via **Stellar Consensus Protocol (SCP)** with minimal fees (~0.00001 XLM per transaction).
 
+Fast transactions and very low fees make even small contributions economically viable, democratizing access to the system and enabling frequent micropayments. This is crucial for the **vault's** sustainability and for encouraging recurring supporter engagement.
 
-### 7.5. Ecossistema e Parcerias
-- Anchors e SEPs (SEP-10, SEP-24, SEP-12, SEP-31) + integração com wallets (Freighter, Albedo) + oráculos (Band, DIA).<br>
-&nbsp; &nbsp; &nbsp; &nbsp; Por ser uma rede com crescente ecossistema dedicado a soluções sociais e de finanças descentralizadas, Stellar propicia sinergias, integrações e oportunidades de parcerias que aceleram a inovação contínua do projeto, garantindo uma evolução alinhada com as tecnologias e demandas do mercado.
+## 7.2. Soroban Smart Contracts
 
-&nbsp; &nbsp; &nbsp; &nbsp; Em resumo, a blockchain Stellar não é apenas uma infraestrutura tecnológica, mas um pilar essencial que sustenta sua proposta de valor, viabilidade e impacto, configurando-se como um diferencial competitivo decisivo no panorama das doações digitais e do financiamento social inovador.
+- **Smart contracts** in **Rust/WASM** using the **Soroban SDK**.
 
-## **8. Conclusões**
-&nbsp; &nbsp; &nbsp; &nbsp; O 4Bridge é uma plataforma descentralizada baseada na blockchain Stellar que reinventa o modelo tradicional de doações sociais. Permitindo que o usuário mantenha total liquidez sobre o capital aportado, a plataforma direciona apenas os rendimentos gerados aos projetos sociais escolhidos, assegurando um impacto contínuo, seguro e transparente.  Essa solução alia inovação tecnológica e sustentabilidade social, criando um ambiente escalável e confiável que atrai diversos perfis de apoiadores.
+The robustness and security of **Soroban smart contracts** allow for the implementation of complex logic for principal capital liquidity, programmable yield division, and the issuance of **NFT** certificates—a future idea for the project. In addition, they facilitate real-time auditability of operations, increasing the transparency and trust of all **stakeholders**.
+
+## 7.3. Scalability and Global Inclusion
+
+- Distributed infrastructure, compatible with multiple assets and currencies via **Stellar Assets** and **Liquidity Pools**.
+
+**Stellar's** infrastructure is designed to support a high volume of transactions with great efficiency, ensuring that **Impact Vault** can grow without technical bottlenecks. The ability to support multiple currencies allows the platform to serve a diverse global audience, promoting financial inclusion in emerging markets and consolidating social impact in different regions.
+
+## 7.4. Security and Transparency
+
+- Immutable **ledger** + **Horizon API** + **indexers (StellarExpert, Dune)** for **on-chain** monitoring.
+
+**Stellar** offers a secure, resilient, and proven environment where all operations are immutable and traceable, reinforcing **Impact Vault's** commitment to radical transparency. This feature is vital for combating historical distrust in donations, ensuring clear accountability and governance.
+
+## 7.5. Ecosystem and Partnerships
+
+- **Anchors** and **SEPs (SEP-10, SEP-24, SEP-12, SEP-31)** + integration with **wallets (Freighter, Albedo)** + **oracles (Band, DIA)**.
+
+As a network with a growing ecosystem dedicated to social and decentralized finance solutions, **Stellar** provides synergies, integrations, and partnership opportunities that accelerate the project's continuous innovation, ensuring an evolution aligned with market technologies and demands.
+
+In summary, the **Stellar blockchain** is not just a technological infrastructure, but an essential pillar that supports its value proposition, viability, and impact, establishing itself as a decisive competitive differentiator in the landscape of digital donations and innovative social financing.
+
+---
+
+# 8. Conclusions
+
+**4Bridge** is a decentralized platform based on the **Stellar blockchain** that reinvents the traditional social donation model. By allowing users to maintain full liquidity over their contributed capital, the platform directs only the generated yields to chosen social projects, ensuring a continuous, secure, and transparent impact. This solution combines technological innovation and social sustainability, creating a scalable and reliable environment that attracts diverse profiles of supporters.
