@@ -3,32 +3,38 @@ use soroban_sdk::{contracttype, Address, Env, Map, Symbol, Vec};
 #[derive(Clone)]
 #[contracttype]
 pub struct DepositInfo {
-    pub amount: i128,
-    pub split: i128,
+    pub amount: i128,           // quanto o user depositou neste projeto ainda na vault
+    pub split: i128,            // porcento do yield doado ao projeto
+    pub reserved_yield: i128,   // rendimento reservado não doado para o user sacar
 }
 
-// Salva ou atualiza o depósito do usuário para um projeto
+// TOTAL DA VAULT
+pub fn get_total_vault(env: Env) -> i128 {
+    env.storage().persistent().get(&"vault_total").unwrap_or(0)
+}
+pub fn set_total_vault(env: Env, value: i128) {
+    env.storage().persistent().set(&"vault_total", &value);
+}
+
+// MAPA DE DEPOSITOS (user → projeto → DepositInfo)
 pub fn set_user_deposit(env: Env, user: Address, project: Symbol, amount: i128, split: i128) {
     let mut deposits: Map<Symbol, DepositInfo> = env
         .storage()
         .persistent()
         .get(&user)
         .unwrap_or(Map::new(&env));
-    deposits.set(project.clone(), DepositInfo { amount, split });
+    let mut info = deposits.get(project.clone()).unwrap_or(DepositInfo { amount: 0, split, reserved_yield: 0 });
+    // Ao novo depósito, some amount ao existente, não zere reserved_yield
+    info.amount += amount;
+    info.split = split;
+    deposits.set(project.clone(), info);
     env.storage().persistent().set(&user, &deposits);
+
+    // Atualiza total da vault
+    let total = get_total_vault(env.clone());
+    set_total_vault(env, total + amount);
 }
 
-// Recupera todos projetos que um usuário apoiou
-pub fn get_user_projects(env: Env, user: Address) -> Vec<Symbol> {
-    let deposits: Map<Symbol, DepositInfo> = env
-        .storage()
-        .persistent()
-        .get(&user)
-        .unwrap_or(Map::new(&env));
-    deposits.keys()
-}
-
-// Recupera informações do depósito do usuário em um projeto específico
 pub fn get_user_deposit(env: Env, user: Address, project: Symbol) -> Option<DepositInfo> {
     let deposits: Map<Symbol, DepositInfo> = env
         .storage()
@@ -38,32 +44,56 @@ pub fn get_user_deposit(env: Env, user: Address, project: Symbol) -> Option<Depo
     deposits.get(project)
 }
 
-// Atualiza/consulta rendimento acumulado de um projeto
-pub fn set_project_status(env: Env, project: Symbol, rendimento: i128) {
-    env.storage().persistent().set(&(&project,), &rendimento);
+// TOTAL EM CADA PROJETO (para proporcionalidade)
+pub fn get_project_total(env: Env, project: Symbol) -> i128 {
+    env.storage().persistent().get(&("project_total", project)).unwrap_or(0)
+}
+pub fn set_project_total(env: Env, project: Symbol, value: i128) {
+    env.storage().persistent().set(&("project_total", project), &value);
 }
 
-pub fn get_project_status(env: Env, project: Symbol) -> i128 {
-    env.storage().persistent().get(&(&project,)).unwrap_or(0)
+// ATUALIZAR QUANDO ALGUÉM DEPOSITA/SACA
+pub fn update_project_total(env: Env, project: Symbol, delta: i128) {
+    let prev = get_project_total(env.clone(), project.clone());
+    set_project_total(env, project, prev + delta);
 }
 
-#[cfg(test)]
-mod test {
-    use super::*;
-    use soroban_sdk::{symbol_short, Map, Symbol, Env};
+// UPDATE reservado do yield não doado
+pub fn add_reserved_yield(env: Env, user: Address, project: Symbol, value: i128) {
+    let mut deposits: Map<Symbol, DepositInfo> = env
+        .storage()
+        .persistent()
+        .get(&user)
+        .unwrap_or(Map::new(&env));
+    let mut info = deposits.get(project.clone()).unwrap_or(DepositInfo { amount: 0, split: 0, reserved_yield: 0 });
+    info.reserved_yield += value;
+    deposits.set(project, info);
+    env.storage().persistent().set(&user, &deposits);
+}
 
-    #[test]
-    fn test_deposito() {
-        let env = Env::default();
-        let mut deposits: Map<Symbol, DepositInfo> = Map::new(&env);
+// Atualize withdraw para também descontar do project_total e vault!
+pub fn withdraw_user_deposit(env: Env, user: Address, project: Symbol, amount: i128) -> i128 {
+    let mut deposits: Map<Symbol, DepositInfo> = env
+        .storage()
+        .persistent()
+        .get(&user)
+        .unwrap_or(Map::new(&env));
+    if let Some(mut info) = deposits.get(project.clone()) {
+        assert!(info.amount >= amount, "Saldo insuficiente");
+        info.amount -= amount;
+        let to_withdraw = amount + info.reserved_yield;
+        // Zera também o reserved_yield, pois tudo é sacado de uma vez
+        info.reserved_yield = 0;
+        deposits.set(project.clone(), info);
+        env.storage().persistent().set(&user, &deposits);
 
-        let project = symbol_short!("projeto");
-        deposits.set(project.clone(), DepositInfo { amount: 100, split: 90 });
+        // Atualiza project_total e vault_total
+        update_project_total(env.clone(), project.clone(), -amount);
+        let vault = get_total_vault(env.clone());
+        set_total_vault(env, vault - amount);
 
-        assert_eq!(deposits.get(project.clone()).unwrap().amount, 100);
-
-        // altere split, valor etc
-        deposits.set(project.clone(), DepositInfo { amount: 300, split: 40 });
-        assert_eq!(deposits.get(project).unwrap().split, 40);
+        return to_withdraw; // valor a liberar para o usuário
+    } else {
+        panic!("Nada a sacar desse projeto");
     }
 }

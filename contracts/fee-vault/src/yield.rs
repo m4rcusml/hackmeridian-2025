@@ -1,34 +1,29 @@
-// yield.rs
-
 use soroban_sdk::{Env, Symbol, Address, Vec};
 use crate::storage;
 
-/// Aplica um percentual de rendimento sobre um projeto e salva o novo rendimento acumulado
-pub fn simulate_yield(env: Env, project: Symbol, percent: i128, users: Vec<Address>) {
-    // Calcula o novo rendimento para o projeto inteiro baseado no depósito de cada user
-    let mut total = 0i128;
-    for user in users.iter() {
-        if let Some(info) = storage::get_user_deposit(env.clone(), user.clone(), project.clone()) {
-            let rendimento = info.amount * percent / 100;
-            total += rendimento;
+// users: lista de todos usuários atuais da pool, projects: lista de todos projetos atuais
+pub fn simulate_yield(env: Env, total_yield: i128, all_projects: Vec<Symbol>, all_users: Vec<Address>) {
+    // Distribui proporcionalmente entre os projetos
+    let vault_total = storage::get_total_vault(env.clone());
+    assert!(vault_total > 0, "Vault vazio"); // Evita divisão por zero!
+    for project in all_projects.iter() {
+        let project_total = storage::get_project_total(env.clone(), project.clone());
+        if project_total > 0 {
+            // Quanto de yield vai para esse projeto
+            let proj_yield = total_yield * project_total / vault_total;
+            // Agora, distribua o yield aos usuários do projeto
+            for user in all_users.iter() {
+                if let Some(info) = storage::get_user_deposit(env.clone(), user.clone(), project.clone()) {
+                    if info.amount > 0 {
+                        let user_yield = proj_yield * info.amount / project_total;
+                        // Doa split% ao projeto (disponibilize como quiser, ex: project_rendimentos[project] etc)
+                        // O restante é reservado ao user
+                        let reserved_part = user_yield * (100 - info.split) / 100;
+                        crate::storage::add_reserved_yield(env.clone(), user.clone(), project.clone(), reserved_part);
+                        // O split (doado) você pode somar em uma variável para relatórios, mas para MVP basta separar
+                    }
+                }
+            }
         }
     }
-    let rendimento_atual = storage::get_project_status(env.clone(), project.clone());
-    storage::set_project_status(env, project, rendimento_atual + total);
-}
-
-/// Distribui o rendimento de um projeto entre os depositantes (exemplo MVP: retorna novo estado).  
-pub fn distribute_yield(env: Env, project: Symbol, users: Vec<Address>) -> Vec<(Address, i128)> {
-    let rendimento = storage::get_project_status(env.clone(), project.clone());
-    let mut distribuidos = Vec::new(&env);
-    for user in users.iter() {
-        if let Some(info) = storage::get_user_deposit(env.clone(), user.clone(), project.clone()) {
-            // Valor proporcional ao split do usuário
-            let share = rendimento * info.split / 100;
-            distribuidos.push_back((user.clone(), share));
-        }
-    }
-    // Zera o rendimento do projeto (ou não, conforme regra)
-    storage::set_project_status(env, project, 0);
-    distribuidos
 }
