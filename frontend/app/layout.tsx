@@ -8,9 +8,9 @@ import { UserProvider } from "@/contexts/user-context"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "StellarImpact - Investimentos Sociais",
+  title: "FourBridges - Social Impact Investments",
   description:
-    "Plataforma de investimentos sociais na rede Stellar. Invista em projetos que geram impacto positivo e receba retornos.",
+    "Social impact investment platform on the Stellar network. Invest in projects that generate positive impact and receive returns.",
   generator: "v0.app",
 }
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <UserProvider>
           <Suspense fallback={null}>{children}</Suspense>

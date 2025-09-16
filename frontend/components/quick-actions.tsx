@@ -4,26 +4,26 @@ import { Plus, Search, Wallet, BarChart3 } from "lucide-react"
 
 const actions = [
   {
-    title: "Explorar Projetos",
-    description: "Encontre novos projetos para investir",
+    title: "Explore Projects",
+    description: "Find new projects to invest in",
     icon: Search,
     href: "/projetos",
   },
   {
-    title: "Fazer Investimento",
-    description: "Invista em um projeto específico",
+    title: "Make Investment",
+    description: "Invest in a specific project",
     icon: Plus,
     href: "/investir",
   },
   {
-    title: "Gerenciar Carteira",
-    description: "Visualize e gerencie sua carteira",
+    title: "Manage Wallet",
+    description: "View and manage your wallet",
     icon: Wallet,
     href: "/carteira",
   },
   {
-    title: "Relatórios",
-    description: "Veja relatórios detalhados",
+    title: "Reports",
+    description: "View detailed reports",
     icon: BarChart3,
     href: "/relatorios",
   },
@@ -33,7 +33,7 @@ export function QuickActions() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Ações Rápidas</CardTitle>
+        <CardTitle>Quick Actions</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">

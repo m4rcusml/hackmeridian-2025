@@ -7,18 +7,17 @@ import { Progress } from "@/components/ui/progress"
 import { ArrowLeft, MapPin, Users, Calendar, Target, Globe, Mail, Phone } from "lucide-react"
 import Link from "next/link"
 
-// Mock data - in real app, this would come from your backend
 const organizationData = {
   1: {
-    name: "EcoVerde Brasil",
+    name: "EcoGreen Brazil",
     description:
-      "A EcoVerde Brasil é uma organização sem fins lucrativos dedicada à preservação ambiental e desenvolvimento sustentável. Fundada em 2018, já impactou mais de 50 comunidades em todo o país.",
+      "EcoGreen Brazil is a non-profit organization dedicated to environmental preservation and sustainable development. Founded in 2018, it has already impacted more than 50 communities across the country.",
     location: "São Paulo, SP",
     founded: "2018",
-    website: "www.ecoverdebrasil.org",
-    email: "contato@ecoverdebrasil.org",
+    website: "www.ecogreenbrazil.org",
+    email: "contact@ecogreenbrazil.org",
     phone: "+55 11 9999-9999",
-    totalRaised: "R$ 2.5M",
+    totalRaised: "$2.5M",
     totalProjects: 12,
     activeProjects: 5,
     image: "/environmental-organization-office.jpg",
@@ -26,24 +25,24 @@ const organizationData = {
     projects: [
       {
         id: 1,
-        title: "Reflorestamento da Mata Atlântica",
-        description: "Projeto para plantar 10.000 árvores nativas na região da Serra do Mar",
+        title: "Atlantic Forest Reforestation",
+        description: "Project to plant 10,000 native trees in the Serra do Mar region",
         goal: 150000,
         raised: 89000,
         investors: 234,
         daysLeft: 45,
-        category: "Meio Ambiente",
+        category: "Environment",
         image: "/forest-reforestation-project.jpg",
       },
       {
         id: 2,
-        title: "Energia Solar Comunitária",
-        description: "Instalação de painéis solares em escolas rurais",
+        title: "Community Solar Energy",
+        description: "Installing solar panels in rural schools",
         goal: 200000,
         raised: 156000,
         investors: 189,
         daysLeft: 23,
-        category: "Energia",
+        category: "Energy",
         image: "/solar-panels-school-rural.jpg",
       },
     ],
@@ -54,7 +53,7 @@ export default function OrganizationDetailPage({ params }: { params: { id: strin
   const org = organizationData[params.id as keyof typeof organizationData]
 
   if (!org) {
-    return <div>Organização não encontrada</div>
+    return <div>Organization not found</div>
   }
 
   return (
@@ -67,7 +66,7 @@ export default function OrganizationDetailPage({ params }: { params: { id: strin
           className="inline-flex items-center text-muted-foreground hover:text-foreground mb-6"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Voltar para Organizações
+          Back to Organizations
         </Link>
 
         {/* Organization Header */}
@@ -78,7 +77,7 @@ export default function OrganizationDetailPage({ params }: { params: { id: strin
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <h1 className="text-3xl font-bold text-foreground">{org.name}</h1>
-                  {org.verified && <Badge variant="secondary">Verificada</Badge>}
+                  {org.verified && <Badge variant="secondary">Verified</Badge>}
                 </div>
                 <p className="text-muted-foreground mb-4">{org.description}</p>
               </div>
@@ -88,7 +87,7 @@ export default function OrganizationDetailPage({ params }: { params: { id: strin
           {/* Organization Stats */}
           <Card>
             <CardHeader>
-              <CardTitle>Informações</CardTitle>
+              <CardTitle>Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center text-sm">
@@ -97,15 +96,15 @@ export default function OrganizationDetailPage({ params }: { params: { id: strin
               </div>
               <div className="flex items-center text-sm">
                 <Calendar className="h-4 w-4 mr-2 text-muted-foreground" />
-                Fundada em {org.founded}
+                Founded in {org.founded}
               </div>
               <div className="flex items-center text-sm">
                 <Target className="h-4 w-4 mr-2 text-muted-foreground" />
-                {org.totalProjects} projetos criados
+                {org.totalProjects} projects created
               </div>
               <div className="flex items-center text-sm">
                 <Users className="h-4 w-4 mr-2 text-muted-foreground" />
-                {org.totalRaised} arrecadados
+                {org.totalRaised} raised
               </div>
               <div className="flex items-center text-sm">
                 <Globe className="h-4 w-4 mr-2 text-muted-foreground" />
@@ -129,7 +128,7 @@ export default function OrganizationDetailPage({ params }: { params: { id: strin
 
         {/* Organization Projects */}
         <div>
-          <h2 className="text-2xl font-bold text-foreground mb-6">Projetos Ativos</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Active Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {org.projects.map((project) => (
               <Card key={project.id} className="hover:shadow-lg transition-shadow">
@@ -154,23 +153,23 @@ export default function OrganizationDetailPage({ params }: { params: { id: strin
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between text-sm mb-2">
-                        <span>Progresso</span>
+                        <span>Progress</span>
                         <span>{Math.round((project.raised / project.goal) * 100)}%</span>
                       </div>
                       <Progress value={(project.raised / project.goal) * 100} className="mb-2" />
                       <div className="flex justify-between text-sm text-muted-foreground">
-                        <span>R$ {project.raised.toLocaleString()}</span>
-                        <span>Meta: R$ {project.goal.toLocaleString()}</span>
+                        <span>${project.raised.toLocaleString()}</span>
+                        <span>Goal: ${project.goal.toLocaleString()}</span>
                       </div>
                     </div>
 
                     <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>{project.investors} investidores</span>
-                      <span>{project.daysLeft} dias restantes</span>
+                      <span>{project.investors} investors</span>
+                      <span>{project.daysLeft} days remaining</span>
                     </div>
 
                     <Link href={`/projetos/${project.id}`}>
-                      <Button className="w-full">Ver Projeto</Button>
+                      <Button className="w-full">View Project</Button>
                     </Link>
                   </div>
                 </CardContent>

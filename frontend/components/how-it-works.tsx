@@ -4,46 +4,46 @@ import { UserPlus, Search, DollarSign, TrendingUp, Building, Target } from "luci
 const investorSteps = [
   {
     icon: UserPlus,
-    title: "Conecte sua Carteira",
-    description: "Conecte sua carteira Stellar e complete seu perfil de investidor",
+    title: "Connect Your Wallet",
+    description: "Connect your Stellar wallet and complete your investor profile",
   },
   {
     icon: Search,
-    title: "Explore Projetos",
-    description: "Navegue pelos projetos sociais disponíveis e analise seus impactos",
+    title: "Explore Projects",
+    description: "Browse available social projects and analyze their impacts",
   },
   {
     icon: DollarSign,
-    title: "Invista",
-    description: "Escolha o valor que deseja investir e confirme a transação",
+    title: "Invest",
+    description: "Choose the amount you want to invest and confirm the transaction",
   },
   {
     icon: TrendingUp,
-    title: "Receba Retornos",
-    description: "Acompanhe seus investimentos e receba os retornos conforme acordado",
+    title: "Receive Returns",
+    description: "Track your investments and receive returns as agreed",
   },
 ]
 
 const organizationSteps = [
   {
     icon: Building,
-    title: "Cadastre sua Organização",
-    description: "Registre sua organização e comprove sua legitimidade",
+    title: "Register Your Organization",
+    description: "Register your organization and prove your legitimacy",
   },
   {
     icon: Target,
-    title: "Crie seu Projeto",
-    description: "Detalhe seu projeto social, metas e impacto esperado",
+    title: "Create Your Project",
+    description: "Detail your social project, goals and expected impact",
   },
   {
     icon: DollarSign,
-    title: "Defina Parâmetros",
-    description: "Estabeleça valor necessário, prazo e retorno para investidores",
+    title: "Set Parameters",
+    description: "Establish required amount, timeline and returns for investors",
   },
   {
     icon: TrendingUp,
-    title: "Receba Investimentos",
-    description: "Sua pool de investimentos cresce e você executa o projeto",
+    title: "Receive Investments",
+    description: "Your investment pool grows and you execute the project",
   },
 ]
 
@@ -52,21 +52,21 @@ export function HowItWorks() {
     <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Como Funciona</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">How It Works</h2>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            Um processo simples e transparente para investidores e organizações
+            A simple and transparent process for investors and organizations
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Para Investidores */}
+          {/* For Investors */}
           <div>
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <TrendingUp className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-2">Para Investidores</h3>
-              <p className="text-muted-foreground">Invista em projetos sociais e receba retornos financeiros</p>
+              <h3 className="text-2xl font-bold mb-2">For Investors</h3>
+              <p className="text-muted-foreground">Invest in social projects and receive financial returns</p>
             </div>
 
             <div className="space-y-6">
@@ -91,14 +91,14 @@ export function HowItWorks() {
             </div>
           </div>
 
-          {/* Para Organizações */}
+          {/* For Organizations */}
           <div>
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary/10 rounded-full mb-4">
                 <Building className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold mb-2">Para Organizações</h3>
-              <p className="text-muted-foreground">Crie projetos sociais e receba investimentos para executá-los</p>
+              <h3 className="text-2xl font-bold mb-2">For Organizations</h3>
+              <p className="text-muted-foreground">Create social projects and receive investments to execute them</p>
             </div>
 
             <div className="space-y-6">

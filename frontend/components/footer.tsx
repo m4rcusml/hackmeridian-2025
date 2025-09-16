@@ -10,12 +10,12 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">SI</span>
+                <span className="text-primary-foreground font-bold text-sm">FB</span>
               </div>
-              <span className="font-bold text-xl">StellarImpact</span>
+              <span className="font-bold text-xl">FourBridges</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Conectando investidores a projetos sociais através da tecnologia blockchain Stellar.
+              Connecting investors to social projects through Stellar blockchain technology.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -35,16 +35,16 @@ export function Footer() {
 
           {/* Platform */}
           <div>
-            <h3 className="font-semibold mb-4">Plataforma</h3>
+            <h3 className="font-semibold mb-4">Platform</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/projetos" className="text-muted-foreground hover:text-primary transition-colors">
-                  Explorar Projetos
+                  Explore Projects
                 </Link>
               </li>
               <li>
                 <Link href="/organizacoes" className="text-muted-foreground hover:text-primary transition-colors">
-                  Organizações
+                  Organizations
                 </Link>
               </li>
               <li>
@@ -54,7 +54,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/carteira" className="text-muted-foreground hover:text-primary transition-colors">
-                  Carteira
+                  Wallet
                 </Link>
               </li>
             </ul>
@@ -62,16 +62,16 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4">Recursos</h3>
+            <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/como-funciona" className="text-muted-foreground hover:text-primary transition-colors">
-                  Como Funciona
+                  How It Works
                 </Link>
               </li>
               <li>
                 <Link href="/documentacao" className="text-muted-foreground hover:text-primary transition-colors">
-                  Documentação
+                  Documentation
                 </Link>
               </li>
               <li>
@@ -84,26 +84,26 @@ export function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="font-semibold mb-4">Suporte</h3>
+            <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/contato" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contato
+                  Contact
                 </Link>
               </li>
               <li>
                 <Link href="/suporte" className="text-muted-foreground hover:text-primary transition-colors">
-                  Central de Ajuda
+                  Help Center
                 </Link>
               </li>
               <li>
                 <Link href="/termos" className="text-muted-foreground hover:text-primary transition-colors">
-                  Termos de Uso
+                  Terms of Use
                 </Link>
               </li>
               <li>
                 <Link href="/privacidade" className="text-muted-foreground hover:text-primary transition-colors">
-                  Privacidade
+                  Privacy
                 </Link>
               </li>
             </ul>
@@ -111,7 +111,7 @@ export function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 StellarImpact. Todos os direitos reservados.</p>
+          <p>&copy; 2024 FourBridges. All rights reserved.</p>
         </div>
       </div>
     </footer>

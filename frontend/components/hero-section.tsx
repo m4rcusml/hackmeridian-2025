@@ -16,23 +16,23 @@ export function HeroSection() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-            Invista em <span className="text-primary">Projetos Sociais</span> e Gere Impacto Positivo
+            Invest in <span className="text-primary">Social Projects</span> and Generate Positive Impact
           </h1>
 
           <p className="text-xl text-muted-foreground text-balance mb-8 max-w-2xl mx-auto">
-            Una rentabilidade e propósito. Invista em organizações que transformam o mundo e receba retornos financeiros
-            enquanto gera impacto social real.
+            Unite profitability and purpose. Invest in organizations that transform the world and receive financial
+            returns while generating real social impact.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" className="text-lg px-8" asChild>
               <Link href="/projetos">
-                Explorar Projetos
+                Explore Projects
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
-              <Link href="/login">Começar como Investidor</Link>
+              <Link href="/login">Start as Investor</Link>
             </Button>
           </div>
 
@@ -42,22 +42,22 @@ export function HeroSection() {
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mx-auto mb-3">
                 <TrendingUp className="h-6 w-6 text-primary" />
               </div>
-              <div className="text-2xl font-bold text-foreground">R$ 2.5M+</div>
-              <div className="text-sm text-muted-foreground">Investidos</div>
+              <div className="text-2xl font-bold text-foreground">$2.5M+</div>
+              <div className="text-sm text-muted-foreground">Invested</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mx-auto mb-3">
                 <Users className="h-6 w-6 text-primary" />
               </div>
               <div className="text-2xl font-bold text-foreground">1,200+</div>
-              <div className="text-sm text-muted-foreground">Investidores</div>
+              <div className="text-sm text-muted-foreground">Investors</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mx-auto mb-3">
                 <Heart className="h-6 w-6 text-primary" />
               </div>
               <div className="text-2xl font-bold text-foreground">85</div>
-              <div className="text-sm text-muted-foreground">Projetos Ativos</div>
+              <div className="text-sm text-muted-foreground">Active Projects</div>
             </div>
           </div>
         </div>

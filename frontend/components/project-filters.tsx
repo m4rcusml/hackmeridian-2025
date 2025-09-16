@@ -5,9 +5,9 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 
-const categories = ["Educação", "Saúde", "Sustentabilidade", "Empreendedorismo", "Alimentação", "Tecnologia"]
-const locations = ["São Paulo", "Rio de Janeiro", "Minas Gerais", "Nordeste", "Amazônia", "Sul"]
-const statusOptions = ["Ativo", "Totalmente Financiado", "Concluído"]
+const categories = ["Education", "Health", "Sustainability", "Entrepreneurship", "Food", "Technology"]
+const locations = ["São Paulo", "Rio de Janeiro", "Minas Gerais", "Northeast", "Amazon", "South"]
+const statusOptions = ["Active", "Fully Funded", "Completed"]
 
 interface ProjectFiltersProps {
   selectedCategories: string[]
@@ -58,12 +58,12 @@ export function ProjectFilters({
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Filtros</CardTitle>
+          <CardTitle className="text-lg">Filters</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Categories */}
           <div>
-            <Label className="text-sm font-medium mb-3 block">Categoria</Label>
+            <Label className="text-sm font-medium mb-3 block">Category</Label>
             <div className="space-y-2">
               {categories.map((category) => (
                 <div key={category} className="flex items-center space-x-2">
@@ -82,7 +82,7 @@ export function ProjectFilters({
 
           {/* Location */}
           <div>
-            <Label className="text-sm font-medium mb-3 block">Localização</Label>
+            <Label className="text-sm font-medium mb-3 block">Location</Label>
             <div className="space-y-2">
               {locations.map((location) => (
                 <div key={location} className="flex items-center space-x-2">
@@ -120,7 +120,7 @@ export function ProjectFilters({
 
           <div className="pt-4 space-y-2">
             <Button variant="outline" className="w-full bg-transparent" onClick={clearAllFilters}>
-              Limpar Filtros
+              Clear Filters
             </Button>
           </div>
         </CardContent>

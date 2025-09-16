@@ -25,7 +25,7 @@ export default function ProjectsPage() {
   }, [isLoggedIn, router])
 
   if (!isLoggedIn) {
-    return <div>Redirecionando para login...</div>
+    return <div>Redirecting to login...</div>
   }
 
   return (
@@ -34,9 +34,9 @@ export default function ProjectsPage() {
       <main className="py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-balance mb-4">Projetos Sociais</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-balance mb-4">Social Projects</h1>
             <p className="text-xl text-muted-foreground text-balance">
-              Descubra oportunidades de investimento que geram impacto positivo
+              Discover investment opportunities that generate positive impact
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
             <div className="relative max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
-                placeholder="Buscar projetos..."
+                placeholder="Search projects..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"

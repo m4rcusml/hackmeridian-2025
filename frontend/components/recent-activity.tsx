@@ -5,36 +5,36 @@ const activities = [
   {
     id: 1,
     type: "investment",
-    title: "Novo investimento realizado",
-    description: "Investiu R$ 2.000 em Hortas Comunitárias Urbanas",
-    time: "2 horas atrás",
+    title: "New investment made",
+    description: "Invested $2,000 in Urban Community Gardens",
+    time: "2 hours ago",
     icon: DollarSign,
     color: "text-primary",
   },
   {
     id: 2,
     type: "return",
-    title: "Retorno recebido",
-    description: "R$ 156 de retorno do projeto Energia Solar",
-    time: "1 dia atrás",
+    title: "Return received",
+    description: "$156 return from Solar Energy project",
+    time: "1 day ago",
     icon: TrendingUp,
     color: "text-primary",
   },
   {
     id: 3,
     type: "milestone",
-    title: "Marco alcançado",
-    description: "Projeto Educação Digital atingiu 75% da meta",
-    time: "2 dias atrás",
+    title: "Milestone reached",
+    description: "Digital Education project reached 75% of goal",
+    time: "2 days ago",
     icon: Target,
     color: "text-secondary",
   },
   {
     id: 4,
     type: "impact",
-    title: "Impacto gerado",
-    description: "Seus investimentos impactaram 45 novas pessoas",
-    time: "3 dias atrás",
+    title: "Impact generated",
+    description: "Your investments impacted 45 new people",
+    time: "3 days ago",
     icon: Users,
     color: "text-secondary",
   },
@@ -44,7 +44,7 @@ export function RecentActivity() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Atividade Recente</CardTitle>
+        <CardTitle>Recent Activity</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

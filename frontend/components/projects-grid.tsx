@@ -11,138 +11,138 @@ import { MapPin, Users, Target, TrendingUp, Heart, ChevronLeft, ChevronRight, Sh
 const allProjects = [
   {
     id: 1,
-    title: "Educação Digital para Comunidades Rurais",
-    organization: "Instituto Conecta",
-    description: "Levar acesso à internet e educação digital para 500 famílias em comunidades rurais do interior.",
+    title: "Digital Education for Rural Communities",
+    organization: "Connect Institute",
+    description: "Bringing internet access and digital education to 500 families in rural interior communities.",
     location: "São Paulo",
-    category: "Educação",
+    category: "Education",
     targetAmount: 150000,
     currentAmount: 89500,
     investors: 234,
     expectedReturn: "8.5%",
-    duration: "18 meses",
+    duration: "18 months",
     image: "/rural-education-technology-center.jpg",
-    status: "ativo",
+    status: "active",
   },
   {
     id: 2,
-    title: "Energia Solar para Escolas Públicas",
-    organization: "EcoFuturo",
-    description: "Instalação de painéis solares em 20 escolas públicas, reduzindo custos e impacto ambiental.",
+    title: "Solar Energy for Public Schools",
+    organization: "EcoFuture",
+    description: "Installing solar panels in 20 public schools, reducing costs and environmental impact.",
     location: "Rio de Janeiro",
-    category: "Sustentabilidade",
+    category: "Sustainability",
     targetAmount: 300000,
-    currentAmount: 300000, // Made this project fully funded
+    currentAmount: 300000,
     investors: 456,
     expectedReturn: "9.2%",
-    duration: "24 meses",
+    duration: "24 months",
     image: "/solar-panels-on-school-building.jpg",
-    status: "ativo",
+    status: "active",
   },
   {
     id: 3,
-    title: "Microcrédito para Mulheres Empreendedoras",
-    organization: "Mulheres em Ação",
-    description: "Programa de microcrédito para apoiar 200 mulheres a iniciarem seus próprios negócios.",
-    location: "Nordeste",
-    category: "Empreendedorismo",
+    title: "Microcredit for Women Entrepreneurs",
+    organization: "Women in Action",
+    description: "Microcredit program to support 200 women in starting their own businesses.",
+    location: "Northeast",
+    category: "Entrepreneurship",
     targetAmount: 80000,
-    currentAmount: 80000, // Made this project completed
+    currentAmount: 80000,
     investors: 189,
     expectedReturn: "7.8%",
-    duration: "12 meses",
+    duration: "12 months",
     image: "/women-entrepreneurs-working-together.jpg",
-    status: "concluido", // Changed status to completed
+    status: "completed",
   },
   {
     id: 4,
-    title: "Hortas Comunitárias Urbanas",
-    organization: "Verde Cidade",
-    description: "Criação de hortas comunitárias em áreas urbanas para promover segurança alimentar.",
+    title: "Urban Community Gardens",
+    organization: "Green City",
+    description: "Creating community gardens in urban areas to promote food security.",
     location: "São Paulo",
-    category: "Alimentação",
+    category: "Food",
     targetAmount: 120000,
     currentAmount: 78000,
     investors: 156,
     expectedReturn: "6.5%",
-    duration: "15 meses",
+    duration: "15 months",
     image: "/urban-community-garden-vegetables.jpg",
-    status: "ativo",
+    status: "active",
   },
   {
     id: 5,
-    title: "Telemedicina para Comunidades Isoladas",
-    organization: "Saúde Digital",
-    description: "Implementar sistema de telemedicina para atender comunidades isoladas da Amazônia.",
-    location: "Amazônia",
-    category: "Saúde",
+    title: "Telemedicine for Isolated Communities",
+    organization: "Digital Health",
+    description: "Implementing telemedicine system to serve isolated communities in the Amazon.",
+    location: "Amazon",
+    category: "Health",
     targetAmount: 200000,
     currentAmount: 134000,
     investors: 298,
     expectedReturn: "8.8%",
-    duration: "20 meses",
+    duration: "20 months",
     image: "/telemedicine-consultation-rural-clinic.jpg",
-    status: "inativo",
+    status: "inactive",
   },
   {
     id: 6,
-    title: "Reciclagem de Eletrônicos",
-    organization: "TechVerde",
-    description: "Centro de reciclagem de eletrônicos com geração de empregos para jovens em situação de risco.",
+    title: "Electronics Recycling",
+    organization: "TechGreen",
+    description: "Electronics recycling center generating jobs for at-risk youth.",
     location: "Minas Gerais",
-    category: "Sustentabilidade",
+    category: "Sustainability",
     targetAmount: 180000,
     currentAmount: 95000,
     investors: 167,
     expectedReturn: "7.2%",
-    duration: "16 meses",
+    duration: "16 months",
     image: "/electronics-recycling-center-workers.jpg",
-    status: "ativo",
+    status: "active",
   },
   {
     id: 7,
-    title: "Biblioteca Digital Comunitária",
-    organization: "Saber Popular",
-    description: "Criação de bibliotecas digitais em comunidades carentes com acesso gratuito a livros e cursos.",
+    title: "Community Digital Library",
+    organization: "Popular Knowledge",
+    description: "Creating digital libraries in underserved communities with free access to books and courses.",
     location: "Minas Gerais",
-    category: "Educação",
+    category: "Education",
     targetAmount: 90000,
     currentAmount: 45000,
     investors: 123,
     expectedReturn: "6.8%",
-    duration: "14 meses",
+    duration: "14 months",
     image: "/digital-library-community-center.jpg",
-    status: "ativo",
+    status: "active",
   },
   {
     id: 8,
-    title: "Purificação de Água Rural",
-    organization: "Água Limpa",
-    description: "Instalação de sistemas de purificação de água em comunidades rurais sem acesso à água potável.",
-    location: "Nordeste",
-    category: "Saúde",
+    title: "Rural Water Purification",
+    organization: "Clean Water",
+    description: "Installing water purification systems in rural communities without access to clean water.",
+    location: "Northeast",
+    category: "Health",
     targetAmount: 250000,
-    currentAmount: 250000, // Made this project completed
+    currentAmount: 250000,
     investors: 340,
     expectedReturn: "8.1%",
-    duration: "22 meses",
+    duration: "22 months",
     image: "/water-purification-system-rural.jpg",
-    status: "concluido", // Changed status to completed
+    status: "completed",
   },
   {
     id: 9,
-    title: "Capacitação em Tecnologia",
+    title: "Technology Training",
     organization: "TechSocial",
-    description: "Curso de programação e desenvolvimento web para jovens de comunidades carentes.",
-    location: "Sul",
-    category: "Tecnologia",
+    description: "Programming and web development course for youth from underserved communities.",
+    location: "South",
+    category: "Technology",
     targetAmount: 100000,
     currentAmount: 100000,
     investors: 200,
     expectedReturn: "7.5%",
-    duration: "18 meses",
+    duration: "18 months",
     image: "/tech-training-classroom.jpg",
-    status: "concluido",
+    status: "completed",
   },
 ]
 
@@ -182,12 +182,12 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
 
         return selectedStatus.some((status) => {
           switch (status) {
-            case "Ativo":
-              return project.status === "ativo"
-            case "Totalmente Financiado":
-              return isFullyFunded && project.status !== "concluido"
-            case "Concluído":
-              return project.status === "concluido"
+            case "Active":
+              return project.status === "active"
+            case "Fully Funded":
+              return isFullyFunded && project.status !== "completed"
+            case "Completed":
+              return project.status === "completed"
             default:
               return false
           }
@@ -224,10 +224,10 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">{filteredProjects.length} projetos encontrados</p>
+        <p className="text-muted-foreground">{filteredProjects.length} projects found</p>
         {totalPages > 1 && (
           <p className="text-sm text-muted-foreground">
-            Página {currentPage} de {totalPages}
+            Page {currentPage} of {totalPages}
           </p>
         )}
       </div>
@@ -250,22 +250,22 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
                   <Badge className="bg-primary">{project.category}</Badge>
                   <Badge
                     className={`${
-                      project.status === "concluido"
+                      project.status === "completed"
                         ? "bg-blue-600 hover:bg-blue-700"
-                        : project.status === "ativo"
+                        : project.status === "active"
                           ? isFullyFunded
                             ? "bg-orange-600 hover:bg-orange-700"
                             : "bg-green-600 hover:bg-green-700"
                           : "bg-gray-500 hover:bg-gray-600"
                     }`}
                   >
-                    {project.status === "concluido"
-                      ? "Concluído"
-                      : project.status === "ativo"
+                    {project.status === "completed"
+                      ? "Completed"
+                      : project.status === "active"
                         ? isFullyFunded
-                          ? "Financiado"
-                          : "Ativo"
-                        : "Inativo"}
+                          ? "Funded"
+                          : "Active"
+                        : "Inactive"}
                   </Badge>
                 </div>
                 <div className="absolute top-3 right-3 flex flex-col gap-2">
@@ -299,13 +299,13 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
 
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Progresso</span>
+                    <span className="text-muted-foreground">Progress</span>
                     <span className="font-medium">
-                      R$ {project.currentAmount.toLocaleString()} / R$ {project.targetAmount.toLocaleString()}
+                      ${project.currentAmount.toLocaleString()} / ${project.targetAmount.toLocaleString()}
                     </span>
                   </div>
                   <Progress value={progress} className="h-2" />
-                  <div className="text-xs text-muted-foreground">{progress.toFixed(1)}% do objetivo alcançado</div>
+                  <div className="text-xs text-muted-foreground">{progress.toFixed(1)}% of goal achieved</div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 text-center">
@@ -314,21 +314,21 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
                       <Users className="h-4 w-4 text-primary" />
                     </div>
                     <div className="text-sm font-medium">{project.investors}</div>
-                    <div className="text-xs text-muted-foreground">Investidores</div>
+                    <div className="text-xs text-muted-foreground">Investors</div>
                   </div>
                   <div>
                     <div className="flex items-center justify-center mb-1">
                       <TrendingUp className="h-4 w-4 text-primary" />
                     </div>
                     <div className="text-sm font-medium">{project.expectedReturn}</div>
-                    <div className="text-xs text-muted-foreground">Retorno</div>
+                    <div className="text-xs text-muted-foreground">Return</div>
                   </div>
                   <div>
                     <div className="flex items-center justify-center mb-1">
                       <Target className="h-4 w-4 text-primary" />
                     </div>
                     <div className="text-sm font-medium">{project.duration}</div>
-                    <div className="text-xs text-muted-foreground">Prazo</div>
+                    <div className="text-xs text-muted-foreground">Duration</div>
                   </div>
                 </div>
               </CardContent>
@@ -336,13 +336,13 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
               <CardFooter>
                 <Button
                   className="w-full"
-                  disabled={project.status === "inativo"}
-                  asChild={project.status !== "inativo"}
+                  disabled={project.status === "inactive"}
+                  asChild={project.status !== "inactive"}
                 >
-                  {project.status === "inativo" ? (
-                    <span>Projeto Inativo</span>
+                  {project.status === "inactive" ? (
+                    <span>Inactive Project</span>
                   ) : (
-                    <Link href={`/projetos/${project.id}`}>Ver Detalhes</Link>
+                    <Link href={`/projetos/${project.id}`}>View Details</Link>
                   )}
                 </Button>
               </CardFooter>
@@ -360,7 +360,7 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
             disabled={currentPage === 1}
           >
             <ChevronLeft className="h-4 w-4 mr-1" />
-            Anterior
+            Previous
           </Button>
 
           <div className="flex space-x-1">
@@ -383,7 +383,7 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
           >
-            Próxima
+            Next
             <ChevronRight className="h-4 w-4 ml-1" />
           </Button>
         </div>
@@ -391,8 +391,8 @@ export function ProjectsGrid({ searchTerm, selectedCategories, selectedLocations
 
       {filteredProjects.length === 0 && (
         <div className="text-center py-12">
-          <div className="text-muted-foreground mb-2">Nenhum projeto encontrado</div>
-          <p className="text-sm text-muted-foreground">Tente ajustar os filtros ou termo de busca</p>
+          <div className="text-muted-foreground mb-2">No projects found</div>
+          <p className="text-sm text-muted-foreground">Try adjusting the filters or search term</p>
         </div>
       )}
     </div>

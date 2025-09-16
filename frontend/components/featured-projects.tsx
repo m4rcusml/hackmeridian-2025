@@ -7,48 +7,48 @@ import { MapPin, Users, Target, TrendingUp } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "Educação Digital para Comunidades Rurais",
-    organization: "Instituto Conecta",
-    description: "Levar acesso à internet e educação digital para 500 famílias em comunidades rurais do interior.",
-    location: "Interior de São Paulo",
-    category: "Educação",
+    title: "Digital Education for Rural Communities",
+    organization: "Connect Institute",
+    description: "Bringing internet access and digital education to 500 families in rural interior communities.",
+    location: "São Paulo Interior",
+    category: "Education",
     targetAmount: 150000,
     currentAmount: 89500,
     investors: 234,
     expectedReturn: "8.5%",
-    duration: "18 meses",
+    duration: "18 months",
     image: "/rural-education-technology-center.jpg",
-    status: "ativo",
+    status: "active",
   },
   {
     id: 2,
-    title: "Energia Solar para Escolas Públicas",
-    organization: "EcoFuturo",
-    description: "Instalação de painéis solares em 20 escolas públicas, reduzindo custos e impacto ambiental.",
+    title: "Solar Energy for Public Schools",
+    organization: "EcoFuture",
+    description: "Installing solar panels in 20 public schools, reducing costs and environmental impact.",
     location: "Rio de Janeiro",
-    category: "Sustentabilidade",
+    category: "Sustainability",
     targetAmount: 300000,
     currentAmount: 245000,
     investors: 456,
     expectedReturn: "9.2%",
-    duration: "24 meses",
+    duration: "24 months",
     image: "/solar-panels-on-school-building.jpg",
-    status: "ativo",
+    status: "active",
   },
   {
     id: 3,
-    title: "Microcrédito para Mulheres Empreendedoras",
-    organization: "Mulheres em Ação",
-    description: "Programa de microcrédito para apoiar 200 mulheres a iniciarem seus próprios negócios.",
-    location: "Nordeste",
-    category: "Empreendedorismo",
+    title: "Microcredit for Women Entrepreneurs",
+    organization: "Women in Action",
+    description: "Microcredit program to support 200 women in starting their own businesses.",
+    location: "Northeast",
+    category: "Entrepreneurship",
     targetAmount: 80000,
     currentAmount: 65200,
     investors: 189,
     expectedReturn: "7.8%",
-    duration: "12 meses",
+    duration: "12 months",
     image: "/women-entrepreneurs-working-together.jpg",
-    status: "inativo",
+    status: "inactive",
   },
 ]
 
@@ -57,9 +57,9 @@ export function FeaturedProjects() {
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Projetos em Destaque</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Featured Projects</h2>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            Descubra oportunidades de investimento que geram impacto social positivo
+            Discover investment opportunities that generate positive social impact
           </p>
         </div>
 
@@ -78,10 +78,10 @@ export function FeaturedProjects() {
                   <Badge className="absolute top-3 left-3 bg-primary">{project.category}</Badge>
                   <Badge
                     className={`absolute top-3 right-3 ${
-                      project.status === "ativo" ? "bg-green-600 hover:bg-green-700" : "bg-gray-500 hover:bg-gray-600"
+                      project.status === "active" ? "bg-green-600 hover:bg-green-700" : "bg-gray-500 hover:bg-gray-600"
                     }`}
                   >
-                    {project.status === "ativo" ? "Ativo" : "Inativo"}
+                    {project.status === "active" ? "Active" : "Inactive"}
                   </Badge>
                 </div>
 
@@ -101,13 +101,13 @@ export function FeaturedProjects() {
 
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Progresso</span>
+                      <span className="text-muted-foreground">Progress</span>
                       <span className="font-medium">
-                        R$ {project.currentAmount.toLocaleString()} / R$ {project.targetAmount.toLocaleString()}
+                        ${project.currentAmount.toLocaleString()} / ${project.targetAmount.toLocaleString()}
                       </span>
                     </div>
                     <Progress value={progress} className="h-2" />
-                    <div className="text-xs text-muted-foreground">{progress.toFixed(1)}% do objetivo alcançado</div>
+                    <div className="text-xs text-muted-foreground">{progress.toFixed(1)}% of goal achieved</div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 text-center">
@@ -116,28 +116,28 @@ export function FeaturedProjects() {
                         <Users className="h-4 w-4 text-primary" />
                       </div>
                       <div className="text-sm font-medium">{project.investors}</div>
-                      <div className="text-xs text-muted-foreground">Investidores</div>
+                      <div className="text-xs text-muted-foreground">Investors</div>
                     </div>
                     <div>
                       <div className="flex items-center justify-center mb-1">
                         <TrendingUp className="h-4 w-4 text-primary" />
                       </div>
                       <div className="text-sm font-medium">{project.expectedReturn}</div>
-                      <div className="text-xs text-muted-foreground">Retorno</div>
+                      <div className="text-xs text-muted-foreground">Return</div>
                     </div>
                     <div>
                       <div className="flex items-center justify-center mb-1">
                         <Target className="h-4 w-4 text-primary" />
                       </div>
                       <div className="text-sm font-medium">{project.duration}</div>
-                      <div className="text-xs text-muted-foreground">Prazo</div>
+                      <div className="text-xs text-muted-foreground">Duration</div>
                     </div>
                   </div>
                 </CardContent>
 
                 <CardFooter>
-                  <Button className="w-full" disabled={project.status === "inativo"}>
-                    {project.status === "ativo" ? "Investir Agora" : "Projeto Inativo"}
+                  <Button className="w-full" disabled={project.status === "inactive"}>
+                    {project.status === "active" ? "Invest Now" : "Inactive Project"}
                   </Button>
                 </CardFooter>
               </Card>
@@ -147,7 +147,7 @@ export function FeaturedProjects() {
 
         <div className="text-center mt-12">
           <Button variant="outline" size="lg">
-            Ver Todos os Projetos
+            View All Projects
           </Button>
         </div>
       </div>

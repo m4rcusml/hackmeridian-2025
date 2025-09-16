@@ -15,56 +15,56 @@ import { useUser } from "@/contexts/user-context"
 const organizations = [
   {
     id: 1,
-    name: "EcoVerde Brasil",
-    description: "Organização focada em projetos de sustentabilidade e preservação ambiental",
+    name: "EcoGreen Brazil",
+    description: "Organization focused on sustainability and environmental preservation projects",
     location: "São Paulo, SP",
     activeProjects: 5,
-    totalRaised: "R$ 2.5M",
-    category: "Meio Ambiente",
+    totalRaised: "$500K",
+    category: "Environment",
     image: "/environmental-organization-logo.png",
     verified: true,
   },
   {
     id: 2,
-    name: "Educação Para Todos",
-    description: "Democratizando o acesso à educação de qualidade em comunidades carentes",
+    name: "Education For All",
+    description: "Democratizing access to quality education in underserved communities",
     location: "Rio de Janeiro, RJ",
     activeProjects: 8,
-    totalRaised: "R$ 1.8M",
-    category: "Educação",
+    totalRaised: "$360K",
+    category: "Education",
     image: "/education-organization-logo.jpg",
     verified: true,
   },
   {
     id: 3,
-    name: "Saúde Comunitária",
-    description: "Levando cuidados médicos básicos para regiões remotas do Brasil",
+    name: "Community Health",
+    description: "Bringing basic medical care to remote regions of Brazil",
     location: "Manaus, AM",
     activeProjects: 3,
-    totalRaised: "R$ 950K",
-    category: "Saúde",
+    totalRaised: "$190K",
+    category: "Healthcare",
     image: "/healthcare-organization-logo.png",
     verified: true,
   },
   {
     id: 4,
     name: "TechSocial",
-    description: "Capacitando jovens em tecnologia para transformação social",
+    description: "Empowering youth in technology for social transformation",
     location: "Belo Horizonte, MG",
     activeProjects: 6,
-    totalRaised: "R$ 1.2M",
-    category: "Tecnologia",
+    totalRaised: "$240K",
+    category: "Technology",
     image: "/tech-social-organization-logo.jpg",
     verified: false,
   },
   {
     id: 5,
-    name: "Água Limpa",
-    description: "Levando água potável para comunidades rurais",
+    name: "Clean Water",
+    description: "Bringing clean water to rural communities",
     location: "Fortaleza, CE",
     activeProjects: 4,
-    totalRaised: "R$ 800K",
-    category: "Meio Ambiente",
+    totalRaised: "$160K",
+    category: "Environment",
     image: "/water-organization-logo.png",
     verified: true,
   },
@@ -74,7 +74,7 @@ export default function OrganizationsPage() {
   const router = useRouter()
   const { isLoggedIn } = useUser()
   const [searchTerm, setSearchTerm] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("Todas")
+  const [selectedCategory, setSelectedCategory] = useState("All")
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -83,7 +83,7 @@ export default function OrganizationsPage() {
   }, [isLoggedIn, router])
 
   if (!isLoggedIn) {
-    return <div>Redirecionando para login...</div>
+    return <div>Redirecting to login...</div>
   }
 
   const filteredOrganizations = organizations.filter((org) => {
@@ -92,21 +92,21 @@ export default function OrganizationsPage() {
       org.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       org.location.toLowerCase().includes(searchTerm.toLowerCase())
 
-    const matchesCategory = selectedCategory === "Todas" || org.category === selectedCategory
+    const matchesCategory = selectedCategory === "All" || org.category === selectedCategory
 
     return matchesSearch && matchesCategory
   })
 
-  const categories = ["Todas", "Meio Ambiente", "Educação", "Saúde", "Tecnologia"]
+  const categories = ["All", "Environment", "Education", "Healthcare", "Technology"]
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Organizações</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Organizations</h1>
           <p className="text-xl text-muted-foreground mb-6">
-            Conheça as organizações que estão transformando o mundo através de projetos sociais
+            Meet the organizations that are transforming the world through social projects
           </p>
 
           {/* Search and Filters */}
@@ -114,7 +114,7 @@ export default function OrganizationsPage() {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
-                placeholder="Buscar organizações..."
+                placeholder="Search organizations..."
                 className="pl-10"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -146,7 +146,7 @@ export default function OrganizationsPage() {
                       <CardTitle className="text-lg">{org.name}</CardTitle>
                       {org.verified && (
                         <Badge variant="secondary" className="text-xs">
-                          Verificada
+                          Verified
                         </Badge>
                       )}
                     </div>
@@ -171,16 +171,16 @@ export default function OrganizationsPage() {
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Target className="h-4 w-4 mr-2" />
-                    {org.activeProjects} projetos ativos
+                    {org.activeProjects} active projects
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Users className="h-4 w-4 mr-2" />
-                    {org.totalRaised} arrecadados
+                    {org.totalRaised} raised
                   </div>
                 </div>
 
                 <Link href={`/organizacoes/${org.id}`}>
-                  <Button className="w-full">Ver Projetos</Button>
+                  <Button className="w-full">View Projects</Button>
                 </Link>
               </CardContent>
             </Card>
@@ -189,7 +189,7 @@ export default function OrganizationsPage() {
 
         {filteredOrganizations.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">Nenhuma organização encontrada com os filtros selecionados.</p>
+            <p className="text-muted-foreground text-lg">No organizations found with the selected filters.</p>
           </div>
         )}
       </main>

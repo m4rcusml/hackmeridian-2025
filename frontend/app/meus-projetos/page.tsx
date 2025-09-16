@@ -10,35 +10,35 @@ import { useUser } from "@/contexts/user-context"
 import { Plus, TrendingUp, Users, DollarSign } from "lucide-react"
 import { redirect } from "next/navigation"
 
-export default function MeusProjetosPage() {
+export default function MyProjectsPage() {
   const { userType, isLoggedIn } = useUser()
 
   if (!isLoggedIn || userType !== "organization") {
     redirect("/")
   }
 
-  const projetos = [
+  const projects = [
     {
       id: 1,
-      nome: "Educação Digital Rural",
-      categoria: "Educação",
-      metaFinanciamento: 50000,
-      valorArrecadado: 32000,
-      investidores: 45,
-      status: "ativo",
-      retornoPool: "8.5% a.a.",
-      dataInicio: "2024-01-15",
+      name: "Rural Digital Education",
+      category: "Education",
+      fundingGoal: 50000,
+      amountRaised: 32000,
+      investors: 45,
+      status: "active",
+      poolReturn: "8.5% p.a.",
+      startDate: "2024-01-15",
     },
     {
       id: 2,
-      nome: "Horta Comunitária Sustentável",
-      categoria: "Sustentabilidade",
-      metaFinanciamento: 25000,
-      valorArrecadado: 25000,
-      investidores: 32,
-      status: "financiado",
-      retornoPool: "8.5% a.a.",
-      dataInicio: "2023-11-20",
+      name: "Sustainable Community Garden",
+      category: "Sustainability",
+      fundingGoal: 25000,
+      amountRaised: 25000,
+      investors: 32,
+      status: "funded",
+      poolReturn: "8.5% p.a.",
+      startDate: "2023-11-20",
     },
   ]
 
@@ -49,14 +49,14 @@ export default function MeusProjetosPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-balance mb-4">Meus Projetos</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-balance mb-4">My Projects</h1>
               <p className="text-xl text-muted-foreground text-balance">
-                Gerencie seus projetos sociais e acompanhe o desempenho
+                Manage your social projects and track performance
               </p>
             </div>
             <Button>
               <Plus className="h-4 w-4 mr-2" />
-              Novo Projeto
+              New Project
             </Button>
           </div>
 
@@ -65,8 +65,8 @@ export default function MeusProjetosPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Total Arrecadado</p>
-                    <p className="text-2xl font-bold">R$ 57.000</p>
+                    <p className="text-sm text-muted-foreground">Total Raised</p>
+                    <p className="text-2xl font-bold">$57,000</p>
                   </div>
                   <DollarSign className="h-8 w-8 text-primary" />
                 </div>
@@ -76,7 +76,7 @@ export default function MeusProjetosPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Projetos Ativos</p>
+                    <p className="text-sm text-muted-foreground">Active Projects</p>
                     <p className="text-2xl font-bold">2</p>
                   </div>
                   <TrendingUp className="h-8 w-8 text-primary" />
@@ -87,7 +87,7 @@ export default function MeusProjetosPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Total Investidores</p>
+                    <p className="text-sm text-muted-foreground">Total Investors</p>
                     <p className="text-2xl font-bold">77</p>
                   </div>
                   <Users className="h-8 w-8 text-primary" />
@@ -98,8 +98,8 @@ export default function MeusProjetosPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Retorno da Pool</p>
-                    <p className="text-2xl font-bold">8.5% a.a.</p>
+                    <p className="text-sm text-muted-foreground">Pool Return</p>
+                    <p className="text-2xl font-bold">8.5% p.a.</p>
                   </div>
                   <TrendingUp className="h-8 w-8 text-green-600" />
                 </div>
@@ -108,16 +108,16 @@ export default function MeusProjetosPage() {
           </div>
 
           <div className="grid gap-6">
-            {projetos.map((projeto) => (
-              <Card key={projeto.id}>
+            {projects.map((project) => (
+              <Card key={project.id}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
-                      <CardTitle className="text-xl">{projeto.nome}</CardTitle>
-                      <p className="text-muted-foreground mt-1">{projeto.categoria}</p>
+                      <CardTitle className="text-xl">{project.name}</CardTitle>
+                      <p className="text-muted-foreground mt-1">{project.category}</p>
                     </div>
-                    <Badge variant={projeto.status === "ativo" ? "default" : "secondary"}>
-                      {projeto.status === "ativo" ? "Ativo" : "Financiado"}
+                    <Badge variant={project.status === "active" ? "default" : "secondary"}>
+                      {project.status === "active" ? "Active" : "Funded"}
                     </Badge>
                   </div>
                 </CardHeader>
@@ -126,45 +126,45 @@ export default function MeusProjetosPage() {
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between text-sm mb-2">
-                          <span>Progresso do Financiamento</span>
-                          <span>{Math.round((projeto.valorArrecadado / projeto.metaFinanciamento) * 100)}%</span>
+                          <span>Funding Progress</span>
+                          <span>{Math.round((project.amountRaised / project.fundingGoal) * 100)}%</span>
                         </div>
-                        <Progress value={(projeto.valorArrecadado / projeto.metaFinanciamento) * 100} />
+                        <Progress value={(project.amountRaised / project.fundingGoal) * 100} />
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Arrecadado:</span>
-                        <span className="font-medium">R$ {projeto.valorArrecadado.toLocaleString()}</span>
+                        <span className="text-sm text-muted-foreground">Raised:</span>
+                        <span className="font-medium">${project.amountRaised.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Meta:</span>
-                        <span className="font-medium">R$ {projeto.metaFinanciamento.toLocaleString()}</span>
+                        <span className="text-sm text-muted-foreground">Goal:</span>
+                        <span className="font-medium">${project.fundingGoal.toLocaleString()}</span>
                       </div>
                     </div>
                     <div className="space-y-4">
                       <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Investidores:</span>
-                        <span className="font-medium">{projeto.investidores}</span>
+                        <span className="text-sm text-muted-foreground">Investors:</span>
+                        <span className="font-medium">{project.investors}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Retorno da Pool:</span>
-                        <span className="font-medium text-green-600">{projeto.retornoPool}</span>
+                        <span className="text-sm text-muted-foreground">Pool Return:</span>
+                        <span className="font-medium text-green-600">{project.poolReturn}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Data de Início:</span>
-                        <span className="font-medium">{new Date(projeto.dataInicio).toLocaleDateString("pt-BR")}</span>
+                        <span className="text-sm text-muted-foreground">Start Date:</span>
+                        <span className="font-medium">{new Date(project.startDate).toLocaleDateString("en-US")}</span>
                       </div>
                     </div>
                   </div>
                   <div className="flex gap-2 mt-6">
                     <Button variant="outline" size="sm">
-                      Ver Detalhes
+                      View Details
                     </Button>
                     <Button variant="outline" size="sm">
-                      Relatórios
+                      Reports
                     </Button>
-                    {projeto.status === "ativo" && (
+                    {project.status === "active" && (
                       <Button variant="outline" size="sm">
-                        Editar
+                        Edit
                       </Button>
                     )}
                   </div>

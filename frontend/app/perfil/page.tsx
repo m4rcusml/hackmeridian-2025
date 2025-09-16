@@ -48,25 +48,25 @@ export default function ProfilePage() {
   }
 
   const investorData = {
-    name: "João Silva",
-    email: "joao@email.com",
-    phone: "+55 11 99999-9999",
-    location: "São Paulo, SP",
+    name: "John Silva",
+    email: "john@email.com",
+    phone: "+1 555 999-9999",
+    location: "New York, NY",
     joinDate: "2024-01-15",
-    bio: "Investidor focado em projetos de impacto social e sustentabilidade. Acredito no poder da tecnologia para transformar comunidades.",
+    bio: "Investor focused on social impact and sustainability projects. I believe in the power of technology to transform communities.",
     walletAddress: "GCKFBEIYTKP...",
     totalInvested: 25000,
     currentValue: 27500,
     totalReturn: 2500,
     returnPercentage: 10,
     activeInvestments: 8,
-    riskProfile: "Moderado",
-    preferredSectors: ["Meio Ambiente", "Educação", "Saúde"],
+    riskProfile: "Moderate",
+    preferredSectors: ["Environment", "Education", "Health"],
     investments: [
       {
         id: 1,
-        projectName: "Reflorestamento da Mata Atlântica",
-        organization: "EcoVerde Brasil",
+        projectName: "Atlantic Forest Reforestation",
+        organization: "EcoGreen USA",
         invested: 5000,
         currentValue: 5750,
         return: 750,
@@ -75,8 +75,8 @@ export default function ProfilePage() {
       },
       {
         id: 2,
-        projectName: "Energia Solar Comunitária",
-        organization: "EcoVerde Brasil",
+        projectName: "Community Solar Energy",
+        organization: "EcoGreen USA",
         invested: 8000,
         currentValue: 8400,
         return: 400,
@@ -85,8 +85,8 @@ export default function ProfilePage() {
       },
       {
         id: 3,
-        projectName: "Educação Digital Rural",
-        organization: "Educação Para Todos",
+        projectName: "Rural Digital Education",
+        organization: "Education For All",
         invested: 3000,
         currentValue: 3300,
         return: 300,
@@ -97,38 +97,38 @@ export default function ProfilePage() {
     favoriteProjects: [
       {
         id: 1,
-        title: "Educação Digital para Comunidades Rurais",
-        organization: "Instituto Conecta",
-        category: "Educação",
+        title: "Digital Education for Rural Communities",
+        organization: "Connect Institute",
+        category: "Education",
         targetAmount: 150000,
         currentAmount: 89500,
         image: "/rural-education-technology-center.jpg",
-        status: "ativo",
+        status: "active",
         addedDate: "2024-01-20",
       },
       {
         id: 4,
-        title: "Hortas Comunitárias Urbanas",
-        organization: "Verde Cidade",
-        category: "Alimentação",
+        title: "Urban Community Gardens",
+        organization: "Green City",
+        category: "Food",
         targetAmount: 120000,
         currentAmount: 78000,
         image: "/urban-community-garden-vegetables.jpg",
-        status: "ativo",
+        status: "active",
         addedDate: "2024-01-25",
       },
     ],
   }
 
   const organizationData = {
-    name: "EcoVerde Brasil",
-    email: "contato@ecoverdebrasil.org",
-    phone: "+55 11 3333-4444",
-    location: "São Paulo, SP",
+    name: "EcoGreen USA",
+    email: "contact@ecogreenusa.org",
+    phone: "+1 555 333-4444",
+    location: "San Francisco, CA",
     foundedDate: "2020-03-15",
-    bio: "Organização dedicada à preservação ambiental e desenvolvimento sustentável. Trabalhamos com comunidades locais para criar soluções inovadoras.",
-    website: "www.ecoverdebrasil.org",
-    cnpj: "12.345.678/0001-90",
+    bio: "Organization dedicated to environmental preservation and sustainable development. We work with local communities to create innovative solutions.",
+    website: "www.ecogreenusa.org",
+    cnpj: "12-345-678/0001-90",
     walletAddress: "GCKFBEIYTKP...",
     totalRaised: 2500000,
     totalProjects: 12,
@@ -142,32 +142,32 @@ export default function ProfilePage() {
     projects: [
       {
         id: 1,
-        title: "Reflorestamento da Mata Atlântica",
+        title: "Atlantic Forest Reforestation",
         goal: 150000,
         raised: 89000,
         investors: 234,
         returns: 12500,
-        status: "Ativo",
+        status: "Active",
         startDate: "2024-01-15",
       },
       {
         id: 2,
-        title: "Energia Solar Comunitária",
+        title: "Community Solar Energy",
         goal: 200000,
         raised: 156000,
         investors: 189,
         returns: 8900,
-        status: "Ativo",
+        status: "Active",
         startDate: "2024-02-01",
       },
       {
         id: 3,
-        title: "Compostagem Urbana",
+        title: "Urban Composting",
         goal: 80000,
         raised: 80000,
         investors: 156,
         returns: 15600,
-        status: "Concluído",
+        status: "Completed",
         startDate: "2023-11-10",
       },
     ],
@@ -189,7 +189,7 @@ export default function ProfilePage() {
               className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
             >
               <Camera className="h-4 w-4 mr-2" />
-              Alterar Capa
+              Change Cover
             </Button>
           </div>
 
@@ -234,18 +234,18 @@ export default function ProfilePage() {
                       </div>
                     </div>
                     <Badge variant="secondary" className="mt-2">
-                      {userType === "investor" ? "Investidor" : "Organização"}
+                      {userType === "investor" ? "Investor" : "Organization"}
                     </Badge>
                   </div>
 
                   <div className="flex gap-2">
                     <Button variant="outline" onClick={() => setIsEditing(!isEditing)}>
                       <Edit3 className="h-4 w-4 mr-2" />
-                      {isEditing ? "Cancelar" : "Editar Perfil"}
+                      {isEditing ? "Cancel" : "Edit Profile"}
                     </Button>
                     <Button variant="outline">
                       <Settings className="h-4 w-4 mr-2" />
-                      Configurações
+                      Settings
                     </Button>
                   </div>
                 </div>
@@ -256,11 +256,11 @@ export default function ProfilePage() {
 
         <Tabs defaultValue="overview" className="space-y-6">
           <TabsList className={`grid w-full ${userType === "investor" ? "grid-cols-5" : "grid-cols-4"}`}>
-            <TabsTrigger value="overview">Visão Geral</TabsTrigger>
-            <TabsTrigger value="activity">{userType === "investor" ? "Investimentos" : "Projetos"}</TabsTrigger>
-            {userType === "investor" && <TabsTrigger value="favorites">Favoritos</TabsTrigger>}
-            <TabsTrigger value="profile">Perfil</TabsTrigger>
-            <TabsTrigger value="settings">Configurações</TabsTrigger>
+            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="activity">{userType === "investor" ? "Investments" : "Projects"}</TabsTrigger>
+            {userType === "investor" && <TabsTrigger value="favorites">Favorites</TabsTrigger>}
+            <TabsTrigger value="profile">Profile</TabsTrigger>
+            <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
 
           {/* Overview Tab */}
@@ -271,46 +271,46 @@ export default function ProfilePage() {
                 <>
                   <Card className="border-l-4 border-l-emerald-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Total Investido</CardTitle>
+                      <CardTitle className="text-sm font-medium">Total Invested</CardTitle>
                       <DollarSign className="h-4 w-4 text-emerald-600" />
                     </CardHeader>
                     <CardContent>
-                      <div className="text-2xl font-bold">R$ {investorData.totalInvested.toLocaleString()}</div>
+                      <div className="text-2xl font-bold">${investorData.totalInvested.toLocaleString()}</div>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Desde {new Date(investorData.joinDate).toLocaleDateString("pt-BR")}
+                        Since {new Date(investorData.joinDate).toLocaleDateString()}
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-blue-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Valor Atual</CardTitle>
+                      <CardTitle className="text-sm font-medium">Current Value</CardTitle>
                       <Wallet className="h-4 w-4 text-blue-600" />
                     </CardHeader>
                     <CardContent>
-                      <div className="text-2xl font-bold">R$ {investorData.currentValue.toLocaleString()}</div>
-                      <p className="text-xs text-muted-foreground mt-1">Portfolio atual</p>
+                      <div className="text-2xl font-bold">${investorData.currentValue.toLocaleString()}</div>
+                      <p className="text-xs text-muted-foreground mt-1">Current portfolio</p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-green-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Retorno Total</CardTitle>
+                      <CardTitle className="text-sm font-medium">Total Return</CardTitle>
                       <TrendingUp className="h-4 w-4 text-green-600" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold text-green-600">
-                        +R$ {investorData.totalReturn.toLocaleString()}
+                        +${investorData.totalReturn.toLocaleString()}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">+{investorData.returnPercentage}% de retorno</p>
+                      <p className="text-xs text-muted-foreground mt-1">+{investorData.returnPercentage}% return</p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-purple-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Investimentos Ativos</CardTitle>
+                      <CardTitle className="text-sm font-medium">Active Investments</CardTitle>
                       <Target className="h-4 w-4 text-purple-600" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold">{investorData.activeInvestments}</div>
-                      <p className="text-xs text-muted-foreground mt-1">Projetos em andamento</p>
+                      <p className="text-xs text-muted-foreground mt-1">Ongoing projects</p>
                     </CardContent>
                   </Card>
                 </>
@@ -318,48 +318,46 @@ export default function ProfilePage() {
                 <>
                   <Card className="border-l-4 border-l-emerald-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Total Arrecadado</CardTitle>
+                      <CardTitle className="text-sm font-medium">Total Raised</CardTitle>
                       <DollarSign className="h-4 w-4 text-emerald-600" />
                     </CardHeader>
                     <CardContent>
-                      <div className="text-2xl font-bold">
-                        R$ {(organizationData.totalRaised / 1000000).toFixed(1)}M
-                      </div>
+                      <div className="text-2xl font-bold">${(organizationData.totalRaised / 1000000).toFixed(1)}M</div>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Desde {new Date(organizationData.foundedDate).toLocaleDateString("pt-BR")}
+                        Since {new Date(organizationData.foundedDate).toLocaleDateString()}
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-blue-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Projetos Ativos</CardTitle>
+                      <CardTitle className="text-sm font-medium">Active Projects</CardTitle>
                       <Target className="h-4 w-4 text-blue-600" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold">{organizationData.activeProjects}</div>
                       <p className="text-xs text-muted-foreground mt-1">
-                        {organizationData.totalProjects} projetos total
+                        {organizationData.totalProjects} total projects
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-green-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Total de Investidores</CardTitle>
+                      <CardTitle className="text-sm font-medium">Total Investors</CardTitle>
                       <User className="h-4 w-4 text-green-600" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold">{organizationData.totalInvestors}</div>
-                      <p className="text-xs text-muted-foreground mt-1">Comunidade ativa</p>
+                      <p className="text-xs text-muted-foreground mt-1">Active community</p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-purple-500">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">Taxa de Sucesso</CardTitle>
+                      <CardTitle className="text-sm font-medium">Success Rate</CardTitle>
                       <BarChart3 className="h-4 w-4 text-purple-600" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold">85%</div>
-                      <p className="text-xs text-muted-foreground mt-1">Projetos bem-sucedidos</p>
+                      <p className="text-xs text-muted-foreground mt-1">Successful projects</p>
                     </CardContent>
                   </Card>
                 </>
@@ -371,9 +369,9 @@ export default function ProfilePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Award className="h-5 w-5 text-emerald-600" />
-                    Métricas de Impacto
+                    Impact Metrics
                   </CardTitle>
-                  <CardDescription>Impacto social e ambiental dos seus projetos</CardDescription>
+                  <CardDescription>Social and environmental impact of your projects</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -381,19 +379,19 @@ export default function ProfilePage() {
                       <div className="text-3xl font-bold text-emerald-600">
                         {organizationData.impactMetrics.treesPlanted.toLocaleString()}
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">Árvores Plantadas</p>
+                      <p className="text-sm text-muted-foreground mt-1">Trees Planted</p>
                     </div>
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
                       <div className="text-3xl font-bold text-blue-600">
                         {organizationData.impactMetrics.co2Reduced.toLocaleString()}t
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">CO₂ Reduzido</p>
+                      <p className="text-sm text-muted-foreground mt-1">CO₂ Reduced</p>
                     </div>
                     <div className="text-center p-4 bg-purple-50 rounded-lg">
                       <div className="text-3xl font-bold text-purple-600">
                         {organizationData.impactMetrics.communitiesImpacted}
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">Comunidades Impactadas</p>
+                      <p className="text-sm text-muted-foreground mt-1">Communities Impacted</p>
                     </div>
                   </div>
                 </CardContent>
@@ -408,9 +406,9 @@ export default function ProfilePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Activity className="h-5 w-5" />
-                    Meus Investimentos
+                    My Investments
                   </CardTitle>
-                  <CardDescription>Acompanhe o desempenho dos seus investimentos</CardDescription>
+                  <CardDescription>Track the performance of your investments</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -423,16 +421,16 @@ export default function ProfilePage() {
                           <h3 className="font-semibold">{investment.projectName}</h3>
                           <p className="text-sm text-muted-foreground">{investment.organization}</p>
                           <p className="text-xs text-muted-foreground">
-                            Investido em {new Date(investment.date).toLocaleDateString("pt-BR")}
+                            Invested on {new Date(investment.date).toLocaleDateString()}
                           </p>
                         </div>
                         <div className="text-right">
-                          <div className="font-semibold">R$ {investment.currentValue.toLocaleString()}</div>
+                          <div className="font-semibold">${investment.currentValue.toLocaleString()}</div>
                           <div className="text-sm text-green-600">
-                            +R$ {investment.return.toLocaleString()} ({investment.returnPercentage}%)
+                            +${investment.return.toLocaleString()} ({investment.returnPercentage}%)
                           </div>
                           <div className="text-xs text-muted-foreground">
-                            Investido: R$ {investment.invested.toLocaleString()}
+                            Invested: ${investment.invested.toLocaleString()}
                           </div>
                         </div>
                       </div>
@@ -445,9 +443,9 @@ export default function ProfilePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Target className="h-5 w-5" />
-                    Meus Projetos
+                    My Projects
                   </CardTitle>
-                  <CardDescription>Gerencie seus projetos e acompanhe os rendimentos</CardDescription>
+                  <CardDescription>Manage your projects and track returns</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -457,34 +455,36 @@ export default function ProfilePage() {
                           <div className="flex-1">
                             <h3 className="font-semibold">{project.title}</h3>
                             <p className="text-sm text-muted-foreground">
-                              Iniciado em {new Date(project.startDate).toLocaleDateString("pt-BR")}
+                              Started on {new Date(project.startDate).toLocaleDateString()}
                             </p>
                           </div>
-                          <Badge variant={project.status === "Ativo" ? "default" : "secondary"}>{project.status}</Badge>
+                          <Badge variant={project.status === "Active" ? "default" : "secondary"}>
+                            {project.status}
+                          </Badge>
                         </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                           <div>
-                            <p className="text-sm text-muted-foreground">Meta</p>
-                            <p className="font-semibold">R$ {project.goal.toLocaleString()}</p>
+                            <p className="text-sm text-muted-foreground">Goal</p>
+                            <p className="font-semibold">${project.goal.toLocaleString()}</p>
                           </div>
                           <div>
-                            <p className="text-sm text-muted-foreground">Arrecadado</p>
-                            <p className="font-semibold">R$ {project.raised.toLocaleString()}</p>
+                            <p className="text-sm text-muted-foreground">Raised</p>
+                            <p className="font-semibold">${project.raised.toLocaleString()}</p>
                           </div>
                           <div>
-                            <p className="text-sm text-muted-foreground">Investidores</p>
+                            <p className="text-sm text-muted-foreground">Investors</p>
                             <p className="font-semibold">{project.investors}</p>
                           </div>
                           <div>
-                            <p className="text-sm text-muted-foreground">Rendimentos</p>
-                            <p className="font-semibold text-green-600">R$ {project.returns.toLocaleString()}</p>
+                            <p className="text-sm text-muted-foreground">Returns</p>
+                            <p className="font-semibold text-green-600">${project.returns.toLocaleString()}</p>
                           </div>
                         </div>
 
                         <Progress value={(project.raised / project.goal) * 100} className="mb-2" />
                         <p className="text-sm text-muted-foreground">
-                          {Math.round((project.raised / project.goal) * 100)}% da meta atingida
+                          {Math.round((project.raised / project.goal) * 100)}% of goal achieved
                         </p>
                       </div>
                     ))}
@@ -500,9 +500,9 @@ export default function ProfilePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Heart className="h-5 w-5 text-red-500" />
-                    Projetos Favoritos
+                    Favorite Projects
                   </CardTitle>
-                  <CardDescription>Projetos que você marcou como favoritos</CardDescription>
+                  <CardDescription>Projects you've marked as favorites</CardDescription>
                 </CardHeader>
                 <CardContent>
                   {investorData.favoriteProjects.length > 0 ? (
@@ -529,9 +529,9 @@ export default function ProfilePage() {
                                     {project.category}
                                   </Badge>
                                   <Badge
-                                    className={`text-xs ${project.status === "ativo" ? "bg-green-600" : "bg-gray-500"}`}
+                                    className={`text-xs ${project.status === "active" ? "bg-green-600" : "bg-gray-500"}`}
                                   >
-                                    {project.status === "ativo" ? "Ativo" : "Inativo"}
+                                    {project.status === "active" ? "Active" : "Inactive"}
                                   </Badge>
                                 </div>
                               </div>
@@ -541,19 +541,19 @@ export default function ProfilePage() {
                               </div>
                               <div className="space-y-1 mb-3">
                                 <div className="flex justify-between text-sm">
-                                  <span>R$ {project.currentAmount.toLocaleString()}</span>
-                                  <span>R$ {project.targetAmount.toLocaleString()}</span>
+                                  <span>${project.currentAmount.toLocaleString()}</span>
+                                  <span>${project.targetAmount.toLocaleString()}</span>
                                 </div>
                                 <Progress value={progress} className="h-2" />
-                                <p className="text-xs text-muted-foreground">{progress.toFixed(0)}% arrecadado</p>
+                                <p className="text-xs text-muted-foreground">{progress.toFixed(0)}% raised</p>
                               </div>
                               <div className="flex items-center justify-between">
                                 <p className="text-xs text-muted-foreground">
-                                  Favoritado em {new Date(project.addedDate).toLocaleDateString("pt-BR")}
+                                  Favorited on {new Date(project.addedDate).toLocaleDateString()}
                                 </p>
                                 <div className="flex gap-2">
                                   <Button variant="outline" size="sm" asChild>
-                                    <Link href={`/projetos/${project.id}`}>Ver Projeto</Link>
+                                    <Link href={`/projects/${project.id}`}>View Project</Link>
                                   </Button>
                                   <Button variant="ghost" size="sm" className="text-red-500 hover:text-red-600">
                                     <Heart className="h-4 w-4 fill-current" />
@@ -568,12 +568,12 @@ export default function ProfilePage() {
                   ) : (
                     <div className="text-center py-8">
                       <Heart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                      <h3 className="text-lg font-semibold mb-2">Nenhum projeto favoritado</h3>
+                      <h3 className="text-lg font-semibold mb-2">No favorite projects</h3>
                       <p className="text-muted-foreground mb-4">
-                        Explore projetos e marque seus favoritos para acompanhá-los facilmente
+                        Explore projects and mark your favorites to track them easily
                       </p>
                       <Button asChild>
-                        <Link href="/projetos">Explorar Projetos</Link>
+                        <Link href="/projects">Explore Projects</Link>
                       </Button>
                     </div>
                   )}
@@ -586,15 +586,15 @@ export default function ProfilePage() {
           <TabsContent value="profile">
             <Card>
               <CardHeader>
-                <CardTitle>Informações do Perfil</CardTitle>
-                <CardDescription>Gerencie suas informações pessoais</CardDescription>
+                <CardTitle>Profile Information</CardTitle>
+                <CardDescription>Manage your personal information</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 {isEditing ? (
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="name">Nome</Label>
+                        <Label htmlFor="name">Name</Label>
                         <Input id="name" defaultValue={currentData.name} />
                       </div>
                       <div>
@@ -602,49 +602,49 @@ export default function ProfilePage() {
                         <Input id="email" type="email" defaultValue={currentData.email} />
                       </div>
                       <div>
-                        <Label htmlFor="phone">Telefone</Label>
+                        <Label htmlFor="phone">Phone</Label>
                         <Input id="phone" defaultValue={currentData.phone} />
                       </div>
                       <div>
-                        <Label htmlFor="location">Localização</Label>
+                        <Label htmlFor="location">Location</Label>
                         <Input id="location" defaultValue={currentData.location} />
                       </div>
                     </div>
                     <div>
-                      <Label htmlFor="bio">Biografia</Label>
+                      <Label htmlFor="bio">Biography</Label>
                       <Textarea id="bio" defaultValue={currentData.bio} rows={4} />
                     </div>
                     <div className="flex gap-2">
-                      <Button onClick={() => setIsEditing(false)}>Salvar Alterações</Button>
+                      <Button onClick={() => setIsEditing(false)}>Save Changes</Button>
                       <Button variant="outline" onClick={() => setIsEditing(false)}>
-                        Cancelar
+                        Cancel
                       </Button>
                     </div>
                   </div>
                 ) : (
                   <div className="space-y-4">
                     <div>
-                      <Label className="text-sm font-medium text-muted-foreground">Biografia</Label>
+                      <Label className="text-sm font-medium text-muted-foreground">Biography</Label>
                       <p className="mt-1">{currentData.bio}</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label className="text-sm font-medium text-muted-foreground">Data de Cadastro</Label>
+                        <Label className="text-sm font-medium text-muted-foreground">Join Date</Label>
                         <p className="mt-1 flex items-center gap-2">
                           <Calendar className="h-4 w-4" />
                           {new Date(
                             userType === "investor" ? investorData.joinDate : organizationData.foundedDate,
-                          ).toLocaleDateString("pt-BR")}
+                          ).toLocaleDateString()}
                         </p>
                       </div>
                       {userType === "investor" && (
                         <>
                           <div>
-                            <Label className="text-sm font-medium text-muted-foreground">Perfil de Risco</Label>
+                            <Label className="text-sm font-medium text-muted-foreground">Risk Profile</Label>
                             <p className="mt-1">{investorData.riskProfile}</p>
                           </div>
                           <div className="md:col-span-2">
-                            <Label className="text-sm font-medium text-muted-foreground">Setores de Interesse</Label>
+                            <Label className="text-sm font-medium text-muted-foreground">Preferred Sectors</Label>
                             <div className="flex gap-2 mt-1">
                               {investorData.preferredSectors.map((sector) => (
                                 <Badge key={sector} variant="secondary">
@@ -658,7 +658,7 @@ export default function ProfilePage() {
                       {userType === "organization" && (
                         <>
                           <div>
-                            <Label className="text-sm font-medium text-muted-foreground">CNPJ</Label>
+                            <Label className="text-sm font-medium text-muted-foreground">Tax ID</Label>
                             <p className="mt-1">{organizationData.cnpj}</p>
                           </div>
                           <div>
@@ -679,20 +679,20 @@ export default function ProfilePage() {
             <div className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Carteira Stellar</CardTitle>
-                  <CardDescription>Gerencie sua carteira conectada</CardDescription>
+                  <CardTitle>Stellar Wallet</CardTitle>
+                  <CardDescription>Manage your connected wallet</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between p-4 border rounded-lg">
                     <div className="flex items-center gap-3">
                       <Wallet className="h-8 w-8 text-emerald-600" />
                       <div>
-                        <p className="font-medium">Carteira Conectada</p>
+                        <p className="font-medium">Connected Wallet</p>
                         <p className="text-sm text-muted-foreground">{currentData.walletAddress}</p>
                       </div>
                     </div>
                     <Button variant="outline" onClick={handleDisconnect}>
-                      Desconectar
+                      Disconnect
                     </Button>
                   </div>
                 </CardContent>
@@ -700,26 +700,26 @@ export default function ProfilePage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Preferências</CardTitle>
-                  <CardDescription>Configure suas preferências da plataforma</CardDescription>
+                  <CardTitle>Preferences</CardTitle>
+                  <CardDescription>Configure your platform preferences</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium">Notificações por Email</p>
-                      <p className="text-sm text-muted-foreground">Receba atualizações sobre seus investimentos</p>
+                      <p className="font-medium">Email Notifications</p>
+                      <p className="text-sm text-muted-foreground">Receive updates about your investments</p>
                     </div>
                     <Button variant="outline" size="sm">
-                      Configurar
+                      Configure
                     </Button>
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium">Autenticação em Duas Etapas</p>
-                      <p className="text-sm text-muted-foreground">Adicione uma camada extra de segurança</p>
+                      <p className="font-medium">Two-Factor Authentication</p>
+                      <p className="text-sm text-muted-foreground">Add an extra layer of security</p>
                     </div>
                     <Button variant="outline" size="sm">
-                      Ativar
+                      Enable
                     </Button>
                   </div>
                 </CardContent>
@@ -727,18 +727,18 @@ export default function ProfilePage() {
 
               <Card className="border-red-200">
                 <CardHeader>
-                  <CardTitle className="text-red-600">Zona de Perigo</CardTitle>
-                  <CardDescription>Ações irreversíveis da conta</CardDescription>
+                  <CardTitle className="text-red-600">Danger Zone</CardTitle>
+                  <CardDescription>Irreversible account actions</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between p-4 border border-red-200 rounded-lg bg-red-50">
                     <div>
-                      <p className="font-medium text-red-800">Desconectar Conta</p>
-                      <p className="text-sm text-red-600">Sair da plataforma e desconectar sua carteira</p>
+                      <p className="font-medium text-red-800">Disconnect Account</p>
+                      <p className="text-sm text-red-600">Log out of the platform and disconnect your wallet</p>
                     </div>
                     <Button variant="destructive" onClick={handleDisconnect}>
                       <LogOut className="h-4 w-4 mr-2" />
-                      Desconectar
+                      Disconnect
                     </Button>
                   </div>
                 </CardContent>

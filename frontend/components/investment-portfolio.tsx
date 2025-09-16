@@ -7,36 +7,36 @@ import { TrendingUp, MapPin } from "lucide-react"
 const investments = [
   {
     id: 1,
-    title: "Educação Digital Rural",
-    organization: "Instituto Conecta",
+    title: "Rural Digital Education",
+    organization: "Connect Institute",
     invested: 5000,
     currentValue: 5420,
     return: 8.4,
     progress: 67,
-    category: "Educação",
+    category: "Education",
     location: "São Paulo",
   },
   {
     id: 2,
-    title: "Energia Solar Escolas",
-    organization: "EcoFuturo",
+    title: "Solar Energy Schools",
+    organization: "EcoFuture",
     invested: 8000,
     currentValue: 8736,
     return: 9.2,
     progress: 82,
-    category: "Sustentabilidade",
+    category: "Sustainability",
     location: "Rio de Janeiro",
   },
   {
     id: 3,
-    title: "Microcrédito Mulheres",
-    organization: "Mulheres em Ação",
+    title: "Women Microcredit",
+    organization: "Women in Action",
     invested: 3000,
     currentValue: 3234,
     return: 7.8,
     progress: 81,
-    category: "Empreendedorismo",
-    location: "Nordeste",
+    category: "Entrepreneurship",
+    location: "Northeast",
   },
 ]
 
@@ -44,7 +44,7 @@ export function InvestmentPortfolio() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Meu Portfólio</CardTitle>
+        <CardTitle>My Portfolio</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
@@ -65,7 +65,7 @@ export function InvestmentPortfolio() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm text-muted-foreground">Retorno</div>
+                  <div className="text-sm text-muted-foreground">Return</div>
                   <div className="flex items-center text-primary font-medium">
                     <TrendingUp className="h-4 w-4 mr-1" />+{investment.return}%
                   </div>
@@ -74,7 +74,7 @@ export function InvestmentPortfolio() {
 
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span>Progresso do Projeto</span>
+                  <span>Project Progress</span>
                   <span>{investment.progress}%</span>
                 </div>
                 <Progress value={investment.progress} className="h-2" />
@@ -82,15 +82,15 @@ export function InvestmentPortfolio() {
 
               <div className="flex justify-between items-center">
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Investido</div>
-                  <div className="font-medium">R$ {investment.invested.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground">Invested</div>
+                  <div className="font-medium">${investment.invested.toLocaleString()}</div>
                 </div>
                 <div className="space-y-1 text-right">
-                  <div className="text-sm text-muted-foreground">Valor Atual</div>
-                  <div className="font-medium">R$ {investment.currentValue.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground">Current Value</div>
+                  <div className="font-medium">${investment.currentValue.toLocaleString()}</div>
                 </div>
                 <Button variant="outline" size="sm">
-                  Ver Detalhes
+                  View Details
                 </Button>
               </div>
             </div>

@@ -3,29 +3,29 @@ import { TrendingUp, DollarSign, Target, Users } from "lucide-react"
 
 const stats = [
   {
-    title: "Total Investido",
-    value: "R$ 25.450",
+    title: "Total Invested",
+    value: "$25,450",
     change: "+12.5%",
     changeType: "positive" as const,
     icon: DollarSign,
   },
   {
-    title: "Retorno Total",
-    value: "R$ 3.120",
+    title: "Total Return",
+    value: "$3,120",
     change: "+8.2%",
     changeType: "positive" as const,
     icon: TrendingUp,
   },
   {
-    title: "Projetos Ativos",
+    title: "Active Projects",
     value: "8",
     change: "+2",
     changeType: "positive" as const,
     icon: Target,
   },
   {
-    title: "Pessoas Impactadas",
-    value: "1.247",
+    title: "People Impacted",
+    value: "1,247",
     change: "+156",
     changeType: "positive" as const,
     icon: Users,
@@ -44,7 +44,7 @@ export function DashboardStats() {
           <CardContent>
             <div className="text-2xl font-bold">{stat.value}</div>
             <p className={`text-xs ${stat.changeType === "positive" ? "text-primary" : "text-destructive"}`}>
-              {stat.change} em relação ao mês anterior
+              {stat.change} from last month
             </p>
           </CardContent>
         </Card>

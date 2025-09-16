@@ -51,5 +51,5 @@ export default function WalletConnectButton() {
         Carteira
       </Link>
     </Button>
-  );
+  );
 }

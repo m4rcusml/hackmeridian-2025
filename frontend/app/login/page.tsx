@@ -16,7 +16,7 @@ export default function LoginPage() {
   const handleLogin = (type: "investor" | "organization") => {
     setUserType(type)
     setIsLoggedIn(true)
-    router.push("/") // Redireciona para a página inicial após login
+    router.push("/") // Redirects to home page after login
   }
 
   return (
@@ -26,10 +26,10 @@ export default function LoginPage() {
         <div className="text-center space-y-2">
           <Link href="/" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-4">
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Voltar ao início
+            Back to home
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900">Bem-vindo!</h1>
-          <p className="text-gray-600">Escolha como você deseja acessar a plataforma</p>
+          <h1 className="text-3xl font-bold text-gray-900">Welcome!</h1>
+          <p className="text-gray-600">Choose how you want to access the platform</p>
         </div>
 
         {/* Login Options */}
@@ -46,15 +46,15 @@ export default function LoginPage() {
               <div className="mx-auto w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
                 <User className="h-8 w-8 text-emerald-600" />
               </div>
-              <CardTitle className="text-xl">Sou Investidor</CardTitle>
-              <CardDescription>Quero investir em projetos sociais e ambientais</CardDescription>
+              <CardTitle className="text-xl">I'm an Investor</CardTitle>
+              <CardDescription>I want to invest in social and environmental projects</CardDescription>
             </CardHeader>
             <CardContent className="pt-0">
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Explore projetos de impacto</li>
-                <li>• Invista com segurança</li>
-                <li>• Acompanhe seus retornos</li>
-                <li>• Gere impacto positivo</li>
+                <li>• Explore impact projects</li>
+                <li>• Invest securely</li>
+                <li>• Track your returns</li>
+                <li>• Generate positive impact</li>
               </ul>
             </CardContent>
           </Card>
@@ -71,15 +71,15 @@ export default function LoginPage() {
               <div className="mx-auto w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4">
                 <Building2 className="h-8 w-8 text-teal-600" />
               </div>
-              <CardTitle className="text-xl">Sou Organização</CardTitle>
-              <CardDescription>Represento uma ONG ou organização social</CardDescription>
+              <CardTitle className="text-xl">I'm an Organization</CardTitle>
+              <CardDescription>I represent an NGO or social organization</CardDescription>
             </CardHeader>
             <CardContent className="pt-0">
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Publique seus projetos</li>
-                <li>• Receba investimentos</li>
-                <li>• Gerencie campanhas</li>
-                <li>• Amplie seu impacto</li>
+                <li>• Publish your projects</li>
+                <li>• Receive investments</li>
+                <li>• Manage campaigns</li>
+                <li>• Expand your impact</li>
               </ul>
             </CardContent>
           </Card>
@@ -91,21 +91,21 @@ export default function LoginPage() {
           disabled={!selectedType}
           onClick={() => selectedType && handleLogin(selectedType)}
         >
-          {selectedType === "investor" && "Continuar como Investidor"}
-          {selectedType === "organization" && "Continuar como Organização"}
-          {!selectedType && "Selecione uma opção"}
+          {selectedType === "investor" && "Continue as Investor"}
+          {selectedType === "organization" && "Continue as Organization"}
+          {!selectedType && "Select an option"}
         </Button>
 
         {/* Footer */}
         <div className="text-center text-sm text-gray-500">
           <p>
-            Ao continuar, você concorda com nossos{" "}
+            By continuing, you agree to our{" "}
             <Link href="/termos" className="text-emerald-600 hover:underline">
-              Termos de Uso
+              Terms of Use
             </Link>{" "}
-            e{" "}
+            and{" "}
             <Link href="/privacidade" className="text-emerald-600 hover:underline">
-              Política de Privacidade
+              Privacy Policy
             </Link>
           </p>
         </div>

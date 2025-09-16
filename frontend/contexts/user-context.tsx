@@ -27,11 +27,10 @@ export function UserProvider({ children }: { children: ReactNode }) {
   const [userType, setUserType] = useState<UserType>(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  // Mock data - em produção viria da API
   const organizationData = {
     id: "org-1",
-    name: "Instituto Verde Futuro",
-    email: "contato@verdefuturo.org",
+    name: "Green Future Institute",
+    email: "contact@greenfuture.org",
   }
 
   const investorData = {

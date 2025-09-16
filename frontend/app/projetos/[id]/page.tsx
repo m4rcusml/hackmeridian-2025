@@ -30,80 +30,78 @@ import {
   AlertCircle,
 } from "lucide-react"
 
-// Mock data - in a real app this would come from an API
 const projectsData = [
   {
     id: 1,
-    title: "Educação Digital para Comunidades Rurais",
-    organization: "Instituto Conecta",
+    title: "Digital Education for Rural Communities",
+    organization: "Connect Institute",
     organizationId: 1,
-    description: "Levar acesso à internet e educação digital para 500 famílias em comunidades rurais do interior.",
+    description: "Bringing internet access and digital education to 500 families in rural interior communities.",
     fullDescription:
-      "Este projeto visa transformar a realidade educacional de comunidades rurais através da implementação de centros de tecnologia digital. Nosso objetivo é estabelecer pontos de acesso à internet de alta velocidade e criar programas de capacitação digital para todas as idades. O projeto inclui a instalação de equipamentos, treinamento de educadores locais e desenvolvimento de conteúdo educacional adaptado às necessidades específicas de cada comunidade. Esperamos impactar diretamente 500 famílias, proporcionando novas oportunidades de aprendizado e desenvolvimento econômico.",
+      "This project aims to transform the educational reality of rural communities through the implementation of digital technology centers. Our goal is to establish high-speed internet access points and create digital literacy programs for all ages. The project includes equipment installation, training of local educators, and development of educational content adapted to the specific needs of each community. We expect to directly impact 500 families, providing new learning and economic development opportunities.",
     location: "São Paulo",
-    category: "Educação",
+    category: "Education",
     targetAmount: 150000,
     currentAmount: 89500,
     investors: 234,
     expectedReturn: "8.5%",
-    duration: "18 meses",
+    duration: "18 months",
     startDate: "2024-03-01",
     endDate: "2024-08-31",
     image: "/rural-education-technology-center.jpg",
-    status: "ativo",
+    status: "active",
     milestones: [
-      { title: "Análise das comunidades", completed: true, date: "2024-01-15" },
-      { title: "Instalação da infraestrutura", completed: true, date: "2024-02-28" },
-      { title: "Treinamento dos educadores", completed: false, date: "2024-04-15" },
-      { title: "Lançamento dos programas", completed: false, date: "2024-06-01" },
-      { title: "Avaliação de impacto", completed: false, date: "2024-08-15" },
+      { title: "Community analysis", completed: true, date: "2024-01-15" },
+      { title: "Infrastructure installation", completed: true, date: "2024-02-28" },
+      { title: "Educator training", completed: false, date: "2024-04-15" },
+      { title: "Program launch", completed: false, date: "2024-06-01" },
+      { title: "Impact assessment", completed: false, date: "2024-08-15" },
     ],
     updates: [
       {
         date: "2024-01-20",
-        title: "Primeira fase concluída",
-        content:
-          "Finalizamos o mapeamento de todas as comunidades participantes e identificamos as principais necessidades tecnológicas.",
+        title: "First phase completed",
+        content: "We have finished mapping all participating communities and identified the main technological needs.",
       },
       {
         date: "2024-01-10",
-        title: "Projeto aprovado",
-        content: "O projeto foi oficialmente aprovado e estamos iniciando a captação de recursos.",
+        title: "Project approved",
+        content: "The project has been officially approved and we are starting fundraising.",
       },
     ],
   },
   {
     id: 2,
-    title: "Energia Solar para Escolas Públicas",
-    organization: "EcoFuturo",
+    title: "Solar Energy for Public Schools",
+    organization: "EcoFuture",
     organizationId: 2,
-    description: "Instalação de painéis solares em 20 escolas públicas, reduzindo custos e impacto ambiental.",
+    description: "Installing solar panels in 20 public schools, reducing costs and environmental impact.",
     fullDescription:
-      "Projeto de sustentabilidade que visa instalar sistemas de energia solar fotovoltaica em 20 escolas públicas da região metropolitana. O objetivo é reduzir os custos operacionais das instituições de ensino e promover a educação ambiental entre estudantes e comunidade. Cada instalação terá capacidade para suprir 80% da demanda energética da escola, gerando economia significativa que poderá ser reinvestida em melhorias educacionais.",
+      "Sustainability project that aims to install photovoltaic solar energy systems in 20 public schools in the metropolitan region. The goal is to reduce operational costs of educational institutions and promote environmental education among students and the community. Each installation will have the capacity to supply 80% of the school's energy demand, generating significant savings that can be reinvested in educational improvements.",
     location: "Rio de Janeiro",
-    category: "Sustentabilidade",
+    category: "Sustainability",
     targetAmount: 300000,
     currentAmount: 245000,
     investors: 456,
     expectedReturn: "9.2%",
-    duration: "24 meses",
+    duration: "24 months",
     startDate: "2024-02-01",
     endDate: "2024-12-31",
     image: "/solar-panels-on-school-building.jpg",
-    status: "ativo",
+    status: "active",
     milestones: [
-      { title: "Seleção das escolas", completed: true, date: "2024-01-30" },
-      { title: "Projeto técnico", completed: true, date: "2024-03-15" },
-      { title: "Instalação - Fase 1", completed: true, date: "2024-05-30" },
-      { title: "Instalação - Fase 2", completed: false, date: "2024-08-30" },
-      { title: "Monitoramento e avaliação", completed: false, date: "2024-12-15" },
+      { title: "School selection", completed: true, date: "2024-01-30" },
+      { title: "Technical design", completed: true, date: "2024-03-15" },
+      { title: "Installation - Phase 1", completed: true, date: "2024-05-30" },
+      { title: "Installation - Phase 2", completed: false, date: "2024-08-30" },
+      { title: "Monitoring and evaluation", completed: false, date: "2024-12-15" },
     ],
     updates: [
       {
         date: "2024-01-25",
-        title: "15 escolas já instaladas",
+        title: "15 schools already installed",
         content:
-          "Concluímos a instalação dos painéis solares em 15 das 20 escolas previstas. A economia de energia já é visível!",
+          "We have completed the installation of solar panels in 15 of the 20 planned schools. Energy savings are already visible!",
       },
     ],
   },
@@ -146,19 +144,19 @@ export default function ProjectDetailPage() {
 
       const organizationPercentage = 100 - returnPercentage[0]
       alert(
-        `Doação de R$ ${donationAmount} realizada com sucesso!\n` +
-          `${returnPercentage[0]}% do retorno para você, ${organizationPercentage}% para a organização.\n` +
-          `Doação identificada como ${userType === "investor" ? "investidor" : "usuário"}.`,
+        `Donation of $${donationAmount} completed successfully!\n` +
+          `${returnPercentage[0]}% of returns for you, ${organizationPercentage}% for the organization.\n` +
+          `Donation identified as ${userType === "investor" ? "investor" : "user"}.`,
       )
     }, 2000)
   }
 
   if (!isLoggedIn) {
-    return <div>Redirecionando para login...</div>
+    return <div>Redirecting to login...</div>
   }
 
   if (!project) {
-    return <div>Carregando...</div>
+    return <div>Loading...</div>
   }
 
   const progress = (project.currentAmount / project.targetAmount) * 100
@@ -173,7 +171,7 @@ export default function ProjectDetailPage() {
             <Button variant="outline" asChild>
               <Link href="/projetos">
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Voltar aos Projetos
+                Back to Projects
               </Link>
             </Button>
           </div>
@@ -189,9 +187,9 @@ export default function ProjectDetailPage() {
                   />
                   <Badge className="absolute top-4 left-4 bg-primary">{project.category}</Badge>
                   <Badge
-                    className={`absolute top-4 right-16 ${project.status === "ativo" ? "bg-green-600" : "bg-gray-500"}`}
+                    className={`absolute top-4 right-16 ${project.status === "active" ? "bg-green-600" : "bg-gray-500"}`}
                   >
-                    {project.status === "ativo" ? "Ativo" : "Inativo"}
+                    {project.status === "active" ? "Active" : "Inactive"}
                   </Badge>
                   <div className="absolute top-4 right-4 flex gap-2">
                     <Button variant="ghost" size="sm" className="bg-background/80 hover:bg-background">
@@ -231,18 +229,18 @@ export default function ProjectDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Progresso do Financiamento</CardTitle>
+                  <CardTitle>Funding Progress</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span>Arrecadado</span>
+                      <span>Raised</span>
                       <span className="font-medium">
-                        R$ {project.currentAmount.toLocaleString()} / R$ {project.targetAmount.toLocaleString()}
+                        ${project.currentAmount.toLocaleString()} / ${project.targetAmount.toLocaleString()}
                       </span>
                     </div>
                     <Progress value={progress} className="h-3" />
-                    <div className="text-sm text-muted-foreground">{progress.toFixed(1)}% do objetivo alcançado</div>
+                    <div className="text-sm text-muted-foreground">{progress.toFixed(1)}% of goal achieved</div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 pt-4">
@@ -251,21 +249,21 @@ export default function ProjectDetailPage() {
                         <Users className="h-5 w-5 text-primary" />
                       </div>
                       <div className="text-lg font-semibold">{project.investors}</div>
-                      <div className="text-sm text-muted-foreground">Investidores</div>
+                      <div className="text-sm text-muted-foreground">Investors</div>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center mb-2">
                         <TrendingUp className="h-5 w-5 text-primary" />
                       </div>
                       <div className="text-lg font-semibold">{project.expectedReturn}</div>
-                      <div className="text-sm text-muted-foreground">Retorno Esperado</div>
+                      <div className="text-sm text-muted-foreground">Expected Return</div>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center mb-2">
                         <DollarSign className="h-5 w-5 text-primary" />
                       </div>
-                      <div className="text-lg font-semibold">R$ {remainingAmount.toLocaleString()}</div>
-                      <div className="text-sm text-muted-foreground">Restante</div>
+                      <div className="text-lg font-semibold">${remainingAmount.toLocaleString()}</div>
+                      <div className="text-sm text-muted-foreground">Remaining</div>
                     </div>
                   </div>
                 </CardContent>
@@ -273,7 +271,7 @@ export default function ProjectDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Marcos do Projeto</CardTitle>
+                  <CardTitle>Project Milestones</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -294,7 +292,7 @@ export default function ProjectDetailPage() {
                               {milestone.title}
                             </h4>
                             <span className="text-sm text-muted-foreground">
-                              {new Date(milestone.date).toLocaleDateString("pt-BR")}
+                              {new Date(milestone.date).toLocaleDateString("en-US")}
                             </span>
                           </div>
                         </div>
@@ -306,7 +304,7 @@ export default function ProjectDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Atualizações do Projeto</CardTitle>
+                  <CardTitle>Project Updates</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
@@ -320,7 +318,7 @@ export default function ProjectDetailPage() {
                             <div className="flex items-center justify-between mb-2">
                               <h4 className="font-medium">{update.title}</h4>
                               <span className="text-sm text-muted-foreground">
-                                {new Date(update.date).toLocaleDateString("pt-BR")}
+                                {new Date(update.date).toLocaleDateString("en-US")}
                               </span>
                             </div>
                             <p className="text-muted-foreground text-sm leading-relaxed">{update.content}</p>
@@ -335,29 +333,29 @@ export default function ProjectDetailPage() {
             </div>
 
             <div className="space-y-6">
-              {userType === "investor" && isLoggedIn && project.status === "ativo" && (
+              {userType === "investor" && isLoggedIn && project.status === "active" && (
                 <Card>
                   <CardHeader>
-                    <CardTitle>Fazer Doação</CardTitle>
-                    <CardDescription>Doe para este projeto e defina como dividir os retornos</CardDescription>
+                    <CardTitle>Make Donation</CardTitle>
+                    <CardDescription>Donate to this project and define how to split the returns</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <Label htmlFor="donation-amount">Valor da Doação (R$)</Label>
+                      <Label htmlFor="donation-amount">Donation Amount ($)</Label>
                       <Input
                         id="donation-amount"
                         type="number"
-                        placeholder="0,00"
+                        placeholder="0.00"
                         value={donationAmount}
                         onChange={(e) => setDonationAmount(e.target.value)}
                         min="1"
                         step="1"
                       />
-                      <p className="text-xs text-muted-foreground mt-1">Sem valor mínimo</p>
+                      <p className="text-xs text-muted-foreground mt-1">No minimum value</p>
                     </div>
 
                     <div>
-                      <Label>Divisão dos Retornos</Label>
+                      <Label>Return Division</Label>
                       <div className="space-y-3 mt-2">
                         <div className="px-3">
                           <Slider
@@ -371,24 +369,24 @@ export default function ProjectDetailPage() {
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-muted-foreground">
-                            Para você: <span className="font-medium text-foreground">{returnPercentage[0]}%</span>
+                            For you: <span className="font-medium text-foreground">{returnPercentage[0]}%</span>
                           </span>
                           <span className="text-muted-foreground">
-                            Para organização:{" "}
+                            For organization:{" "}
                             <span className="font-medium text-foreground">{100 - returnPercentage[0]}%</span>
                           </span>
                         </div>
                         <p className="text-xs text-muted-foreground">
-                          Você decide como dividir os retornos do investimento entre você e a organização
+                          You decide how to split the investment returns between you and the organization
                         </p>
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="message">Mensagem (opcional)</Label>
+                      <Label htmlFor="message">Message (optional)</Label>
                       <Textarea
                         id="message"
-                        placeholder="Deixe uma mensagem de apoio..."
+                        placeholder="Leave a support message..."
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         rows={3}
@@ -400,14 +398,14 @@ export default function ProjectDetailPage() {
                       onClick={handleDonation}
                       disabled={!donationAmount || Number(donationAmount) < 1 || isDonating}
                     >
-                      {isDonating ? "Processando..." : "Doar Agora"}
+                      {isDonating ? "Processing..." : "Donate Now"}
                     </Button>
 
                     <div className="text-xs text-muted-foreground space-y-1">
-                      <p>• Retorno esperado: {project.expectedReturn} ao ano</p>
-                      <p>• Prazo: {project.duration}</p>
-                      <p>• Você define como dividir os retornos</p>
-                      <p>• Todas as doações são identificadas</p>
+                      <p>• Expected return: {project.expectedReturn} per year</p>
+                      <p>• Duration: {project.duration}</p>
+                      <p>• You define how to split the returns</p>
+                      <p>• All donations are identified</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -415,29 +413,29 @@ export default function ProjectDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Informações do Projeto</CardTitle>
+                  <CardTitle>Project Information</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Categoria</span>
+                    <span className="text-muted-foreground">Category</span>
                     <Badge variant="secondary">{project.category}</Badge>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Localização</span>
+                    <span className="text-muted-foreground">Location</span>
                     <span className="font-medium">{project.location}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Início</span>
-                    <span className="font-medium">{new Date(project.startDate).toLocaleDateString("pt-BR")}</span>
+                    <span className="text-muted-foreground">Start</span>
+                    <span className="font-medium">{new Date(project.startDate).toLocaleDateString("en-US")}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Previsão de Término</span>
-                    <span className="font-medium">{new Date(project.endDate).toLocaleDateString("pt-BR")}</span>
+                    <span className="text-muted-foreground">Expected Completion</span>
+                    <span className="font-medium">{new Date(project.endDate).toLocaleDateString("en-US")}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Status</span>
-                    <Badge className={project.status === "ativo" ? "bg-green-600" : "bg-gray-500"}>
-                      {project.status === "ativo" ? "Ativo" : "Inativo"}
+                    <Badge className={project.status === "active" ? "bg-green-600" : "bg-gray-500"}>
+                      {project.status === "active" ? "Active" : "Inactive"}
                     </Badge>
                   </div>
                 </CardContent>
@@ -445,7 +443,7 @@ export default function ProjectDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Sobre a Organização</CardTitle>
+                  <CardTitle>About the Organization</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-3 mb-3">
@@ -454,11 +452,11 @@ export default function ProjectDetailPage() {
                     </div>
                     <div>
                       <h4 className="font-medium">{project.organization}</h4>
-                      <p className="text-sm text-muted-foreground">Organização verificada</p>
+                      <p className="text-sm text-muted-foreground">Verified organization</p>
                     </div>
                   </div>
                   <Button variant="outline" className="w-full bg-transparent" asChild>
-                    <Link href={`/organizacoes/${project.organizationId}`}>Ver Perfil da Organização</Link>
+                    <Link href={`/organizacoes/${project.organizationId}`}>View Organization Profile</Link>
                   </Button>
                 </CardContent>
               </Card>

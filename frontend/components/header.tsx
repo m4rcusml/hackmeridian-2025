@@ -41,19 +41,19 @@ export function Header() {
             {isLoggedIn && (
               <>
                 <Link href="/projetos" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Projetos
+                  Projects
                 </Link>
                 <Link href="/organizacoes" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Organizações
+                  Organizations
                 </Link>
                 {userType === "investor" && (
                   <Link href="/como-funciona" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Como Funciona
+                    How it Works
                   </Link>
                 )}
                 {userType === "organization" && (
                   <Link href="/meus-projetos" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Meus Projetos
+                    My Projects
                   </Link>
                 )}
               </>
@@ -65,7 +65,7 @@ export function Header() {
             {!isLoggedIn ? (
               <>
                 <Button size="sm" asChild>
-                  <Link href="/login">Entrar</Link>
+                  <Link href="/login">Sign In</Link>
                 </Button>
               </>
             ) : (
@@ -75,7 +75,7 @@ export function Header() {
                   <Button variant="outline" size="sm" asChild>
                     <Link href="/novo-projeto">
                       <Plus className="h-4 w-4 mr-2" />
-                      Novo Projeto
+                      New Project
                     </Link>
                   </Button>
                 )}
@@ -110,14 +110,14 @@ export function Header() {
                     className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Projetos
+                    Projects
                   </Link>
                   <Link
                     href="/organizacoes"
                     className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Organizações
+                    Organizations
                   </Link>
                   {userType === "investor" && (
                     <Link
@@ -125,7 +125,7 @@ export function Header() {
                       className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Como Funciona
+                      How it Works
                     </Link>
                   )}
                   {userType === "organization" && (
@@ -135,14 +135,14 @@ export function Header() {
                         className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        Meus Projetos
+                        My Projects
                       </Link>
                       <Link
                         href="/novo-projeto"
                         className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        Novo Projeto
+                        New Project
                       </Link>
                     </>
                   )}
@@ -151,21 +151,21 @@ export function Header() {
                     className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Perfil
+                    Profile
                   </Link>
                   <Link
                     href="/carteira"
                     className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Carteira
+                    Wallet
                   </Link>
                 </>
               )}
               <div className="px-3 py-2 space-y-2">
                 {!isLoggedIn ? (
                   <Button size="sm" className="w-full" asChild>
-                    <Link href="/login">Entrar</Link>
+                    <Link href="/login">Sign In</Link>
                   </Button>
                 ) : (
                   <Button
@@ -178,7 +178,7 @@ export function Header() {
                     }}
                   >
                     <LogOut className="h-4 w-4 mr-2" />
-                    Sair
+                    Sign Out
                   </Button>
                 )}
               </div>

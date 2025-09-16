@@ -4,27 +4,27 @@ import { TrendingUp, Users, Globe, Zap } from "lucide-react"
 const stats = [
   {
     icon: TrendingUp,
-    value: "R$ 2.5M+",
-    label: "Total Investido",
-    description: "Em projetos sociais",
+    value: "$2.5M+",
+    label: "Total Invested",
+    description: "In social projects",
   },
   {
     icon: Users,
     value: "15,000+",
-    label: "Pessoas Impactadas",
-    description: "Diretamente pelos projetos",
+    label: "People Impacted",
+    description: "Directly by projects",
   },
   {
     icon: Globe,
     value: "85",
-    label: "Projetos Ativos",
-    description: "Em todo o Brasil",
+    label: "Active Projects",
+    description: "Across the country",
   },
   {
     icon: Zap,
     value: "12.3%",
-    label: "Retorno Médio",
-    description: "Anual para investidores",
+    label: "Average Return",
+    description: "Annual for investors",
   },
 ]
 
@@ -33,9 +33,9 @@ export function ImpactStats() {
     <section className="py-16 bg-primary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-balance mb-4">Nosso Impacto em Números</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-balance mb-4">Our Impact in Numbers</h2>
           <p className="text-muted-foreground text-balance">
-            Resultados reais de uma comunidade comprometida com mudanças positivas
+            Real results from a community committed to positive change
           </p>
         </div>
 
