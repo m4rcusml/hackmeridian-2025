@@ -15,17 +15,24 @@ import {
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isLoginDropdownOpen, setIsLoginDropdownOpen] = useState(false)
   const { userType, setUserType, isLoggedIn, setIsLoggedIn, organizationData, investorData } = useUser()
 
   const handleLogin = (type: "investor" | "organization") => {
+    console.log("[v0] Login attempt:", type)
     setUserType(type)
     setIsLoggedIn(true)
+    setIsLoginDropdownOpen(false)
+    console.log("[v0] Login successful, userType:", type, "isLoggedIn:", true)
   }
 
   const handleLogout = () => {
+    console.log("[v0] Logout attempt")
     setUserType(null)
     setIsLoggedIn(false)
   }
+
+  console.log("[v0] Current state - userType:", userType, "isLoggedIn:", isLoggedIn)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -70,16 +77,36 @@ export function Header() {
                     Conectar Carteira
                   </Link>
                 </Button>
-                <DropdownMenu>
+                <DropdownMenu open={isLoginDropdownOpen} onOpenChange={setIsLoginDropdownOpen}>
                   <DropdownMenuTrigger asChild>
-                    <Button size="sm">Entrar</Button>
+                    <Button
+                      size="sm"
+                      onClick={() => {
+                        console.log("[v0] Login button clicked, current state:", isLoginDropdownOpen)
+                        setIsLoginDropdownOpen(!isLoginDropdownOpen)
+                      }}
+                    >
+                      Entrar
+                    </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem onClick={() => handleLogin("investor")}>
+                  <DropdownMenuContent align="end" className="w-48">
+                    <DropdownMenuItem
+                      onClick={() => {
+                        console.log("[v0] Investor option clicked")
+                        handleLogin("investor")
+                      }}
+                      className="cursor-pointer"
+                    >
                       <User className="h-4 w-4 mr-2" />
                       Como Investidor
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => handleLogin("organization")}>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        console.log("[v0] Organization option clicked")
+                        handleLogin("organization")
+                      }}
+                      className="cursor-pointer"
+                    >
                       <Building2 className="h-4 w-4 mr-2" />
                       Como Organização
                     </DropdownMenuItem>
@@ -105,7 +132,7 @@ export function Header() {
                       {userType === "organization" ? organizationData?.name : investorData?.name}
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent align="end">
                     <DropdownMenuItem asChild>
                       <Link href="/perfil">
                         <User className="h-4 w-4 mr-2" />
@@ -119,7 +146,7 @@ export function Header() {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleLogout}>
+                    <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
                       <LogOut className="h-4 w-4 mr-2" />
                       Sair
                     </DropdownMenuItem>
@@ -142,12 +169,14 @@ export function Header() {
               <Link
                 href="/projetos"
                 className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Projetos
               </Link>
               <Link
                 href="/organizacoes"
                 className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Organizações
               </Link>
@@ -155,6 +184,7 @@ export function Header() {
                 <Link
                   href="/como-funciona"
                   className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Como Funciona
                 </Link>
@@ -163,6 +193,7 @@ export function Header() {
                 <Link
                   href="/meus-projetos"
                   className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Meus Projetos
                 </Link>
@@ -172,12 +203,14 @@ export function Header() {
                   <Link
                     href="/perfil"
                     className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     Perfil
                   </Link>
                   <Link
                     href="/carteira"
                     className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     Carteira
                   </Link>
@@ -192,7 +225,14 @@ export function Header() {
                 </Button>
                 {!isLoggedIn ? (
                   <div className="space-y-2">
-                    <Button size="sm" className="w-full" onClick={() => handleLogin("investor")}>
+                    <Button
+                      size="sm"
+                      className="w-full"
+                      onClick={() => {
+                        handleLogin("investor")
+                        setIsMenuOpen(false)
+                      }}
+                    >
                       <User className="h-4 w-4 mr-2" />
                       Entrar como Investidor
                     </Button>
@@ -200,14 +240,25 @@ export function Header() {
                       variant="outline"
                       size="sm"
                       className="w-full bg-transparent"
-                      onClick={() => handleLogin("organization")}
+                      onClick={() => {
+                        handleLogin("organization")
+                        setIsMenuOpen(false)
+                      }}
                     >
                       <Building2 className="h-4 w-4 mr-2" />
                       Entrar como Organização
                     </Button>
                   </div>
                 ) : (
-                  <Button variant="outline" size="sm" className="w-full bg-transparent" onClick={handleLogout}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full bg-transparent"
+                    onClick={() => {
+                      handleLogout()
+                      setIsMenuOpen(false)
+                    }}
+                  >
                     <LogOut className="h-4 w-4 mr-2" />
                     Sair
                   </Button>

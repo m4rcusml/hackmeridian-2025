@@ -1,177 +1,172 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { ArrowLeft, MapPin, Users, Calendar, Target, Globe, Mail, Phone } from "lucide-react"
-import Link from "next/link"
+import { useUser } from "@/contexts/user-context"
+import { Plus, TrendingUp, Users, DollarSign } from "lucide-react"
+import { redirect } from "next/navigation"
 
-// Mock data - in real app, this would come from your backend
-const organizationData = {
-  1: {
-    name: "EcoVerde Brasil",
-    description:
-      "A EcoVerde Brasil é uma organização sem fins lucrativos dedicada à preservação ambiental e desenvolvimento sustentável. Fundada em 2018, já impactou mais de 50 comunidades em todo o país.",
-    location: "São Paulo, SP",
-    founded: "2018",
-    website: "www.ecoverdebrasil.org",
-    email: "contato@ecoverdebrasil.org",
-    phone: "+55 11 9999-9999",
-    totalRaised: "R$ 2.5M",
-    totalProjects: 12,
-    activeProjects: 5,
-    image: "/environmental-organization-office.jpg",
-    verified: true,
-    projects: [
-      {
-        id: 1,
-        title: "Reflorestamento da Mata Atlântica",
-        description: "Projeto para plantar 10.000 árvores nativas na região da Serra do Mar",
-        goal: 150000,
-        raised: 89000,
-        investors: 234,
-        daysLeft: 45,
-        category: "Meio Ambiente",
-        image: "/forest-reforestation-project.jpg",
-      },
-      {
-        id: 2,
-        title: "Energia Solar Comunitária",
-        description: "Instalação de painéis solares em escolas rurais",
-        goal: 200000,
-        raised: 156000,
-        investors: 189,
-        daysLeft: 23,
-        category: "Energia",
-        image: "/solar-panels-school-rural.jpg",
-      },
-    ],
-  },
-}
+export default function MeusProjetosPage() {
+  const { userType, isLoggedIn } = useUser()
 
-export default function OrganizationDetailPage({ params }: { params: { id: string } }) {
-  const org = organizationData[params.id as keyof typeof organizationData]
-
-  if (!org) {
-    return <div>Organização não encontrada</div>
+  if (!isLoggedIn || userType !== "organization") {
+    redirect("/")
   }
+
+  const projetos = [
+    {
+      id: 1,
+      nome: "Educação Digital Rural",
+      categoria: "Educação",
+      metaFinanciamento: 50000,
+      valorArrecadado: 32000,
+      investidores: 45,
+      status: "ativo",
+      retornoPool: "8.5% a.a.",
+      dataInicio: "2024-01-15",
+    },
+    {
+      id: 2,
+      nome: "Horta Comunitária Sustentável",
+      categoria: "Sustentabilidade",
+      metaFinanciamento: 25000,
+      valorArrecadado: 25000,
+      investidores: 32,
+      status: "financiado",
+      retornoPool: "8.5% a.a.",
+      dataInicio: "2023-11-20",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-8">
-        {/* Back Button */}
-        <Link
-          href="/organizacoes"
-          className="inline-flex items-center text-muted-foreground hover:text-foreground mb-6"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Voltar para Organizações
-        </Link>
-
-        {/* Organization Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-          <div className="lg:col-span-2">
-            <div className="flex items-start gap-4 mb-6">
-              <img src={org.image || "/placeholder.svg"} alt={org.name} className="w-24 h-24 rounded-lg object-cover" />
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <h1 className="text-3xl font-bold text-foreground">{org.name}</h1>
-                  {org.verified && <Badge variant="secondary">Verificada</Badge>}
-                </div>
-                <p className="text-muted-foreground mb-4">{org.description}</p>
-              </div>
+      <main className="py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-balance mb-4">Meus Projetos</h1>
+              <p className="text-xl text-muted-foreground text-balance">
+                Gerencie seus projetos sociais e acompanhe o desempenho
+              </p>
             </div>
+            <Button>
+              <Plus className="h-4 w-4 mr-2" />
+              Novo Projeto
+            </Button>
           </div>
 
-          {/* Organization Stats */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Informações</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center text-sm">
-                <MapPin className="h-4 w-4 mr-2 text-muted-foreground" />
-                {org.location}
-              </div>
-              <div className="flex items-center text-sm">
-                <Calendar className="h-4 w-4 mr-2 text-muted-foreground" />
-                Fundada em {org.founded}
-              </div>
-              <div className="flex items-center text-sm">
-                <Target className="h-4 w-4 mr-2 text-muted-foreground" />
-                {org.totalProjects} projetos criados
-              </div>
-              <div className="flex items-center text-sm">
-                <Users className="h-4 w-4 mr-2 text-muted-foreground" />
-                {org.totalRaised} arrecadados
-              </div>
-              <div className="flex items-center text-sm">
-                <Globe className="h-4 w-4 mr-2 text-muted-foreground" />
-                <a href={`https://${org.website}`} className="text-primary hover:underline">
-                  {org.website}
-                </a>
-              </div>
-              <div className="flex items-center text-sm">
-                <Mail className="h-4 w-4 mr-2 text-muted-foreground" />
-                <a href={`mailto:${org.email}`} className="text-primary hover:underline">
-                  {org.email}
-                </a>
-              </div>
-              <div className="flex items-center text-sm">
-                <Phone className="h-4 w-4 mr-2 text-muted-foreground" />
-                {org.phone}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+          <div className="grid md:grid-cols-4 gap-6 mb-8">
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Total Arrecadado</p>
+                    <p className="text-2xl font-bold">R$ 57.000</p>
+                  </div>
+                  <DollarSign className="h-8 w-8 text-primary" />
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Projetos Ativos</p>
+                    <p className="text-2xl font-bold">2</p>
+                  </div>
+                  <TrendingUp className="h-8 w-8 text-primary" />
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Total Investidores</p>
+                    <p className="text-2xl font-bold">77</p>
+                  </div>
+                  <Users className="h-8 w-8 text-primary" />
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Retorno da Pool</p>
+                    <p className="text-2xl font-bold">8.5% a.a.</p>
+                  </div>
+                  <TrendingUp className="h-8 w-8 text-green-600" />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
-        {/* Organization Projects */}
-        <div>
-          <h2 className="text-2xl font-bold text-foreground mb-6">Projetos Ativos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {org.projects.map((project) => (
-              <Card key={project.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-4">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
-                  />
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-lg mb-2">{project.title}</CardTitle>
-                      <Badge variant="outline" className="mb-2">
-                        {project.category}
-                      </Badge>
+          <div className="grid gap-6">
+            {projetos.map((projeto) => (
+              <Card key={projeto.id}>
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-xl">{projeto.nome}</CardTitle>
+                      <p className="text-muted-foreground mt-1">{projeto.categoria}</p>
                     </div>
+                    <Badge variant={projeto.status === "ativo" ? "default" : "secondary"}>
+                      {projeto.status === "ativo" ? "Ativo" : "Financiado"}
+                    </Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="mb-4">{project.description}</CardDescription>
-
-                  <div className="space-y-4">
-                    <div>
-                      <div className="flex justify-between text-sm mb-2">
-                        <span>Progresso</span>
-                        <span>{Math.round((project.raised / project.goal) * 100)}%</span>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <div>
+                        <div className="flex justify-between text-sm mb-2">
+                          <span>Progresso do Financiamento</span>
+                          <span>{Math.round((projeto.valorArrecadado / projeto.metaFinanciamento) * 100)}%</span>
+                        </div>
+                        <Progress value={(projeto.valorArrecadado / projeto.metaFinanciamento) * 100} />
                       </div>
-                      <Progress value={(project.raised / project.goal) * 100} className="mb-2" />
-                      <div className="flex justify-between text-sm text-muted-foreground">
-                        <span>R$ {project.raised.toLocaleString()}</span>
-                        <span>Meta: R$ {project.goal.toLocaleString()}</span>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">Arrecadado:</span>
+                        <span className="font-medium">R$ {projeto.valorArrecadado.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">Meta:</span>
+                        <span className="font-medium">R$ {projeto.metaFinanciamento.toLocaleString()}</span>
                       </div>
                     </div>
-
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>{project.investors} investidores</span>
-                      <span>{project.daysLeft} dias restantes</span>
+                    <div className="space-y-4">
+                      <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">Investidores:</span>
+                        <span className="font-medium">{projeto.investidores}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">Retorno da Pool:</span>
+                        <span className="font-medium text-green-600">{projeto.retornoPool}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">Data de Início:</span>
+                        <span className="font-medium">{new Date(projeto.dataInicio).toLocaleDateString("pt-BR")}</span>
+                      </div>
                     </div>
-
-                    <Link href={`/projetos/${project.id}`}>
-                      <Button className="w-full">Ver Projeto</Button>
-                    </Link>
+                  </div>
+                  <div className="flex gap-2 mt-6">
+                    <Button variant="outline" size="sm">
+                      Ver Detalhes
+                    </Button>
+                    <Button variant="outline" size="sm">
+                      Relatórios
+                    </Button>
+                    {projeto.status === "ativo" && (
+                      <Button variant="outline" size="sm">
+                        Editar
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
