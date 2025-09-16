@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import WalletConnectButton from "./ui/wallet"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -69,12 +70,7 @@ export function Header() {
               </>
             ) : (
               <>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/carteira">
-                    <Wallet className="h-4 w-4 mr-2" />
-                    Carteira
-                  </Link>
-                </Button>
+                <WalletConnectButton />
                 {userType === "organization" && (
                   <Button variant="outline" size="sm" asChild>
                     <Link href="/novo-projeto">
