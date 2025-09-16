@@ -43,33 +43,51 @@ O projeto surgiu da necessidade de alinhar o potencial da tecnologia blockchain 
 - Mecanismo de split de rendimento que permite que o usuário configure o percentual dos juros a ser doado versus o retido para si;
 - Emissão de NFTs simbólicos como certificados digitais de impacto, gamificando a experiência de doação.
 
-#### 2.1.2. Gain Creators 
+#### 2.1.2. Gain Creators
 
 - **Segurança Psicológica e Financeira:** Apoiadores contribuem sem medo de perder seu patrimônio principal.
 - **Transparência:** Auditabilidade imediata de transações dentro da blockchain Stellar.
 - **Engajamento Contínuo:** O modelo gera um fluxo de doações recorrente e contínuo para os projetos.
 - **Flexibilidade e Controle:** O usuário define o nível de apoio através da configuração do split.
 
-#### 2.1.3. Pain Relievers 
+#### 2.1.3. Pain Relievers
 
 - Eliminação do risco de má gestão ou desvio de fundos através do uso da tecnologia on-chain;
 - Redução drástica da burocracia e dos custos operacionais de intermediários tradicionais;
 - Minimização da desconfiança ao fornecer um registro público e imutável de todo o fluxo financeiro.
 
-#### 2.1.4. Perfil do Cliente
+#### 2.1.4. Público alvo
 
-- Apoiadores de causas sociais e filantropos que buscam métodos de doação mais seguros e transparentes;
-- Projetos sociais, ONGs e startups de impacto em busca de modelos de financiamento inovadores e confiáveis;
-- Comunidades e usuários do ecossistema cripto interessados em aplicar seus ativos para gerar impacto social.
+##### Doadores Individuais Modernos (crypto-native e impact-driven): 
+- Jovens e adultos que já usam cripto, stablecoins ou fintechs.
+- Pessoas interessadas em impacto social, mas que não querem perder liquidez.
+
+- Perfil: investidores de varejo, early adopters de blockchain, comunidade Web3.
+
+##### Filantropos e Investidores de Impacto (High-net-worth individuals e ESG):
+
+- Pessoas ou fundos que já apoiam causas sociais, mas que buscam modelos mais transparentes e eficientes.
+
+- Podem enxergar sua plataforma como uma forma de “maximizar impacto sem comprometer patrimônio”.
+
+- Perfil: family offices, investidores ESG, doadores recorrentes.
+
+##### Organizações Sociais (ONGs, fundações e projetos de impacto):
+
+- Entidades que enfrentam a imprevisibilidade das doações e precisam de fluxo de caixa mais estável.
+
+- Se beneficiam diretamente do modelo de yield sustentável e da transparência via blockchain.
+
+- Perfil: ONGs pequenas e médias, fundações educacionais, ambientais ou de saúde.
 
 ### 2.2. Detalhamento da Solução
 
 #### 2.2.1. Funcionalidades Principais
 
 - Conexão segura com a plataforma via carteira Freighter.
-    
+
 - Depósito de capital no vault de doação com configuração do split de rendimento.
-    
+
 - Visualização do capital depositado, rendimentos acumulados e total doado.
     
 - Distribuição automatizada dos rendimentos para os projetos sociais via smart contract.
@@ -92,12 +110,13 @@ O projeto surgiu da necessidade de alinhar o potencial da tecnologia blockchain 
 
 ---
 
-## **3. Projeto da aplicação web**
+## 3. Aplicação do projeto
 
 ### 3.1. Arquitetura da Aplicação
 
+### 3.2. Protótipo
 
-### 3.2. Protótipo de Alta Fidelidade
+### 3.2. Fluxo do usuário
 
 **Telas Principais e Fluxos**
 
