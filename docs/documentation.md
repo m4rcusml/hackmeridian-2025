@@ -181,9 +181,35 @@ O Impact Vault se posiciona como uma solução pioneira no setor de "Philanthrop
 
 ### 5.2. Análise de Mercado
 
-O mercado de doações está em um ponto de inflexão. De um lado, o modelo tradicional (Web2) enfrenta uma crise de confiança devido à falta de transparência e taxas elevadas. Do outro, a filantropia cripto (Web3) ainda busca um modelo sustentável que não exija que o doador abra mão de seu patrimônio.
+O mercado de doações está em um ponto de inflexão. De um lado, o modelo tradicional (Web2) enfrenta uma crise de confiança devido à falta de transparência e taxas elevadas. Do outro, a filantropia cripto (Web3) ainda busca um modelo sustentável.
 
 Nossa plataforma se posiciona exatamente nesta intersecção, oferecendo um modelo de "Doação de Rendimento" (Lossless Donation), onde o impacto social é gerado de forma contínua sem que o doador perca seu capital. A escolha da rede Stellar nos confere uma vantagem competitiva crucial em velocidade e custo, democratizando o acesso a este novo modelo.
+
+Para posicionar o (nome do projeto) e forma clara no cenário filantrópico, é essencial analisar as soluções existentes e identificar as lacunas que nosso projeto preenche. O benchmarking a seguir compara nosso modelo inovador com as principais abordagens do mercado, sendo elas: 
+
+
+- The Giving Block: Plataforma líder em doações de criptomoedas para ONGs, com foco em facilidade e integração.
+
+- Giveth: Plataforma Web3 de doações com governança e recompensas via token.
+
+- Engiven: Solução focada em doações em cripto e ações combinadas para organizações religiosas e ONGs.
+
+- Coinbase Commerce: Infraestrutura robusta para aceitar criptomoedas em sites, com grande user base.
+
+
+| Funcionalidade / Benefício          | Impact Vault | The Giving Block | Giveth | Engiven | Coinbase Commerce |
+| ----------------------------------- | ------------ | ---------------- | ------ | ------- | ----------------- |
+| Liquidez total do capital principal | ✅            | ❌                | ❌      | ❌       | ❌                 |
+| Impacto via rendimento              | ✅            | ❌                | ✅      | ❌       | ❌                 |
+| Transparência on-chain (blockchain) | ✅            | ✅                | ✅      | ❌       | ❌                 |
+| Split programável de rendimentos    | ✅            | ❌                | ❌      | ❌       | ❌                 |
+| Certificado NFT de impacto          | ✅            | ❌                | ✅      | ❌       | ❌                 |
+| Dashboard de impacto em tempo real  | ✅            | ✅                | ✅      | ✅       | ✅                 |
+| Governança participativa            | ✅            | ❌                | ✅      | ❌       | ❌                 |
+| Suporte multi-moeda                 | ✅            | ✅                | ✅      | ✅       | ✅                 |
+| Integração com DeFi real            | ✅            | ❌                | ✅      | ❌       | ❌                 |
+| Modelo sustentável de monetização   | ✅            | ✅                | ❌      | ✅       | ✅                 |
+
 
 ### 5.3. Plano de Marketing 
 
