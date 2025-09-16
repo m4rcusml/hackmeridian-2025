@@ -178,4 +178,4 @@ Nossa plataforma se posiciona exatamente nesta intersecção, oferecendo um mode
 ---
 
 ## **6. Conclusões**
-
+O (nome do projeto) é uma plataforma descentralizada baseada na blockchain Stellar que reinventa o modelo tradicional de doações sociais. Permitindo que o usuário mantenha total liquidez sobre o capital aportado, a plataforma direciona apenas os rendimentos gerados aos projetos sociais escolhidos, assegurando um impacto contínuo, seguro e transparente.  Essa solução alia inovação tecnológica e sustentabilidade social, criando um ambiente escalável e confiável que atrai diversos perfis de apoiadores.
