@@ -77,8 +77,8 @@ Já para o a digitalização das telas no figma foram feitas os seguintes wirefr
 <div align = "center">
   <img src = "../docs/assets/profile.png">
 </div>
-
 <p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+Para ver melhor cada wireframe acesse o link do figma: https://www.figma.com/design/61pQLLpxmorW98mTKshkIJ/hackMeridian?node-id=0-1&t=AM1NvXknhQ0CXrG8-1.
 
 #### 2.1.1. Produtos & Serviços
 
