@@ -46,9 +46,9 @@ The platform converts **traditional donation** into a **programmable, sustainabl
 ├── contracts/          # Soroban Smart Contracts for the fee vault
 ├── backend/            # REST API, local database
 ├── frontend/           # Web app for user interface
+├── src
 ├── docs/               # General documentation, roadmap, API docs, and pitch
-├── README.md           # Main guide and quick instructions
-└── LICENSE             # MIT License
+└── README.md           # Main guide and quick instructions
 ```
 
 ##  Installation and Running
