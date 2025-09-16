@@ -74,7 +74,7 @@ const allProjects = [
     title: "Telemedicina para Comunidades Isoladas",
     organization: "Saúde Digital",
     description: "Implementar sistema de telemedicina para atender comunidades isoladas da Amazônia.",
-    location: "Amazônia",
+    location: "Norte",
     category: "Saúde",
     targetAmount: 200000,
     currentAmount: 134000,

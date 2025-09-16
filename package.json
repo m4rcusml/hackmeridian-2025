@@ -70,8 +70,8 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^24.5.0",
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^5.0.2",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
