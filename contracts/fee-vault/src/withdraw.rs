@@ -1,5 +1,5 @@
-use soroban_sdk::{Env, Address, Symbol};
 use crate::storage;
+use soroban_sdk::{Address, Env, Map, Symbol};
 
 pub fn withdraw(env: Env, user: Address, project: Symbol, amount: i128) -> i128 {
     let total = storage::withdraw_user_deposit(env, user, project, amount);
@@ -8,10 +8,10 @@ pub fn withdraw(env: Env, user: Address, project: Symbol, amount: i128) -> i128 
 }
 
 pub fn withdraw_yield(env: Env, user: Address, project: Symbol) -> i128 {
-    let mut deposits = env
+    let mut deposits: Map<Symbol, crate::storage::DepositInfo> = env
         .storage()
         .persistent()
-        .get::<Map<Symbol, crate::storage::DepositInfo>>(&user)
+        .get(&user)
         .unwrap_or(Map::new(&env));
     if let Some(mut info) = deposits.get(project.clone()) {
         let reserved = info.reserved_yield;
