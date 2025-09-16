@@ -1,4 +1,4 @@
-# Project Name
+# 4Bridge
 
 A platform that merges **philanthropy, DeFi, and liquidity**, transforming support for social projects with the power of the **Stellar blockchain**.
 The platform allows users to support causes without giving up their principal capital, ensuring **full liquidity**, **fair distribution of generated yields** for social impact, and **radical transparency** of all operations.
@@ -97,6 +97,13 @@ Access the application at `http://localhost:3000`
 -   **Participatory governance:** Voting and suggestions for projects and yield policies.
 
 ---
+
+## Team
+- <a href="https://www.linkedin.com/in/anacdejesus/">Ana Carolina</a>
+- <a href="https://www.linkedin.com/in/llorengarcia/">Lorena Garcia</a>
+- <a href="https://www.linkedin.com/in/maria-arielly/">Maria Arielly</a>
+- <a href="https://www.linkedin.com/in/marcus-valente/">Marcus Felipe</a>
+- <a href="https://www.linkedin.com/in/messias-olivindo/">Messias Olivindo</a>
 
 ## 📜 License
 
