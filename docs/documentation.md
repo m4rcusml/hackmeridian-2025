@@ -201,14 +201,10 @@ Para posicionar o (nome do projeto) e forma clara no cenário filantrópico, é 
 | ----------------------------------- | ------------ | ---------------- | ------ | ------- | ----------------- |
 | Liquidez total do capital principal | ✅            | ❌                | ❌      | ❌       | ❌                 |
 | Impacto via rendimento              | ✅            | ❌                | ✅      | ❌       | ❌                 |
-| Transparência on-chain (blockchain) | ✅            | ✅                | ✅      | ❌       | ❌                 |
+| Transparência on-chain              | ✅            | ✅                | ✅      | ❌       | ❌                 |
 | Split programável de rendimentos    | ✅            | ❌                | ❌      | ❌       | ❌                 |
-| Certificado NFT de impacto          | ✅            | ❌                | ✅      | ❌       | ❌                 |
-| Dashboard de impacto em tempo real  | ✅            | ✅                | ✅      | ✅       | ✅                 |
-| Governança participativa            | ✅            | ❌                | ✅      | ❌       | ❌                 |
 | Suporte multi-moeda                 | ✅            | ✅                | ✅      | ✅       | ✅                 |
 | Integração com DeFi real            | ✅            | ❌                | ✅      | ❌       | ❌                 |
-| Modelo sustentável de monetização   | ✅            | ✅                | ❌      | ✅       | ✅                 |
 
 
 ### 5.3. Plano de Marketing 
