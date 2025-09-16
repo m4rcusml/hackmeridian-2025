@@ -44,6 +44,15 @@ pub fn get_user_deposit(env: Env, user: Address, project: Symbol) -> Option<Depo
     deposits.get(project)
 }
 
+pub fn get_user_projects(env: Env, user: Address) -> Vec<Symbol> {
+    let deposits: Map<Symbol, DepositInfo> = env
+        .storage()
+        .persistent()
+        .get(&user)
+        .unwrap_or(Map::new(&env));
+    deposits.keys()
+}
+
 // TOTAL EM CADA PROJETO (para proporcionalidade)
 pub fn get_project_total(env: Env, project: Symbol) -> i128 {
     env.storage().persistent().get(&("project_total", project)).unwrap_or(0)
@@ -96,4 +105,10 @@ pub fn withdraw_user_deposit(env: Env, user: Address, project: Symbol, amount: i
     } else {
         panic!("Nada a sacar desse projeto");
     }
+}
+
+pub fn withdraw_project_accrued_fee(env: Env, project: Symbol) -> i128 {
+    let acc = env.storage().persistent().get(&("accrued_fee", project.clone())).unwrap_or(0);
+    env.storage().persistent().set(&("accrued_fee", project), &0_i128);
+    acc
 }
