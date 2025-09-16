@@ -1,4 +1,4 @@
-# Fobridge
+# 4Bridges
 
 ## **1. Introdução**
 
@@ -35,6 +35,13 @@ O projeto surgiu da necessidade de alinhar o potencial da tecnologia blockchain 
 ## **2. Visão geral da aplicação**
 
 ### 2.1. Proposta de Valor
+Para melhor entender o projeto e a proposta de valor envolvida à aplicação, foi desenvolvido o seguinte canvas proposta de valor:
+
+<p align = "center">Figura 1 - Canvas proposta de valor da 4Bridges.</p>
+<div align = "center">
+  <img src = "../docs/assets/canvas.png">
+</div>
+<p align = "center"> Fonte: (Souza, [2025?]).</p>
 
 #### 2.1.1. Produtos & Serviços
 
