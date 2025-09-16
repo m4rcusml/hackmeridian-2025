@@ -58,6 +58,28 @@ Para melhor entender o projeto e a proposta de valor envolvida à aplicação, f
 
 <p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
 
+Já para o a digitalização das telas no figma foram feitas os seguintes wireframes no figma: 
+ <p align = "center">Figura 4 - Wireframe da aplicação.</p>
+<div align = "center">
+  <img src = "../docs/assets/LandingPage.png">
+</div>
+
+<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+
+ <p align = "center">Figura 5 - Wireframe da aplicação.</p>
+<div align = "center">
+  <img src = "../docs/assets/Projects.png">
+</div>
+
+<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+
+ <p align = "center">Figura 6 - Wireframe da aplicação.</p>
+<div align = "center">
+  <img src = "../docs/assets/profile.png">
+</div>
+
+<p align = "center"> Fonte: (Material produzido pelos autores, 2025).</p>
+
 #### 2.1.1. Produtos & Serviços
 
 - Plataforma web integrada a um smart contract para depósitos de capital com liquidez total; 
@@ -155,7 +177,7 @@ Para melhor entender o projeto e a proposta de valor envolvida à aplicação, f
 
 &nbsp; &nbsp; &nbsp; &nbsp; O processo de design incluiu protótipos de baixa fidelidade para validação rápida de fluxos e usabilidade, culminando no protótipo de baixa fidelidade que guiou o desenvolvimento. Para melhor visualização do fluxo, pode-se obserar a imagem abaixo referente ao rascunho do protótipo das telas e posterior digitalização em wireframes no figma.
 
-<p align = "center">Figura 4 - Canvas proposta de valor da 4Bridges.</p>
+<p align = "center">Figura 7 - Canvas proposta de valor da 4Bridges.</p>
 <div align = "center">
   <img src = "../docs/assets/canvas.png">
 </div>
