@@ -1,12 +1,13 @@
 #![no_std]
 
-use soroban_sdk::{contractimpl, Env, Address, Symbol};
+use soroban_sdk::{contract, contractimpl, Env, Address, Symbol, Vec};
 
 mod storage;
 mod deposit;
-mod yield_logic;
+mod r#yield;
 mod withdraw;
 
+#[contract]
 pub struct FeeVaultContract;
 
 #[contractimpl]
@@ -14,11 +15,14 @@ impl FeeVaultContract {
     pub fn deposit(env: Env, user: Address, project: Symbol, amount: i128, yield_split: i128) {
         deposit::deposit(env, user, project, amount, yield_split);
     }
-    pub fn simulate_yield(env: Env, yield_percent: i128) {
-        yield_logic::simulate_yield(env, yield_percent);
+    // Simula yield para um projeto específico
+    pub fn simulate_yield(env: Env, project: Symbol, percent: i128, users: Vec<Address>) {
+        r#yield::simulate_yield(env, project, percent, users)
     }
-    pub fn distribute_yield(env: Env) {
-        yield_logic::distribute_yield(env);
+
+    // Distribui yield entre depositantes
+    pub fn distribute_yield(env: Env, project: Symbol, users: Vec<Address>) -> Vec<(Address, i128)> {
+        r#yield::distribute_yield(env, project, users)
     }
     pub fn withdraw(env: Env, user: Address, project: Symbol, value: i128) {
         withdraw::withdraw(env, user, project, value);
