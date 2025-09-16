@@ -4,7 +4,7 @@
 
 ### 1.1. Contexto do Projeto
 
-O (nome do projeto) é uma plataforma descentralizada de doação social, que visa revolucionar o ecossistema de filantropia digital por meio da blockchain Stellar. O projeto aborda a crescente demanda por mecanismos de doação que sejam transparentes, sustentáveis e que mitiguem o risco financeiro para os apoiadores.
+O 4Bridge é uma plataforma descentralizada de doação social, que visa revolucionar o ecossistema de filantropia digital por meio da blockchain Stellar. O projeto aborda a crescente demanda por mecanismos de doação que sejam transparentes, sustentáveis e que mitiguem o risco financeiro para os apoiadores.
 
 ### 1.2. Problema
 
@@ -327,27 +327,25 @@ A estratégia promocional contempla:
 A escolha da blockchain Stellar é uma escolha estratégica para o sucesso e diferencial da plataforma.  Stellar oferece uma combinação única de velocidade, segurança, baixo custo e escalabilidade, características essenciais para operacionalizar uma solução descentralizada de doações que visa atender tanto usuários individuais quanto organizações sociais e investidores institucionais em escala global.
 
 ### 7.1. Velocidade e Custo Reduzido
-
+- Transações rápidas via Stellar Consensus Protocol (SCP) com taxas mínimas (~0.00001 XLM por transação).<br>
 Transações rápidas e tarifas baixíssimas permitem que mesmo pequenos aportes sejam economicamente viáveis, democratizando o acesso ao sistema e possibilitando micropagamentos frequentes. Isso é crucial para a sustentabilidade do vault e para estimular o engajamento recorrente dos apoiadores.
 
 ### 7.2. Contratos Inteligentes Soroban
-
+- Contratos inteligentes em Rust/WASM usando Soroban SDK.<br>
 A robustez e segurança dos contratos inteligentes Soroban permitem a implementação da lógica complexa de liquidez do capital principal, divisão programável dos rendimentos e emissão de certificados NFT - que é uma ideia futura do projeto. Além disso, facilitam a auditabilidade em tempo real das operações, aumentando a transparência e a confiança de todos os stakeholders.
 
 ### 7.3. Escalabilidade e Inclusão Global
-
+- Infraestrutura distribuída, compatível com múltiplos ativos e moedas via Stellar Assets e Liquidity Pools.<br>
 A infraestrutura de Stellar é desenhada para suportar elevado volume de transações com muita eficiência, o que garante que o Impact Vault possa crescer sem gargalos técnicos. A capacidade de suportar múltiplas moedas permite que a plataforma atenda a um público global diversificado, promovendo inclusão financeira em mercados emergentes e consolidando o impacto social em diferentes regiões.
 
-
 ### 7.4. Segurança e Transparência
-
+- Ledger imutável + Horizon API + indexers (StellarExpert, Dune) para monitoramento on-chain.<br>
 Stellar oferece um ambiente seguro, resiliente e comprovado, onde todas as operações são imutáveis e rastreáveis, reforçando o compromisso do Impact Vault com a transparência radical. Essa característica é vital para combater a desconfiança histórica em doações, assegurando responsabilidade e governança claras.
 
 
 ### 7.5. Ecossistema e Parcerias
-
+- Anchors e SEPs (SEP-10, SEP-24, SEP-12, SEP-31) + integração com wallets (Freighter, Albedo) + oráculos (Band, DIA).<br>
 Por ser uma rede com crescente ecossistema dedicado a soluções sociais e de finanças descentralizadas, Stellar propicia sinergias, integrações e oportunidades de parcerias que aceleram a inovação contínua do projeto, garantindo uma evolução alinhada com as tecnologias e demandas do mercado.
-
 
 Em resumo, a blockchain Stellar não é apenas uma infraestrutura tecnológica, mas um pilar essencial que sustenta sua proposta de valor, viabilidade e impacto, configurando-se como um diferencial competitivo decisivo no panorama das doações digitais e do financiamento social inovador.
 
