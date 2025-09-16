@@ -4,17 +4,16 @@
 
 ### 1.1. Contexto do Projeto
 
-O (nome do projeto) é uma plataforma descentralizada de doação social. A solução visa revolucionar o ecossistema de filantropia digital por meio da blockchain Stellar. O projeto aborda a crescente demanda por mecanismos de doação que sejam transparentes, sustentáveis e que mitiguem o risco financeiro para os apoiadores.
+O (nome do projeto) é uma plataforma descentralizada de doação social, que visa revolucionar o ecossistema de filantropia digital por meio da blockchain Stellar. O projeto aborda a crescente demanda por mecanismos de doação que sejam transparentes, sustentáveis e que mitiguem o risco financeiro para os apoiadores.
 
 ### 1.2. Problema
 
-O modelo filantrópico tradicional enfrenta barreiras críticas que limitam seu potencial:
+O modelo filantrópico global atravessa uma crise de confiança sistêmica, marcada pela falta de transparência na gestão de recursos. Pesquisas internacionais mostram que a confiança é o fator mais determinante na decisão de doar, mas também a maior barreira: um estudo da Charities Aid Foundation (2023) aponta que mais de 50% dos não doadores citam dúvidas sobre a aplicação dos recursos como motivo de hesitação. De forma semelhante, pesquisas da BBB Wise Giving Alliance (2025) revelam que quase 70% dos potenciais doadores expressam preocupação com o uso indevido de seus dados e doações quando apoiam instituições desconhecidas.
 
-1. **Falta de Transparência:** Doadores têm pouca visibilidade sobre o destino e a aplicação dos fundos, gerando desconfiança.
-    
-2. **Perda de Capital:** A doação é um evento de via única, onde o capital do apoiador é permanentemente transferido, vi uma barreira para contribuições maiores e contínuas.
-    
-3. **Baixo Engajamento:** A natureza pontual das doações dificulta a criação de um fluxo de receita previsível para os projetos sociais.
+Essa desconfiança amplifica o maior obstáculo do modelo: a perda de capital. A doação tradicional é uma transação de via única e irreversível, um sacrifício financeiro que ativa o viés cognitivo da aversão à perda (KAHNEMAN, 2012). Para o doador, isso significa um dilema entre segurança patrimonial e impacto social, o que limita tanto o volume quanto a frequência das contribuições.
+
+O resultado é um modelo insustentável, frequentemente descrito como um “balde furado” (SARGEANT, 2009), no qual a captação não acompanha a evasão. Dados do Fundraising Effectiveness Project (2023) indicam que as taxas globais de retenção de novos doadores raramente ultrapassam 25% ao ano, confirmando o caráter esporádico e pouco previsível das doações. Essa espiral de desconfiança, sacrifício financeiro e baixa retenção mina o planejamento estratégico das organizações e mantém um enorme potencial de capital filantrópico inexplorado.
+
 
 ### 1.3. Objetivos
 
