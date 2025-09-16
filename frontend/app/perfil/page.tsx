@@ -30,13 +30,22 @@ import {
   Activity,
   Heart,
   Building2,
+  LogOut,
 } from "lucide-react"
 import { useUser } from "@/contexts/user-context"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function ProfilePage() {
-  const { userType } = useUser()
+  const { userType, setUserType, setIsLoggedIn } = useUser()
   const [isEditing, setIsEditing] = useState(false)
+  const router = useRouter()
+
+  const handleDisconnect = () => {
+    setUserType(null)
+    setIsLoggedIn(false)
+    router.push("/")
+  }
 
   const investorData = {
     name: "João Silva",
@@ -682,7 +691,9 @@ export default function ProfilePage() {
                         <p className="text-sm text-muted-foreground">{currentData.walletAddress}</p>
                       </div>
                     </div>
-                    <Button variant="outline">Desconectar</Button>
+                    <Button variant="outline" onClick={handleDisconnect}>
+                      Desconectar
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -709,6 +720,25 @@ export default function ProfilePage() {
                     </div>
                     <Button variant="outline" size="sm">
                       Ativar
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-red-200">
+                <CardHeader>
+                  <CardTitle className="text-red-600">Zona de Perigo</CardTitle>
+                  <CardDescription>Ações irreversíveis da conta</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between p-4 border border-red-200 rounded-lg bg-red-50">
+                    <div>
+                      <p className="font-medium text-red-800">Desconectar Conta</p>
+                      <p className="text-sm text-red-600">Sair da plataforma e desconectar sua carteira</p>
+                    </div>
+                    <Button variant="destructive" onClick={handleDisconnect}>
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Desconectar
                     </Button>
                   </div>
                 </CardContent>

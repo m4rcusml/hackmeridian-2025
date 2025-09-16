@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 
 const categories = ["Educação", "Saúde", "Sustentabilidade", "Empreendedorismo", "Alimentação", "Tecnologia"]
-const locations = ["São Paulo", "Rio de Janeiro", "Minas Gerais", "Nordeste", "Norte", "Sul"]
+const locations = ["São Paulo", "Rio de Janeiro", "Minas Gerais", "Nordeste", "Amazônia", "Sul"]
 const statusOptions = ["Ativo", "Totalmente Financiado", "Concluído"]
 
 interface ProjectFiltersProps {
