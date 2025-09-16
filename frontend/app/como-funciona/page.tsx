@@ -34,23 +34,22 @@ export default function ComoFuncionaPage() {
         <section className="py-16 bg-gradient-to-br from-emerald-50 to-teal-50">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-              Como Funciona a <span className="text-primary">StellarImpact</span>
+              How <span className="text-primary">StellarImpact</span> Works
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-balance">
-              Conectamos investidores conscientes com projetos de impacto social e ambiental, usando a tecnologia
-              blockchain Stellar para transparência e eficiência.
+              We connect conscious investors with social and environmental impact projects, using Stellar blockchain technology for transparency and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/projetos">
                   <Search className="mr-2 h-5 w-5" />
-                  Explorar Projetos
+                  Explore Projects
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link href="/login">
                   <Users className="mr-2 h-5 w-5" />
-                  Começar Agora
+                  Get Started
                 </Link>
               </Button>
             </div>
@@ -61,9 +60,9 @@ export default function ComoFuncionaPage() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Processo Simples em 4 Passos</h2>
+              <h2 className="text-3xl font-bold mb-4">A Simple 4-Step Process</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Investir em impacto social nunca foi tão fácil e transparente
+                Investing in social impact has never been so easy and transparent
               </p>
             </div>
 
@@ -72,9 +71,9 @@ export default function ComoFuncionaPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Wallet className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">1. Conecte sua Carteira</h3>
+                <h3 className="text-xl font-semibold mb-2">1. Connect Your Wallet</h3>
                 <p className="text-muted-foreground">
-                  Conecte sua carteira Stellar para começar a investir de forma segura
+                  Connect your Stellar wallet to start investing securely
                 </p>
               </div>
 
@@ -82,9 +81,9 @@ export default function ComoFuncionaPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Search className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">2. Explore Projetos</h3>
+                <h3 className="text-xl font-semibold mb-2">2. Explore Projects</h3>
                 <p className="text-muted-foreground">
-                  Descubra projetos verificados de organizações com impacto comprovado
+                  Discover verified projects from organizations with proven impact
                 </p>
               </div>
 
@@ -92,9 +91,9 @@ export default function ComoFuncionaPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <DollarSign className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">3. Invista</h3>
+                <h3 className="text-xl font-semibold mb-2">3. Invest</h3>
                 <p className="text-muted-foreground">
-                  Escolha investir e defina como será direcionado o retorno financeiro
+                  Choose to invest and decide how your financial return will be directed
                 </p>
               </div>
 
@@ -102,8 +101,8 @@ export default function ComoFuncionaPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">4. Acompanhe o Impacto</h3>
-                <p className="text-muted-foreground">Monitore o progresso e os resultados dos seus investimentos</p>
+                <h3 className="text-xl font-semibold mb-2">4. Track Your Impact</h3>
+                <p className="text-muted-foreground">Monitor the progress and results of your investments</p>
               </div>
             </div>
           </div>
