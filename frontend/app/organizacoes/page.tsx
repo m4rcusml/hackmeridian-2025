@@ -1,3 +1,7 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -6,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, MapPin, Users, Target } from "lucide-react"
 import Link from "next/link"
+import { useUser } from "@/contexts/user-context"
 
 const organizations = [
   {
@@ -52,9 +57,48 @@ const organizations = [
     image: "/tech-social-organization-logo.jpg",
     verified: false,
   },
+  {
+    id: 5,
+    name: "Água Limpa",
+    description: "Levando água potável para comunidades rurais",
+    location: "Fortaleza, CE",
+    activeProjects: 4,
+    totalRaised: "R$ 800K",
+    category: "Meio Ambiente",
+    image: "/water-organization-logo.png",
+    verified: true,
+  },
 ]
 
 export default function OrganizationsPage() {
+  const router = useRouter()
+  const { isLoggedIn } = useUser()
+  const [searchTerm, setSearchTerm] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("Todas")
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push("/login")
+    }
+  }, [isLoggedIn, router])
+
+  if (!isLoggedIn) {
+    return <div>Redirecionando para login...</div>
+  }
+
+  const filteredOrganizations = organizations.filter((org) => {
+    const matchesSearch =
+      org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      org.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      org.location.toLowerCase().includes(searchTerm.toLowerCase())
+
+    const matchesCategory = selectedCategory === "Todas" || org.category === selectedCategory
+
+    return matchesSearch && matchesCategory
+  })
+
+  const categories = ["Todas", "Meio Ambiente", "Educação", "Saúde", "Tecnologia"]
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -69,31 +113,31 @@ export default function OrganizationsPage() {
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-              <Input placeholder="Buscar organizações..." className="pl-10" />
+              <Input
+                placeholder="Buscar organizações..."
+                className="pl-10"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
             <div className="flex gap-2 flex-wrap">
-              <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground">
-                Todas
-              </Badge>
-              <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground">
-                Meio Ambiente
-              </Badge>
-              <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground">
-                Educação
-              </Badge>
-              <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground">
-                Saúde
-              </Badge>
-              <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground">
-                Tecnologia
-              </Badge>
+              {categories.map((category) => (
+                <Badge
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground"
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </Badge>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Organizations Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {organizations.map((org) => (
+          {filteredOrganizations.map((org) => (
             <Card key={org.id} className="hover:shadow-lg transition-shadow">
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
@@ -142,6 +186,12 @@ export default function OrganizationsPage() {
             </Card>
           ))}
         </div>
+
+        {filteredOrganizations.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">Nenhuma organização encontrada com os filtros selecionados.</p>
+          </div>
+        )}
       </main>
       <Footer />
     </div>

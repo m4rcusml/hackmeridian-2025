@@ -43,8 +43,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/criar-projeto" className="text-muted-foreground hover:text-primary transition-colors">
-                  Criar Projeto
+                <Link href="/organizacoes" className="text-muted-foreground hover:text-primary transition-colors">
+                  Organizações
                 </Link>
               </li>
               <li>
@@ -67,11 +67,6 @@ export function Footer() {
               <li>
                 <Link href="/como-funciona" className="text-muted-foreground hover:text-primary transition-colors">
                   Como Funciona
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
-                  FAQ
                 </Link>
               </li>
               <li>
