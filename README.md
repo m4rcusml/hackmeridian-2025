@@ -1,5 +1,7 @@
 # 4Bridge
 
+Testnet hash : CAPKWRXEIDU47QNPSXS7JYZ3Y4ALKVUSDSKO2M2HR7XP6XXS2ZTUR5CY
+
 A platform that merges **philanthropy, DeFi, and liquidity**, transforming support for social projects with the power of the **Stellar blockchain**.
 The platform allows users to support causes without giving up their principal capital, ensuring **full liquidity**, **fair distribution of generated yields** for social impact, and **radical transparency** of all operations.
 
