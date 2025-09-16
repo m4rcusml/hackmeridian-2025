@@ -209,12 +209,42 @@ Para posicionar o (nome do projeto) e forma clara no cenário filantrópico, é 
 
 ### 5.3. Plano de Marketing 
 
-- Apresentar o projeto em comunidades da Stellar e de impacto social para atrair `early adopters`.
+A estratégia de marketing do Impact Vault foi cuidadosamente elaborada para amplificar sua visibilidade, engajando diretamente o público-alvo e fortalecendo seu posicionamento no ecossistema de doações digitais e Web3. Com foco em ações digitais, a comunicação utilizará redes sociais, parcerias estratégicas com organizações sociais, instituições públicas e canais especializados, sempre privilegiando uma linguagem clara, acessível e um design visual acolhed
+or.
+#### 5.3.1. Product
+
+(nome do projeto) é uma plataforma descentralizada de doações que combina segurança, transparência e flexibilidade, utilizando blockchain Stellar e contratos inteligentes Soroban. Diferencia-se por permitir ao usuário manter liquidez total do capital principal, com rendimento destinado a projetos sociais escolhidos, certificados NFT de impacto, dashboard em tempo real e governança participativa. O produto oferece uma experiência inovadora, escalável e confiável para engajar doadores digitais, organizações sociais e investidores sociais.
+
+---
+
+#### 5.3.2. Price
+
+O modelo de precificação será baseado em taxas transparentes e competitivas, aplicadas sobre os rendimentos gerados no vault, garantindo sustentabilidade financeira para manutenção e evolução da plataforma. Haverá níveis diferenciados – versões gratuitas com funcionalidades básicas para usuários comuns e planos premium para ONGs e empresas, incluindo recursos extras, dashboards avançados e relatórios detalhados. Política de incentivos e isenções específicas pode ser aplicada para ampliar acessibilidade inicial.
+
+---
+
+#### 5.3.3. Place
+
+A distribuição e acesso ao (nome do projeto) será digital, com foco inicial em comunidades e projetos sociais conectados à blockchain Stellar, abrangendo Brasil e demais mercados emergentes. A plataforma terá presença online forte, incluindo website institucional, integração com wallets populares, marketplaces Web3 e parcerias estratégicas com instituições filantrópicas, aceleradoras e organizações ESG para ampliação do alcance. O onboarding será facilitado por tutoriais, webinars e networking digital.
+
+---
+
+#### 5.3.4. Promotion
+
+A estratégia promocional contempla:
+
+- Campanhas digitais focadas em públicos de impacto social, entusiastas de cripto e investidores institucionais.
     
-- Estabelecer parcerias com 2-3 ONGs para um projeto piloto na Testnet.
+- Conteúdo educativo sobre doações programáveis e benefícios do modelo de liquidez, via blogs, podcasts e lives.
     
-- Criar conteúdo educativo (artigos, vídeos) explicando o conceito de "yield donation".
+- Participação em eventos blockchain e hackathons para visibilidade técnica e network.
     
+- Parcerias com ONGs e influenciadores sociais para demonstração e validação.
+    
+- Programas de referral e gamificação para recompensar indicações e engajamento contínuo.
+    
+- Relações públicas focadas na mídia especializada em filantropia e tecnologia.
+
 
 ---
 
