@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:front": "next dev",
+    "dev:front": "cd frontend && next dev",
     "build:front": "next build",
     "start:front": "next start",
     "lint:front": "next lint",

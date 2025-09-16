@@ -106,37 +106,6 @@ pub fn add_reserved_yield(env: Env, user: Address, project: Symbol, value: i128)
     env.storage().persistent().set(&user, &deposits);
 }
 
-// Atualize withdraw para também descontar do project_total e vault!
-pub fn withdraw_user_deposit(env: Env, user: Address, project: Symbol, amount: i128) -> i128 {
-    let mut deposits: Map<Symbol, DepositInfo> = env
-        .storage()
-        .persistent()
-        .get(&user)
-        .unwrap_or(Map::new(&env));
-    if let Some(mut info) = deposits.get(project.clone()) {
-        assert!(info.amount >= amount, "Saldo insuficiente");
-
-        let reserved_to_withdraw = if amount >= info.amount {
-            info.reserved_yield
-        } else {
-            (info.reserved_yield * amount) / info.amount
-        };
-
-        info.amount -= amount;
-        info.reserved_yield = info.reserved_yield.saturating_sub(reserved_to_withdraw);
-        deposits.set(project.clone(), info);
-        env.storage().persistent().set(&user, &deposits);
-
-        update_project_total(env.clone(), project.clone(), -amount);
-        let vault = get_total_vault(env.clone());
-        set_total_vault(env, vault - amount);
-
-        return amount + reserved_to_withdraw;
-    } else {
-        panic!("Nada a sacar desse projeto");
-    }
-}
-
 pub fn withdraw_project_accrued_fee(env: Env, project: Symbol) -> i128 {
     let acc = env
         .storage()
